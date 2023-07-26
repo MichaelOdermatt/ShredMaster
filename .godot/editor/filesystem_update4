@@ -1,0 +1,10 @@
+res://main.tscn
+res://Scenes/EnemyManager.tscn
+res://Scenes/BasicEnemy.tscn
+res://Scripts/EnemyManager.gd
+res://Scripts/PlayerMovement.gd
+res://Scripts/PlayerHealth.gd
+res://Scripts/BasicEnemy.gd
+res://Player.gd
+res://Scripts/Player.gd
+res://Scripts/PlayerScripts/Player.gd

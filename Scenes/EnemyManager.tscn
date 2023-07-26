@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6noujhrx0k3f"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyScripts/EnemyManager.gd" id="1_1r6fd"]
+[ext_resource type="PackedScene" uid="uid://bpyvbm1jorjwg" path="res://Scenes/BasicEnemy.tscn" id="2_5x13j"]
+
+[node name="EnemyManager" type="Node2D"]
+script = ExtResource("1_1r6fd")
+basicEnemySpawnIntervalMax = 3
+basicEnemySpawnIntervalMin = 6
+
+[node name="BasicEnemy" parent="." instance=ExtResource("2_5x13j")]

@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://bawod66qbrxj6"]
+
+[ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyManager.tscn" id="1_ha327"]
+[ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
+[ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
+[ext_resource type="Texture2D" uid="uid://djs1bgwymn8rb" path="res://Sprites/Foreground.png" id="3_xgm8f"]
+[ext_resource type="Texture2D" uid="uid://o8qjdunv401w" path="res://Sprites/Background.png" id="4_dsewk"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqxcg"]
+size = Vector2(16, 16)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
+
+[node name="MapBoundries" type="StaticBody2D" parent="."]
+position = Vector2(64, 64)
+collision_layer = 2
+collision_mask = 0
+
+[node name="Bottom" type="CollisionShape2D" parent="MapBoundries"]
+position = Vector2(0, 64)
+shape = SubResource("WorldBoundaryShape2D_ao2bu")
+
+[node name="Left" type="CollisionShape2D" parent="MapBoundries"]
+position = Vector2(-64, 0)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_ao2bu")
+
+[node name="Right" type="CollisionShape2D" parent="MapBoundries"]
+position = Vector2(64, 0)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_ao2bu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_d4847")
+scrollSpeed = 40
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(128, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(64, 64)
+texture = ExtResource("4_dsewk")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(128, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(64, 64)
+texture = ExtResource("3_xgm8f")
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource("5_21ok0")
+
+[node name="CharacterBody" type="CharacterBody2D" parent="Player"]
+position = Vector2(64, 64)
+collision_mask = 2
+script = ExtResource("6_oi6dd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/CharacterBody"]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_nwx8h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
+shape = SubResource("RectangleShape2D_cqxcg")
+
+[node name="PlayerHealth" type="Node2D" parent="Player"]
+script = ExtResource("8_vqve4")
+playerHealth = 3
