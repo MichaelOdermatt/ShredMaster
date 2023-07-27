@@ -8,3 +8,7 @@ func _ready():
 
 func _on_player_hit():
 	playerHealth.decreaseHealth();
+
+## Destroys the player, ending the game.
+func destroyPlayer():
+	queue_free();

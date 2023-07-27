@@ -1,3 +1,7 @@
+Control
+TextureRect
+TextureProgressBar
+CanvasLayer
 Node2D
 Timer
 CollisionShape2D

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=14 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
+[ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="9_tuhrv"]
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
+[ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -74,3 +77,14 @@ shape = SubResource("RectangleShape2D_cqxcg")
 [node name="PlayerHealth" type="Node2D" parent="Player"]
 script = ExtResource("8_vqve4")
 playerHealth = 3
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("9_yu4qi")
+
+[node name="Health" type="TextureRect" parent="UI"]
+offset_right = 27.0
+offset_bottom = 9.0
+texture = ExtResource("9_tuhrv")
+expand_mode = 1
+stretch_mode = 1
+script = ExtResource("11_bh6rr")
