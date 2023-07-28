@@ -1,21 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdxrtukbv5q4c"]
+[gd_scene load_steps=5 format=3 uid="uid://bdxrtukbv5q4c"]
 
 [ext_resource type="Script" path="res://Scripts/Rail.gd" id="1_txjnx"]
-[ext_resource type="Texture2D" uid="uid://b5isqrrxf0emy" path="res://Sprites/rail.png" id="2_hi50w"]
+[ext_resource type="Texture2D" uid="uid://cj62t56hqigxq" path="res://Sprites/rail.png" id="2_hi50w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8ng"]
 size = Vector2(127, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3haxx"]
+size = Vector2(127, 3)
 
 [node name="BasicRail" type="CharacterBody2D"]
 position = Vector2(192, 112)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_txjnx")
+railAltitudeMax = 112
+railAltitudeMin = 56
 movementSpeed = 55
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hi50w")
+offset = Vector2(0, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mu8ng")
@@ -24,3 +30,10 @@ one_way_collision = true
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -5)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3haxx")

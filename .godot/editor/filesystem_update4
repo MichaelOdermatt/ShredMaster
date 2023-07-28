@@ -1,11 +1,9 @@
-res://main.tscn
-res://Scenes/FlyingEnemy.tscn
-res://Scenes/BasicEnemy.tscn
-res://Scripts/Rail.gd
-res://Scripts/EnemyScripts/BasicEnemy.gd
-res://Scripts/PlayerScripts/Player.gd
 res://Scripts/PlayerScripts/PlayerMovement.gd
-res://Scenes/RailManager.tscn
 res://Scenes/BasicRail.tscn
+res://main.tscn
+res://Scenes/RailManager.tscn
+res://Scripts/EnemyScripts/BasicEnemy.gd
 res://Scripts/EnemyScripts/EnemyManager.gd
+res://Scripts/Rail.gd
 res://Scripts/RailManager.gd
+res://Scripts/PlayerScripts/Player.gd

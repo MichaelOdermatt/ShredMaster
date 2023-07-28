@@ -7,7 +7,10 @@ const enemyResetPos: Vector2 = Vector2(192, 112);
 
 signal rail_off_screen();
 
+@export var railAltitudeMax: int;
+@export var railAltitudeMin: int;
 @export var movementSpeed: int;
+
 var movementVector: Vector2;
 ## true if the rail has moved off the screen
 var isOffScreen: bool = true;
@@ -37,3 +40,5 @@ func moveRail(delta):
 func resetEnemyPosition():
 	isOffScreen = false;
 	transform.origin = enemyResetPos;
+	randomize();
+	transform.origin.y = randi_range(railAltitudeMin, railAltitudeMax);
