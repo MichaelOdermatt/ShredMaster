@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=15 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="9_tuhrv"]
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
+[ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailManager.tscn" id="12_iii0j"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -64,7 +65,7 @@ script = ExtResource("5_21ok0")
 
 [node name="CharacterBody" type="CharacterBody2D" parent="Player"]
 position = Vector2(64, 64)
-collision_mask = 2
+collision_mask = 10
 script = ExtResource("6_oi6dd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/CharacterBody"]
@@ -88,3 +89,7 @@ texture = ExtResource("9_tuhrv")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("11_bh6rr")
+
+[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
+basicRailSpawnIntervalMax = 1
+basicRailSpawnIntervalMin = 2
