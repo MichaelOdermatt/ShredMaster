@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cj62t56hqigxq" path="res://Sprites/rail.png" id="2_hi50w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8ng"]
-size = Vector2(127, 6)
+size = Vector2(125, 6)
 
 [node name="BasicRail" type="CharacterBody2D"]
 position = Vector2(192, 112)
