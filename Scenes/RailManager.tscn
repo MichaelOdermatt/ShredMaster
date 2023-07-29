@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjlvkwlv122xg"]
 
+[ext_resource type="Script" path="res://Scripts/RailScripts/RailManager.gd" id="1_52oem"]
 [ext_resource type="PackedScene" uid="uid://bdxrtukbv5q4c" path="res://Scenes/BasicRail.tscn" id="1_j6dis"]
-[ext_resource type="Script" path="res://Scripts/RailManager.gd" id="1_ofdkw"]
 
 [node name="RailManager" type="Node2D"]
-script = ExtResource("1_ofdkw")
+script = ExtResource("1_52oem")
 
 [node name="BasicRail" parent="." instance=ExtResource("1_j6dis")]
 position = Vector2(-64, 48)

@@ -3,14 +3,21 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 
-var isLeftAndRightMovementDisabled: bool = false;
+@onready var globals = get_node("/root/Globals");
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(delta):
-	# TODO (alternative to using area2D) could use get_slide_collision() here to check if the player is colliding with the rail
-	# and if the player is colliding wit the rail set the players velocity to the rails but in the opposite direction. and dont let the player move.
+	var isLeftAndRightMovementDisabled = false;
+	var colliderName = null;
+	if (get_slide_collision_count() > 0):
+		# just grab the first collider since it is not possible for the player
+		# to be colliding with more than 1 physics object at once
+		colliderName = get_slide_collision(0).get_collider().name;
+	
+	if (colliderName == "BasicRail"):
+		isLeftAndRightMovementDisabled = true;
 
 	# Add the gravity.
 	if not is_on_floor():
@@ -24,7 +31,7 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if (isLeftAndRightMovementDisabled):
-		velocity.x = 55;
+		velocity.x = globals.RAIL_SPEED;
 	else:
 		if direction:
 			velocity.x = direction * SPEED
@@ -32,9 +39,3 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func enterRailMode():
-	isLeftAndRightMovementDisabled = true;
-
-func leaveRailMode():
-	isLeftAndRightMovementDisabled = false;

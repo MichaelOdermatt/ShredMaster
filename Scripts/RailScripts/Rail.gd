@@ -5,18 +5,19 @@ extends CharacterBody2D
 const halfOfSpriteWidth: int = 64
 const enemyResetPos: Vector2 = Vector2(192, 112);
 
+@onready var globals = get_node("/root/Globals");
+
 signal rail_off_screen();
 
 @export var railAltitudeMax: int;
 @export var railAltitudeMin: int;
-@export var movementSpeed: int;
 
 var movementVector: Vector2;
 ## true if the rail has moved off the screen
 var isOffScreen: bool = true;
 
 func _ready():
-	movementVector = Vector2(-movementSpeed, 0);
+	movementVector = Vector2(-globals.RAIL_SPEED, 0);
 
 func _physics_process(delta):
 	moveRail(delta);
@@ -27,7 +28,7 @@ func moveRail(delta):
 	if (isOffScreen):
 		return;
 
-	velocity.x = -movementSpeed;
+	velocity = movementVector;
 	move_and_slide()
 
 	# don't mark the enemy as off screen until it is past half its width and
