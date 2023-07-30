@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://j3al3rjdx5fj"]
+
+[ext_resource type="Texture2D" uid="uid://b3o00jfycm5oy" path="res://Sprites/DownRail.png" id="1_oi0w1"]
+
+[node name="DownRail" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oi0w1")
+offset = Vector2(0, 34)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-20, 2, 20, 17, 62, 17, 62, 22, -63, 22, -63, 2)
+one_way_collision = true

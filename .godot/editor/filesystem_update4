@@ -1,7 +1,5 @@
+res://Scripts/RailScripts/RailManager.gd
 res://Scripts/PlayerScripts/PlayerMovement.gd
 res://Scenes/BasicRail.tscn
 res://main.tscn
 res://Scenes/RailManager.tscn
-res://Scripts/Globals.gd
-res://Scripts/RailScripts/Rail.gd
-res://Scripts/AutoLoaded/Globals.gd

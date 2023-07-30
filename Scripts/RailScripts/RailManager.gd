@@ -1,28 +1,35 @@
 extends Node2D
 
-# TODO maybe reuse the same code for this and Enemy Manger
+@export var railSpawnIntervalMax: int;
+@export var railSpawnIntervalMin: int;
 
-@export var basicRailSpawnIntervalMax: int;
-@export var basicRailSpawnIntervalMin: int;
-
+@onready var timer = $Timer;
 @onready var basicRail = $BasicRail;
-@onready var basicRailTimer = $BasicRail/Timer;
+@onready var upRail = $UpRail;
+@onready var downRail = $DownRail;
 
 func _ready():
 	# setup funcs for the basic rail
-	basicRail.rail_off_screen.connect(
-		func(): railOffScreen(basicRailTimer, basicRailSpawnIntervalMin, basicRailSpawnIntervalMax)
-	);
-	basicRailTimer.timeout.connect(
-		func(): resetRail(basicRail)
-	);
+	timer.timeout.connect(resetRandomRail);
+
+	basicRail.rail_off_screen.connect(railOffScreen);
+	upRail.rail_off_screen.connect(railOffScreen);
+	downRail.rail_off_screen.connect(railOffScreen);
 
 ## Setup and start a cooldown timer for the rails's respawn.
-func railOffScreen(railTimer: Timer, spawnIntervalMin: int, spawnIntervalMax: int):
+func railOffScreen():
 	randomize();
-	railTimer.wait_time = randi_range(spawnIntervalMin, spawnIntervalMax);
-	railTimer.start();
+	timer.wait_time = randi_range(railSpawnIntervalMin, railSpawnIntervalMax);
+	timer.start();
 
-## Reset the rails's position.
-func resetRail(railObject):
-	railObject.resetEnemyPosition();
+## Resets one of the rails's position.
+func resetRandomRail():
+	randomize()
+	var randomInt = randi_range(0, 2);
+
+	if (randomInt == 0):
+		basicRail.resetEnemyPosition();
+	elif (randomInt == 1):
+		upRail.resetEnemyPosition();
+	else:
+		downRail.resetEnemyPosition();

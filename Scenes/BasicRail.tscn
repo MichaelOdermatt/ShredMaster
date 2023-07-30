@@ -13,7 +13,6 @@ collision_mask = 0
 script = ExtResource("1_kic0m")
 railAltitudeMax = 112
 railAltitudeMin = 56
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hi50w")
@@ -22,7 +21,3 @@ offset = Vector2(0, 34)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mu8ng")
 one_way_collision = true
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true
-autostart = true

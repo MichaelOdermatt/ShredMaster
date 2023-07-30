@@ -43,3 +43,7 @@ func resetEnemyPosition():
 	transform.origin = enemyResetPos;
 	randomize();
 	transform.origin.y = randi_range(railAltitudeMin, railAltitudeMax);
+
+## Function which returns the script's type as a string.
+func get_type():
+	return "Rail";

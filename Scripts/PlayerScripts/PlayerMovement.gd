@@ -24,12 +24,11 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	if (isGrinding):
 		velocity.x = calcGrindVelocity();
 	else:
@@ -46,7 +45,6 @@ func calcGrindVelocity() -> float:
 
 	var offsetFromCenter = clamp(transform.origin.x - HALF_SCREEN_WIDTH, 0, HALF_SCREEN_WIDTH);
 	var grindVelocityDecrease = (offsetFromCenter / HALF_SCREEN_WIDTH) * MAX_GRIND_VELOCITY_DECREASE_VALUE;
-	print_debug(offsetFromCenter);
 
 	return baseGrindVelocity - grindVelocityDecrease;
 
@@ -56,9 +54,12 @@ func isPlayerGrindingRail() -> bool:
 	if (collisionCount == 0):
 		return false;
 
+	# TODO maybe rather than getting the collider this way I could put a short raycast below my character to check if I am on the rail
+	# Since right now I am having an issue with collision detection the up and down rails.
 	for index in collisionCount:
-		var colliderName = get_slide_collision(index).get_collider().name;
-		if (colliderName == "BasicRail"):
+		var collider = get_slide_collision(index).get_collider();
+		if (collider.has_method("get_type")
+			&& collider.get_type() == "Rail"):
 			return true;
 
 	return false;

@@ -91,5 +91,3 @@ stretch_mode = 1
 script = ExtResource("11_bh6rr")
 
 [node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
-basicRailSpawnIntervalMax = 1
-basicRailSpawnIntervalMin = 2
