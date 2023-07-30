@@ -75,6 +75,16 @@ texture = ExtResource("1_nwx8h")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
 shape = SubResource("RectangleShape2D_cqxcg")
 
+[node name="RailRayCast" type="RayCast2D" parent="Player/CharacterBody"]
+position = Vector2(-8, 0)
+target_position = Vector2(-2, 10)
+collision_mask = 8
+
+[node name="RailRayCast2" type="RayCast2D" parent="Player/CharacterBody"]
+position = Vector2(8, 0)
+target_position = Vector2(2, 10)
+collision_mask = 8
+
 [node name="PlayerHealth" type="Node2D" parent="Player"]
 script = ExtResource("8_vqve4")
 playerHealth = 3

@@ -7,6 +7,8 @@ const HALF_SCREEN_WIDTH: int = 64;
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 
 @onready var globals = get_node("/root/Globals");
+@onready var railRaycast = $RailRayCast;
+@onready var railRaycast2 = $RailRayCast2;
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -39,7 +41,7 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 
 ## Calculates the grid velocity for the frame. If the player is past the halfway point on the 
 ## screen, their grid velocity will be lower than the rail's velocity in the opposite direction.
-## This creates the effect that the player is slowing down as they grind.
+## This makes it look like the player is slowing down as they grind.
 func calcGrindVelocity() -> float:
 	var baseGrindVelocity = globals.RAIL_SPEED;
 
@@ -50,16 +52,17 @@ func calcGrindVelocity() -> float:
 
 ## Returns true if the player is colliding with a rail object. Otherwise returns false.
 func isPlayerGrindingRail() -> bool:
-	var collisionCount = get_slide_collision_count();
-	if (collisionCount == 0):
-		return false;
+	return isRaycastHittingRail(railRaycast) || isRaycastHittingRail(railRaycast2);
 
-	# TODO maybe rather than getting the collider this way I could put a short raycast below my character to check if I am on the rail
-	# Since right now I am having an issue with collision detection the up and down rails.
-	for index in collisionCount:
-		var collider = get_slide_collision(index).get_collider();
-		if (collider.has_method("get_type")
-			&& collider.get_type() == "Rail"):
-			return true;
+## Returns true if the given raycast is colliding with an object of type Rail.
+func isRaycastHittingRail(rayCast: RayCast2D) -> bool:
+	if (!rayCast.is_colliding()):
+		return false;
+	
+	var collider = rayCast.get_collider();
+	var colliderType = collider.get_type() if collider.has_method("get_type") else null;
+
+	if (colliderType == "Rail"):
+		return true;
 
 	return false;

@@ -12,5 +12,5 @@ texture = ExtResource("1_oi0w1")
 offset = Vector2(0, 34)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-20, 2, 20, 17, 62, 17, 62, 22, -63, 22, -63, 2)
+polygon = PackedVector2Array(-20, 2, 20, 17, 62, 17, 62, 22, 20, 22, -20, 7, -63, 7, -63, 2)
 one_way_collision = true
