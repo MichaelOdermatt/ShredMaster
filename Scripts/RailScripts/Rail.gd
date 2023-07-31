@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-# TODO maybe reuse the same code for this and basic enemy
-
 const halfOfSpriteWidth: int = 64
 const enemyResetPos: Vector2 = Vector2(192, 112);
 
@@ -14,17 +12,17 @@ signal rail_off_screen();
 
 var movementVector: Vector2;
 ## true if the rail has moved off the screen
-var isOffScreen: bool = true;
+var isOffScreen: bool = false;
 
 func _ready():
 	movementVector = Vector2(-globals.RAIL_SPEED, 0);
 
 func _physics_process(delta):
-	moveRail(delta);
+	moveRail();
 
 ## Moves the rail while it is not off the screen.
 ## Once it is off the screen emit a signal to the rail manager.
-func moveRail(delta):
+func moveRail():
 	if (isOffScreen):
 		return;
 

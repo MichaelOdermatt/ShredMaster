@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 80.0
+const MAX_JUMP_HEIGHT = 80.0
+const MIN_JUMP_HEIGHT = 15.0
+const JUMP_DURATION = 0.40
 const HALF_SCREEN_WIDTH: int = 64;
 ## The max amount that the grind speed can decrease by while grinding
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
@@ -10,8 +12,15 @@ const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 @onready var railRaycast = $RailRayCast;
 @onready var railRaycast2 = $RailRayCast2;
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float;
+var maxJumpVelocity: float;
+var minJumpVelocity: float;
+
+func _ready():
+	# calculate the value of gravity and min/max jump heights
+	gravity = 2 * MAX_JUMP_HEIGHT / pow(JUMP_DURATION, 2);
+	maxJumpVelocity = -sqrt(2 * gravity * MAX_JUMP_HEIGHT);
+	minJumpVelocity = -sqrt(2 * gravity * MIN_JUMP_HEIGHT);
 
 func _physics_process(delta):
 	var isGrinding = isPlayerGrindingRail();
@@ -27,7 +36,9 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = maxJumpVelocity
+	if Input.is_action_just_released("Jump") && velocity.y < minJumpVelocity:
+		velocity.y = minJumpVelocity;
 
 	# Get the input direction and handle the movement/deceleration.
 	var direction = Input.get_axis("MoveLeft", "MoveRight")
@@ -38,6 +49,8 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 			velocity.x = direction * SPEED
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
+
+# FOR RAIL GRINDING
 
 ## Calculates the grid velocity for the frame. If the player is past the halfway point on the 
 ## screen, their grid velocity will be lower than the rail's velocity in the opposite direction.
@@ -52,7 +65,10 @@ func calcGrindVelocity() -> float:
 
 ## Returns true if the player is colliding with a rail object. Otherwise returns false.
 func isPlayerGrindingRail() -> bool:
-	return isRaycastHittingRail(railRaycast) || isRaycastHittingRail(railRaycast2);
+	var isRearRaycastHittingRail = isRaycastHittingRail(railRaycast);
+	var isFrontRaycastHittingRail = isRaycastHittingRail(railRaycast2);
+	# return true if either of the raycasts are hitting the rail and if the player is not moving upwards
+	return (isRearRaycastHittingRail || isFrontRaycastHittingRail) && velocity.y >= 0;
 
 ## Returns true if the given raycast is colliding with an object of type Rail.
 func isRaycastHittingRail(rayCast: RayCast2D) -> bool:

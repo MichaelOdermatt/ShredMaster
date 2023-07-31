@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://cjlvkwlv122xg"]
 
 [ext_resource type="Script" path="res://Scripts/RailScripts/RailManager.gd" id="1_52oem"]
-[ext_resource type="PackedScene" uid="uid://bdxrtukbv5q4c" path="res://Scenes/BasicRail.tscn" id="1_j6dis"]
-[ext_resource type="PackedScene" uid="uid://c545eqd3nb1jj" path="res://Scenes/UpRail.tscn" id="3_rqesr"]
+[ext_resource type="PackedScene" uid="uid://bdxrtukbv5q4c" path="res://Scenes/RailScenes/BasicRail.tscn" id="1_j6dis"]
+[ext_resource type="PackedScene" uid="uid://c545eqd3nb1jj" path="res://Scenes/RailScenes/UpRail.tscn" id="3_rqesr"]
 [ext_resource type="Script" path="res://Scripts/RailScripts/Rail.gd" id="4_w2riq"]
-[ext_resource type="PackedScene" uid="uid://j3al3rjdx5fj" path="res://Scenes/DownRail.tscn" id="5_ahk5l"]
+[ext_resource type="PackedScene" uid="uid://j3al3rjdx5fj" path="res://Scenes/RailScenes/DownRail.tscn" id="5_ahk5l"]
 
 [node name="RailManager" type="Node2D"]
 script = ExtResource("1_52oem")
@@ -28,4 +28,3 @@ railAltitudeMin = 64
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
-autostart = true

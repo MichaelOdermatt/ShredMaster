@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6noujhrx0k3f"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyScripts/EnemyManager.gd" id="1_1r6fd"]
-[ext_resource type="PackedScene" uid="uid://bpyvbm1jorjwg" path="res://Scenes/BasicEnemy.tscn" id="2_5x13j"]
-[ext_resource type="PackedScene" uid="uid://byl8glshkxvta" path="res://Scenes/FlyingEnemy.tscn" id="2_an644"]
+[ext_resource type="PackedScene" uid="uid://bpyvbm1jorjwg" path="res://Scenes/EnemyScenes/BasicEnemy.tscn" id="2_5x13j"]
+[ext_resource type="PackedScene" uid="uid://byl8glshkxvta" path="res://Scenes/EnemyScenes/FlyingEnemy.tscn" id="2_an644"]
 
 [node name="EnemyManager" type="Node2D"]
 script = ExtResource("1_1r6fd")

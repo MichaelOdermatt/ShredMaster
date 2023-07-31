@@ -1,3 +1,12 @@
+Label
+Control
+MarginContainer
+PanelContainer
+Container
+RichTextLabel
+TextureRect
+HBoxContainer
+Node2D
 RayCast2D
 CollisionPolygon2D
 CharacterBody2D
@@ -5,12 +14,9 @@ CollisionShape2D
 ShapeCast2D
 Area2D
 Timer
-Node2D
 AnimatableBody2D
 Sprite2D
 Path2D
-Control
-TextureRect
 TextureProgressBar
 CanvasLayer
 StaticBody2D

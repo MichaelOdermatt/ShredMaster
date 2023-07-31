@@ -1,7 +1,4 @@
-res://Scripts/RailScripts/RailManager.gd
+res://Scripts/UI/UI.gd
+res://Scripts/PlayerScripts/Player.gd
 res://Scripts/PlayerScripts/PlayerMovement.gd
-res://Scenes/BasicRail.tscn
 res://main.tscn
-res://Scenes/RailManager.tscn
-res://Scenes/UpRail.tscn
-res://Scenes/DownRail.tscn

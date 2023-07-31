@@ -9,7 +9,7 @@ signal enemy_off_screen();
 @export var movementSpeed: int;
 var movementVector: Vector2;
 ## true if the enemy has moved off the screen
-var isOffScreen: bool = true;
+var isOffScreen: bool = false;
 
 func _ready():
 	movementVector = Vector2(-movementSpeed, 0);

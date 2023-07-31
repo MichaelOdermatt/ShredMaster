@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=17 format=3 uid="uid://bawod66qbrxj6"]
 
-[ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyManager.tscn" id="1_ha327"]
+[ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
 [ext_resource type="Texture2D" uid="uid://djs1bgwymn8rb" path="res://Sprites/Foreground.png" id="3_xgm8f"]
@@ -8,10 +8,12 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
 [ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="9_tuhrv"]
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
-[ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailManager.tscn" id="12_iii0j"]
+[ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
+[ext_resource type="Texture2D" uid="uid://c25vvnxjxdxs6" path="res://Sprites/Score.png" id="14_73kod"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -21,6 +23,10 @@ size = Vector2(16, 16)
 [node name="Node2D" type="Node2D"]
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
+
+[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
+railSpawnIntervalMax = 5
+railSpawnIntervalMin = 10
 
 [node name="MapBoundries" type="StaticBody2D" parent="."]
 position = Vector2(64, 64)
@@ -89,15 +95,44 @@ collision_mask = 8
 script = ExtResource("8_vqve4")
 playerHealth = 3
 
+[node name="PlayerScore" type="Node2D" parent="Player"]
+script = ExtResource("9_nxc7c")
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")
 
-[node name="Health" type="TextureRect" parent="UI"]
-offset_right = 27.0
-offset_bottom = 9.0
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_vertical = 0
+
+[node name="Container" type="MarginContainer" parent="UI/HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(27, 0)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Health" type="TextureRect" parent="UI/HBoxContainer/Container"]
+clip_contents = true
+custom_minimum_size = Vector2(27, 10)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource("9_tuhrv")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("11_bh6rr")
 
-[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("14_73kod")
+stretch_mode = 2
+
+[node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"

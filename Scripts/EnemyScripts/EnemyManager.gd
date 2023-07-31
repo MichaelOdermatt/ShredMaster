@@ -51,5 +51,5 @@ func resetEnemy(enemyObject):
 
 func _player_hit(body: Node2D):
 	# Since the enemy is only masking the player collision layer we don't need to 
-	# work about checking to make sure the colliding body is actually the player
+	# worry about checking to make sure the colliding body is actually the player
 	emit_signal("player_hit");
