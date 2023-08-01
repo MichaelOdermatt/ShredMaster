@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=18 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
 [ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
 [ext_resource type="Texture2D" uid="uid://c25vvnxjxdxs6" path="res://Sprites/Score.png" id="14_73kod"]
+[ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -136,3 +137,5 @@ stretch_mode = 2
 [node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]

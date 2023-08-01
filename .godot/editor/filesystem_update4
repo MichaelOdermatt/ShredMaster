@@ -1,4 +1,13 @@
-res://Scripts/UI/UI.gd
-res://Scripts/PlayerScripts/Player.gd
-res://Scripts/PlayerScripts/PlayerMovement.gd
 res://main.tscn
+res://Scenes/CoinScenes/Coin.tscn
+res://Scripts/CoinScripts/Coin.gd
+res://Scripts/EnemyScripts/BasicEnemy.gd
+res://Scripts/CoinScripts/CoinManager.gd
+res://Scenes/CoinScenes/CoinManager.tscn
+res://Scripts/EnemyScripts/EnemyManager.gd
+res://Scenes/EnemyScenes/BasicEnemy.tscn
+res://Scripts/EnemyScripts/FlyingEnemy.gd
+res://Scripts/PlayerScripts/Player.gd
+res://Scenes/RailScenes/BasicRail.tscn
+res://Scenes/RailScenes/DownRail.tscn
+res://Scenes/RailScenes/UpRail.tscn

@@ -1,8 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1690772646
+::res://::1690843844
 icon.svg::CompressedTexture2D::8739832967494668803::1690238305::1690238311::1::::<><>::
-main.tscn::PackedScene::2432694066404650885::1690742849::0::1::::<><>::uid://b6noujhrx0k3f::::res://Scenes/EnemyScenes/EnemyManager.tscn<>uid://dwrv1irnxdunr::::res://icon.svg<>res://Scripts/BackgroundScroll.gd<>uid://djs1bgwymn8rb::::res://Sprites/Foreground.png<>uid://o8qjdunv401w::::res://Sprites/Background.png<>res://Scripts/PlayerScripts/Player.gd<>res://Scripts/PlayerScripts/PlayerMovement.gd<>res://Scripts/PlayerScripts/PlayerHealth.gd<>res://Scripts/PlayerScripts/PlayerScore.gd<>uid://bvwo4aqhbidjk::::res://Sprites/Heart.png<>res://Scripts/UI/UI.gd<>res://Scripts/UI/HealthUI.gd<>uid://cjlvkwlv122xg::::res://Scenes/RailScenes/RailManager.tscn<>uid://c25vvnxjxdxs6::::res://Sprites/Score.png
-::res://Scenes/::1690737064
+main.tscn::PackedScene::2432694066404650885::1690843901::0::1::::<><>::uid://b6noujhrx0k3f::::res://Scenes/EnemyScenes/EnemyManager.tscn<>uid://dwrv1irnxdunr::::res://icon.svg<>res://Scripts/BackgroundScroll.gd<>uid://djs1bgwymn8rb::::res://Sprites/Foreground.png<>uid://o8qjdunv401w::::res://Sprites/Background.png<>res://Scripts/PlayerScripts/Player.gd<>res://Scripts/PlayerScripts/PlayerMovement.gd<>res://Scripts/PlayerScripts/PlayerHealth.gd<>res://Scripts/PlayerScripts/PlayerScore.gd<>uid://bvwo4aqhbidjk::::res://Sprites/Heart.png<>res://Scripts/UI/UI.gd<>res://Scripts/UI/HealthUI.gd<>uid://cjlvkwlv122xg::::res://Scenes/RailScenes/RailManager.tscn<>uid://c25vvnxjxdxs6::::res://Sprites/Score.png<>uid://b77utn85gvy7y::::res://Scenes/CoinScenes/CoinManager.tscn
+::res://Scenes/::1690843875
+::res://Scenes/CoinScenes/::1690843875
+Coin.tscn::PackedScene::4535651993457280700::1690843889::0::1::::<><>::uid://cavf1f07k244i::::res://Sprites/PopCan.png
+CoinManager.tscn::PackedScene::4699772773333605056::1690843898::0::1::::<><>::uid://b5vdr4w0k41bk::::res://Scenes/CoinScenes/Coin.tscn
 ::res://Scenes/EnemyScenes/::1690737042
 BasicEnemy.tscn::PackedScene::3490075917876445470::1690736956::0::1::::<><>::res://Scripts/EnemyScripts/BasicEnemy.gd<>uid://dwrv1irnxdunr
 EnemyManager.tscn::PackedScene::4589997985379625725::1690737042::0::1::::<><>::res://Scripts/EnemyScripts/EnemyManager.gd<>uid://bpyvbm1jorjwg
@@ -23,7 +26,7 @@ FlyingEnemy.gd::GDScript::-1::1690423907::0::1::::<>Node2D<>::
 ::res://Scripts/PlayerScripts/::1690742035
 Player.gd::GDScript::-1::1690742846::0::1::::<>Node2D<>::
 PlayerHealth.gd::GDScript::-1::1690409754::0::1::::<>Node2D<>::
-PlayerMovement.gd::GDScript::-1::1690742732::0::1::::<>CharacterBody2D<>::
+PlayerMovement.gd::GDScript::-1::1690773109::0::1::::<>CharacterBody2D<>::
 PlayerScore.gd::GDScript::-1::1690741766::0::1::::<>Node2D<>::
 ::res://Scripts/RailScripts/::1690655626
 Rail.gd::GDScript::-1::1690734309::0::1::::<>CharacterBody2D<>::
@@ -31,11 +34,12 @@ RailManager.gd::GDScript::-1::1690678407::0::1::::<>Node2D<>::
 ::res://Scripts/UI/::1690741891
 HealthUI.gd::GDScript::-1::1690741608::0::1::::<>TextureRect<>::
 UI.gd::GDScript::-1::1690741891::0::1::::<>CanvasLayer<>::
-::res://Sprites/::1690740191
+::res://Sprites/::1690843770
 Background.png::CompressedTexture2D::1051756009931865414::1690256048::1690256048::1::::<><>::
 DownRail.png::CompressedTexture2D::4382172645309431724::1690676559::1690676559::1::::<><>::
 Foreground.png::CompressedTexture2D::7829701221233337455::1690254088::1690254088::1::::<><>::
 Heart.png::CompressedTexture2D::3906704561639641848::1690412168::1690412170::1::::<><>::
+PopCan.png::CompressedTexture2D::4816543618532070798::1690843770::1690843770::1::::<><>::
 rail.png::CompressedTexture2D::5470211583322426902::1690512141::1690512145::1::::<><>::
 Score.png::CompressedTexture2D::6731184755528821447::1690740189::1690740191::1::::<><>::
 UpRail.png::CompressedTexture2D::3547078570478225037::1690662922::1690662946::1::::<><>::

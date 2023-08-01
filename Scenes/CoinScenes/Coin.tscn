@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5vdr4w0k41bk"]
+
+[ext_resource type="Texture2D" uid="uid://cavf1f07k244i" path="res://Sprites/PopCan.png" id="1_cy170"]
+[ext_resource type="Script" path="res://Scripts/CoinScripts/Coin.gd" id="1_x8snn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3pj6r"]
+size = Vector2(7, 10)
+
+[node name="Coin" type="Area2D"]
+position = Vector2(-24, 8)
+collision_layer = 16
+script = ExtResource("1_x8snn")
+coinAltitudeMin = 40
+coinAltitudeMax = 96
+movementSpeed = 55
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3pj6r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cy170")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

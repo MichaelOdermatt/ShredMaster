@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cj62t56hqigxq" path="res://Sprites/rail.png" id="2_hi50w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8ng"]
-size = Vector2(125, 6)
+size = Vector2(125, 1)
 
 [node name="BasicRail" type="CharacterBody2D"]
 position = Vector2(192, 112)
@@ -19,5 +19,6 @@ texture = ExtResource("2_hi50w")
 offset = Vector2(0, 34)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_mu8ng")
 one_way_collision = true
