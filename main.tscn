@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=20 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
+[ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="9_rdbwf"]
 [ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="9_tuhrv"]
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
@@ -17,6 +18,11 @@
 [ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_payqk"]
+shader = ExtResource("9_rdbwf")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_modifier = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqxcg"]
 size = Vector2(16, 16)
@@ -28,6 +34,8 @@ size = Vector2(16, 16)
 [node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
 railSpawnIntervalMax = 5
 railSpawnIntervalMin = 10
+
+[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]
 
 [node name="MapBoundries" type="StaticBody2D" parent="."]
 position = Vector2(64, 64)
@@ -76,6 +84,7 @@ collision_mask = 10
 script = ExtResource("6_oi6dd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/CharacterBody"]
+material = SubResource("ShaderMaterial_payqk")
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_nwx8h")
 
@@ -137,5 +146,3 @@ stretch_mode = 2
 [node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
-
-[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]
