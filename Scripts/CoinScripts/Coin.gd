@@ -4,17 +4,18 @@ extends Area2D
 const halfOfSpriteWidth: int = 4
 const coinResetPos: Vector2 = Vector2(136, 96);
 
+@onready var globals = get_node("/root/Globals");
+
 signal coin_off_screen();
 
 @export var coinAltitudeMin: int;
 @export var coinAltitudeMax: int;
-@export var movementSpeed: int;
 var movementVector: Vector2;
 ## true if the coin has moved off the screen
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-movementSpeed, 0);
+	movementVector = Vector2(-globals.coinSpeed, 0);
 
 func _physics_process(delta):
 	moveCoin(delta);

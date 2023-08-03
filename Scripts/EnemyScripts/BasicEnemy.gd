@@ -4,15 +4,16 @@ extends Node2D
 const halfOfSpriteWidth: int = 7
 const enemyResetPos: Vector2 = Vector2(136, 120);
 
+@onready var globals = get_node("/root/Globals");
+
 signal enemy_off_screen();
 
-@export var movementSpeed: int;
 var movementVector: Vector2;
 ## true if the enemy has moved off the screen
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-movementSpeed, 0);
+	movementVector = Vector2(-globals.basicEnemySpeed, 0);
 
 func _physics_process(delta):
 	moveEnemy(delta);

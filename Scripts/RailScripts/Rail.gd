@@ -15,7 +15,7 @@ var movementVector: Vector2;
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-globals.RAIL_SPEED, 0);
+	movementVector = Vector2(-globals.railSpeed, 0);
 
 func _physics_process(delta):
 	moveRail();
