@@ -15,7 +15,7 @@ var movementVector: Vector2;
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-globals.railSpeed, 0);
+	getRailSpeed();
 
 func _physics_process(delta):
 	moveRail();
@@ -41,6 +41,11 @@ func resetEnemyPosition():
 	transform.origin = enemyResetPos;
 	randomize();
 	transform.origin.y = randi_range(railAltitudeMin, railAltitudeMax);
+	getRailSpeed();
+
+## Updates the movementVector variable with the rail speed from globals.
+func getRailSpeed():
+	movementVector = Vector2(-globals.railSpeed, 0);
 
 ## Function which returns the script's type as a string.
 func get_type():

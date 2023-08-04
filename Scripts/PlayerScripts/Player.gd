@@ -11,11 +11,16 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerHealth = $PlayerHealth;
 @onready var playerScore = $PlayerScore;
 @onready var playerMovement = $CharacterBody;
-@onready var spriteAnimationPlayer = $CharacterBody/PlayerSprite/AnimationPlayer;
+@onready var playerSprite = $CharacterBody/PlayerSprite;
+@onready var invincibilityTimer = $InvincibilityTimer;
+
+## Bool used to keep track if the player is currently invincible.
+var isPlayerInvincible: bool = false;
 
 func _ready():
 	enemyManager.player_hit.connect(_on_player_hit);
 	coinManager.player_pickup.connect(_on_player_pickup_coin);
+	invincibilityTimer.timeout.connect(_on_invincibilityTimer_timeout);
 
 func _process(delta):
 	if (playerMovement.isPlayerGrindingRail()):
@@ -30,15 +35,18 @@ func addPointsToScore(points: int):
 	playerScore.addPoints(points);
 	ui.updatePlayerScore(str(playerScore.getScore()));
 
-## Playes the On Hit animation for the player.
-func playOnHitAnimation():
-	# just play the default animation on the animation player since there
-	# is only hit on hit animation right now.
-	spriteAnimationPlayer.play("FlashOnDamage");
-
 func _on_player_hit():
+	if (isPlayerInvincible):
+		return;
+
+	isPlayerInvincible = true;
+	ui.removePlayerHeart();
 	playerHealth.decreaseHealth();
-	playOnHitAnimation();
+	playerSprite.playOnHitAnimation();
+	invincibilityTimer.start();
 
 func _on_player_pickup_coin():
 	addPointsToScore(PLAYER_PICKUP_COIN_SCORE);
+
+func _on_invincibilityTimer_timeout():
+	isPlayerInvincible = false;

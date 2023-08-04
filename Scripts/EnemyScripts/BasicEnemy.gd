@@ -13,7 +13,7 @@ var movementVector: Vector2;
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-globals.basicEnemySpeed, 0);
+	getBasicEnemySpeed();
 
 func _physics_process(delta):
 	moveEnemy(delta);
@@ -35,3 +35,8 @@ func moveEnemy(delta):
 func resetEnemyPosition():
 	isOffScreen = false;
 	transform.origin = enemyResetPos;
+	getBasicEnemySpeed();
+
+## Updates the movementVector variable with the basic enemy speed from globals.
+func getBasicEnemySpeed():
+	movementVector = Vector2(-globals.basicEnemySpeed, 0);

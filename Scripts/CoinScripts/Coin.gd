@@ -15,7 +15,7 @@ var movementVector: Vector2;
 var isOffScreen: bool = false;
 
 func _ready():
-	movementVector = Vector2(-globals.coinSpeed, 0);
+	getCoinSpeed();
 
 func _physics_process(delta):
 	moveCoin(delta);
@@ -38,7 +38,12 @@ func resetCoinPosition():
 	isOffScreen = false;
 	transform.origin = coinResetPos;
 	transform.origin.y = randi_range(coinAltitudeMin, coinAltitudeMax);
+	getCoinSpeed();
 
 ## To be used in place of destroying the object.
 func moveCoinOffScreen():
 	transform.origin.x = -(halfOfSpriteWidth + 5);
+
+## Updates the movementVector variable with the coin speed from globals.
+func getCoinSpeed():
+	movementVector = Vector2(-globals.coinSpeed, 0);
