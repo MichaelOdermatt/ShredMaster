@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=25 format=3 uid="uid://bawod66qbrxj6"]
 
+[ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
@@ -94,6 +95,11 @@ _data = {
 [node name="Node2D" type="Node2D"]
 
 [node name="ProgressManager" type="Node2D" parent="."]
+script = ExtResource("1_csyby")
+
+[node name="Timer" type="Timer" parent="ProgressManager"]
+wait_time = 10.0
+autostart = true
 
 [node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
 

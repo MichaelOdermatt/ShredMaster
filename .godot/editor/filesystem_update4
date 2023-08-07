@@ -3,3 +3,7 @@ res://PlayerSprite.gd
 res://Scripts/PlayerScripts/Player.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
+res://ProgressManager.gd
+res://Scripts/ProgressManager.gd
+res://Scripts/RailScripts/Rail.gd
+res://Scripts/AutoLoaded/Globals.gd
