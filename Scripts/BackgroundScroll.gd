@@ -1,7 +1,7 @@
 extends ParallaxBackground
 
-@export var scrollSpeed: int;
+@onready var globals = get_node("/root/Globals");
 
 func _process(delta):
-	# scrolls the 
-	scroll_offset.x -= scrollSpeed * delta;
+	# scrolls the background
+	scroll_offset.x -= globals.currentBaseSpeed * delta;

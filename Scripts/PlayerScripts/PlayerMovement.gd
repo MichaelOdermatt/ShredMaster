@@ -56,7 +56,7 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 ## screen, their grid velocity will be lower than the rail's velocity in the opposite direction.
 ## This makes it look like the player is slowing down as they grind.
 func calcGrindVelocity() -> float:
-	var baseGrindVelocity = globals.railSpeed;
+	var baseGrindVelocity = globals.currentBaseSpeed;
 
 	var offsetFromCenter = clamp(transform.origin.x - HALF_SCREEN_WIDTH, 0, HALF_SCREEN_WIDTH);
 	var grindVelocityDecrease = (offsetFromCenter / HALF_SCREEN_WIDTH) * MAX_GRIND_VELOCITY_DECREASE_VALUE;

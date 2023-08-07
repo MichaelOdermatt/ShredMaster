@@ -130,7 +130,6 @@ shape = SubResource("WorldBoundaryShape2D_ao2bu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("3_d4847")
-scrollSpeed = 40
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)

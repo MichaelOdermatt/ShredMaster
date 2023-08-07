@@ -46,4 +46,4 @@ func moveCoinOffScreen():
 
 ## Updates the movementVector variable with the coin speed from globals.
 func getCoinSpeed():
-	movementVector = Vector2(-globals.coinSpeed, 0);
+	movementVector = Vector2(-globals.currentBaseSpeed, 0);

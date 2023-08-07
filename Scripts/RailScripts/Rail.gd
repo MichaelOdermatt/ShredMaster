@@ -45,7 +45,7 @@ func resetEnemyPosition():
 
 ## Updates the movementVector variable with the rail speed from globals.
 func getRailSpeed():
-	movementVector = Vector2(-globals.railSpeed, 0);
+	movementVector = Vector2(-globals.currentBaseSpeed, 0);
 
 ## Function which returns the script's type as a string.
 func get_type():
