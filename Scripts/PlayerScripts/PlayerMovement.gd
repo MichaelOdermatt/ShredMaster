@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 80.0
-const MAX_JUMP_HEIGHT = 80.0
-const MIN_JUMP_HEIGHT = 15.0
-const JUMP_DURATION = 0.40
+const SPEED = 80.0;
+const ACC = 5;
+const DECC = 5;
+const MAX_JUMP_HEIGHT = 80.0;
+const MIN_JUMP_HEIGHT = 15.0;
+const JUMP_DURATION = 0.40;
 const HALF_SCREEN_WIDTH: int = 64;
 ## The max amount that the grind speed can decrease by while grinding
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
@@ -46,9 +48,9 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 		velocity.x = calcGrindVelocity();
 	else:
 		if direction:
-			velocity.x = direction * SPEED
+			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
 		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.x = move_toward(velocity.x, 0, DECC)
 
 # FOR RAIL GRINDING
 

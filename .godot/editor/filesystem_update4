@@ -1,9 +1,4 @@
 res://Scripts/PlayerScripts/PlayerMovement.gd
-res://Scripts/AutoLoaded/Globals.gd
-res://Scripts/EnemyScripts/BasicEnemy.gd
-res://Scripts/EnemyScripts/EnemyManager.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
-res://Scenes/EnemyScenes/EnemyManager.tscn
 res://Scenes/EnemyScenes/FlyingEnemy.tscn
-res://Scripts/ProgressManager.gd
