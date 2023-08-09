@@ -1,13 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=26 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
 [ext_resource type="Texture2D" uid="uid://djs1bgwymn8rb" path="res://Sprites/Foreground.png" id="3_xgm8f"]
-[ext_resource type="Texture2D" uid="uid://o8qjdunv401w" path="res://Sprites/Background.png" id="4_dsewk"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
+[ext_resource type="Texture2D" uid="uid://y6ukfefccaaa" path="res://Sprites/SkyAndMountains.png" id="6_q8iad"]
+[ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="7_dvc7o"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
 [ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="9_rdbwf"]
@@ -131,13 +132,21 @@ shape = SubResource("WorldBoundaryShape2D_ao2bu")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = ExtResource("3_d4847")
 
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(384, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(64, 64)
+texture = ExtResource("6_q8iad")
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.75, 0.75)
-motion_mirroring = Vector2(128, 0)
+motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2(64, 64)
-texture = ExtResource("4_dsewk")
+texture = ExtResource("7_dvc7o")
+offset = Vector2(64, 64)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2(128, 0)

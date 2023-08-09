@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 80.0;
-const ACC = 5;
+const ACC = 7;
 const DECC = 5;
 const MAX_JUMP_HEIGHT = 80.0;
 const MIN_JUMP_HEIGHT = 15.0;
