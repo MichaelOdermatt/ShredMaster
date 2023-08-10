@@ -1,3 +1,4 @@
 res://main.tscn
 res://Shaders/Flash.gdshader
 res://Scenes/EnemyScenes/FlyingEnemy.tscn
+res://Scripts/EnemyScripts/BasicEnemy.gd

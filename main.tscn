@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
 [ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_nwx8h"]
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
-[ext_resource type="Texture2D" uid="uid://djs1bgwymn8rb" path="res://Sprites/Foreground.png" id="3_xgm8f"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Texture2D" uid="uid://y6ukfefccaaa" path="res://Sprites/SkyAndMountains.png" id="6_q8iad"]
 [ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="7_dvc7o"]
+[ext_resource type="Texture2D" uid="uid://wxjdmjw32p3d" path="res://Sprites/NearBuildings.png" id="8_0au75"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
 [ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="9_rdbwf"]
@@ -149,11 +149,11 @@ texture = ExtResource("7_dvc7o")
 offset = Vector2(64, 64)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(128, 0)
+motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(64, 64)
-texture = ExtResource("3_xgm8f")
+texture = ExtResource("8_0au75")
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("5_21ok0")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djs1bgwymn8rb"
-path="res://.godot/imported/Foreground.png-b052f84004a56deef4949f57e837554a.ctex"
+uid="uid://wxjdmjw32p3d"
+path="res://.godot/imported/NearBuildings.png-9069860e3cd434cf5f78bfad9a81f143.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Foreground.png"
-dest_files=["res://.godot/imported/Foreground.png-b052f84004a56deef4949f57e837554a.ctex"]
+source_file="res://Sprites/NearBuildings.png"
+dest_files=["res://.godot/imported/NearBuildings.png-9069860e3cd434cf5f78bfad9a81f143.ctex"]
 
 [params]
 
