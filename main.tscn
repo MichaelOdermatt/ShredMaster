@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Texture2D" uid="uid://y6ukfefccaaa" path="res://Sprites/SkyAndMountains.png" id="6_q8iad"]
 [ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="7_dvc7o"]
-[ext_resource type="Texture2D" uid="uid://wxjdmjw32p3d" path="res://Sprites/NearBuildings.png" id="8_0au75"]
+[ext_resource type="Texture2D" uid="uid://dmsg4fytads4h" path="res://Sprites/NearBuildings.png" id="8_0au75"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
 [ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="9_rdbwf"]
