@@ -1,3 +1,5 @@
 res://main.tscn
 res://Shaders/Flash.gdshader
 res://Scenes/EnemyScenes/FlyingEnemy.tscn
+res://Scripts/PlayerScripts/PlayerSprite.gd
+res://Scripts/PlayerScripts/PlayerMovement.gd
