@@ -13,6 +13,7 @@ const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 @onready var globals = get_node("/root/Globals");
 @onready var railRaycast = $RailRayCast;
 @onready var railRaycast2 = $RailRayCast2;
+@onready var playerSprite = get_node("PlayerSprite");
 
 var gravity: float;
 var maxJumpVelocity: float;
@@ -46,11 +47,15 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	if (isGrinding):
 		velocity.x = calcGrindVelocity();
+		playerSprite.playGrindAnimation();
 	else:
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
+			if (direction == 1):
+				playerSprite.playPushAnimation();
 		else:
 			velocity.x = move_toward(velocity.x, 0, DECC)
+			playerSprite.playIdleAnimation();
 
 # FOR RAIL GRINDING
 

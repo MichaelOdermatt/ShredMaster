@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=38 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
 [ext_resource type="Texture2D" uid="uid://c25vvnxjxdxs6" path="res://Sprites/Score.png" id="14_73kod"]
 [ext_resource type="Texture2D" uid="uid://bocffklf6j4jg" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="15_aleeg"]
+[ext_resource type="Texture2D" uid="uid://cbct4qd72av0a" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
+[ext_resource type="Texture2D" uid="uid://hq4tawamuyk" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
 [ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
@@ -102,6 +104,30 @@ region = Rect2(10, 0, 10, 16)
 atlas = ExtResource("15_aleeg")
 region = Rect2(0, 0, 10, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d55b5"]
+atlas = ExtResource("15_oxtje")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq2fp"]
+atlas = ExtResource("15_oxtje")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc07m"]
+atlas = ExtResource("15_sqvoo")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp1mm"]
+atlas = ExtResource("15_sqvoo")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcaod"]
+atlas = ExtResource("15_sqvoo")
+region = Rect2(20, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irid1"]
+atlas = ExtResource("15_sqvoo")
+region = Rect2(30, 0, 10, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo0fu"]
 animations = [{
 "frames": [{
@@ -114,6 +140,37 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d55b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq2fp")
+}],
+"loop": true,
+"name": &"grind",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc07m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp1mm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcaod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irid1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irid1")
+}],
+"loop": true,
+"name": &"push",
+"speed": 5.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -218,7 +275,8 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
-frame_progress = 0.423467
+animation = &"grind"
+frame_progress = 0.308414
 
 [node name="PlayerHealth" type="Node2D" parent="Player"]
 script = ExtResource("8_vqve4")
