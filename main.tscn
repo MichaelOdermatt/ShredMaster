@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
 [ext_resource type="Texture2D" uid="uid://y6ukfefccaaa" path="res://Sprites/SkyAndMountains.png" id="6_q8iad"]
-[ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="7_dvc7o"]
-[ext_resource type="Texture2D" uid="uid://lgya8wt1q4ly" path="res://Sprites/NearBuildings.png" id="8_0au75"]
+[ext_resource type="Texture2D" uid="uid://bwu0x26xi1ocp" path="res://Sprites/NearBuildings.png" id="8_0au75"]
+[ext_resource type="Texture2D" uid="uid://dk8ynya7c8fse" path="res://Sprites/Trees.png" id="8_0pvnu"]
 [ext_resource type="Texture2D" uid="uid://dp4uitryitw5f" path="res://Sprites/Sidewalk.png" id="8_blds7"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
@@ -225,7 +225,7 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("7_dvc7o")
+texture = ExtResource("8_0au75")
 offset = Vector2(64, 64)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -233,7 +233,7 @@ motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("8_0au75")
+texture = ExtResource("8_0pvnu")
 offset = Vector2(64, 64)
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]

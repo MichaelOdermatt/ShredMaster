@@ -53,6 +53,8 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
 			if (direction == 1):
 				playerSprite.playPushAnimation();
+			else:
+				playerSprite.playGrindAnimation();
 		else:
 			velocity.x = move_toward(velocity.x, 0, DECC)
 			playerSprite.playIdleAnimation();

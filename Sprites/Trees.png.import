@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwu0x26xi1ocp"
-path="res://.godot/imported/NearBuildings.png-9069860e3cd434cf5f78bfad9a81f143.ctex"
+uid="uid://dk8ynya7c8fse"
+path="res://.godot/imported/Trees.png-007d3f3d49d6cca5b1cb6a10845fe0d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/NearBuildings.png"
-dest_files=["res://.godot/imported/NearBuildings.png-9069860e3cd434cf5f78bfad9a81f143.ctex"]
+source_file="res://Sprites/Trees.png"
+dest_files=["res://.godot/imported/Trees.png-007d3f3d49d6cca5b1cb6a10845fe0d5.ctex"]
 
 [params]
 
