@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg2enuevtunoj"
-path="res://.godot/imported/PlayerGrind.png-0a723567955d35bf4c31e36424780857.ctex"
+uid="uid://bj8m2n1h78m5y"
+path="res://.godot/imported/Trash.png-245c7acf17a4815d416bdaad40eb7858.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/PlayerSprites/PlayerGrind.png"
-dest_files=["res://.godot/imported/PlayerGrind.png-0a723567955d35bf4c31e36424780857.ctex"]
+source_file="res://Sprites/TrashSprites/Trash.png"
+dest_files=["res://.godot/imported/Trash.png-245c7acf17a4815d416bdaad40eb7858.ctex"]
 
 [params]
 

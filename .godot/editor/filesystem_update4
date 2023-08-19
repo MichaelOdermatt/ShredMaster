@@ -1,4 +1,7 @@
-res://Scripts/PlayerScripts/PlayerMovement.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
 res://Scenes/EnemyScenes/FlyingEnemy.tscn
+res://Scenes/EnemyScenes/StationaryEnemy.tscn
+res://Scenes/EnemyScenes/EnemyManager.tscn
+res://Scripts/EnemyScripts/StationaryEnemy.gd
+res://Scripts/PlayerScripts/PlayerSprite.gd

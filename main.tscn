@@ -18,9 +18,9 @@
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
 [ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
 [ext_resource type="Texture2D" uid="uid://c25vvnxjxdxs6" path="res://Sprites/Score.png" id="14_73kod"]
-[ext_resource type="Texture2D" uid="uid://bocffklf6j4jg" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="15_aleeg"]
-[ext_resource type="Texture2D" uid="uid://cbct4qd72av0a" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
-[ext_resource type="Texture2D" uid="uid://hq4tawamuyk" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
+[ext_resource type="Texture2D" uid="uid://bfchhx5qasoj7" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="15_aleeg"]
+[ext_resource type="Texture2D" uid="uid://bg2enuevtunoj" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
+[ext_resource type="Texture2D" uid="uid://cl6fhgayii3tq" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
 [ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
@@ -96,46 +96,46 @@ shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0
 shader_parameter/alpha_modifier = 1.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3uwp"]
-atlas = ExtResource("15_aleeg")
-region = Rect2(10, 0, 10, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_36nt6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4r5l7"]
 atlas = ExtResource("15_aleeg")
 region = Rect2(0, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d55b5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kfdg"]
+atlas = ExtResource("15_aleeg")
+region = Rect2(10, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxk8m"]
 atlas = ExtResource("15_oxtje")
 region = Rect2(0, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jq2fp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yw6s6"]
 atlas = ExtResource("15_oxtje")
 region = Rect2(10, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sc07m"]
-atlas = ExtResource("15_sqvoo")
-region = Rect2(0, 0, 10, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp1mm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2any3"]
 atlas = ExtResource("15_sqvoo")
 region = Rect2(10, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcaod"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwijn"]
 atlas = ExtResource("15_sqvoo")
 region = Rect2(20, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_irid1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtw7c"]
 atlas = ExtResource("15_sqvoo")
 region = Rect2(30, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rhdq"]
+atlas = ExtResource("15_sqvoo")
+region = Rect2(0, 0, 10, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo0fu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t3uwp")
+"texture": SubResource("AtlasTexture_4r5l7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_36nt6")
+"texture": SubResource("AtlasTexture_4kfdg")
 }],
 "loop": true,
 "name": &"default",
@@ -143,10 +143,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d55b5")
+"texture": SubResource("AtlasTexture_gxk8m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jq2fp")
+"texture": SubResource("AtlasTexture_yw6s6")
 }],
 "loop": true,
 "name": &"grind",
@@ -154,19 +154,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sc07m")
+"texture": SubResource("AtlasTexture_2any3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xp1mm")
+"texture": SubResource("AtlasTexture_rwijn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcaod")
+"texture": SubResource("AtlasTexture_gtw7c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_irid1")
+"texture": SubResource("AtlasTexture_gtw7c")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_irid1")
+"texture": SubResource("AtlasTexture_0rhdq")
 }],
 "loop": true,
 "name": &"push",
@@ -275,8 +275,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
-animation = &"grind"
-frame_progress = 0.308414
+animation = &"push"
 
 [node name="PlayerHealth" type="Node2D" parent="Player"]
 script = ExtResource("8_vqve4")
