@@ -1,7 +1,7 @@
 res://main.tscn
 res://Shaders/Flash.gdshader
 res://Scenes/EnemyScenes/FlyingEnemy.tscn
-res://Scenes/EnemyScenes/StationaryEnemy.tscn
-res://Scenes/EnemyScenes/EnemyManager.tscn
+res://Scenes/EnemyScenes/BasicEnemy.tscn
+res://Scripts/EnemyScripts/BasicEnemy.gd
 res://Scripts/EnemyScripts/StationaryEnemy.gd
-res://Scripts/PlayerScripts/PlayerSprite.gd
+res://Scenes/EnemyScenes/EnemyManager.tscn

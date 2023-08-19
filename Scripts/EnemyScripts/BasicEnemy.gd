@@ -5,6 +5,7 @@ const halfOfSpriteWidth: int = 7
 const enemyResetPos: Vector2 = Vector2(136, 120);
 
 @onready var globals = get_node("/root/Globals");
+@onready var enemySprite = $AnimatedSprite2D;
 
 signal enemy_off_screen();
 
@@ -14,6 +15,7 @@ var isOffScreen: bool = false;
 
 func _ready():
 	getBasicEnemySpeed();
+	enemySprite.play("default")
 
 func _physics_process(delta):
 	moveEnemy(delta);

@@ -1,7 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpyvbm1jorjwg"]
+[gd_scene load_steps=8 format=3 uid="uid://bpyvbm1jorjwg"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyScripts/BasicEnemy.gd" id="1_0f00p"]
-[ext_resource type="Texture2D" uid="uid://dwrv1irnxdunr" path="res://icon.svg" id="1_775ia"]
+[ext_resource type="Texture2D" uid="uid://bb4juhdq8alnl" path="res://Sprites/EnemySprites/ScooterKid.png" id="2_08pjv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnbo0"]
+atlas = ExtResource("2_08pjv")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xhkd"]
+atlas = ExtResource("2_08pjv")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8pv8"]
+atlas = ExtResource("2_08pjv")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7qmqr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnbo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xhkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8pv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8pv8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8pv8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ioyoi"]
 size = Vector2(16, 16)
@@ -10,9 +45,9 @@ size = Vector2(16, 16)
 position = Vector2(136, 120)
 script = ExtResource("1_0f00p")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_775ia")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7qmqr")
+frame_progress = 0.945687
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
