@@ -1,18 +1,22 @@
-extends "res://Scripts/EnemyScripts/BasicEnemy.gd"
+extends "res://Scripts/EnemyScripts/EnemyBase.gd"
+
+const halfOfSpriteWidth: int = 7;
+const enemyResetPos: Vector2 = Vector2(136, 120);
 
 @export var enemyAltitudeMax: int;
 @export var enemyAltitudeMin: int;
 
-func _ready():
-	getFlyingEnemySpeed();
+var enemySpeedX: int;
 
-## Call the super function then give the enemy a random altitude.
+func _ready():
+	enemySpeedX = globals.flyingEnemySpeed;
+	# Set initial enemy speed
+	movementVector = Vector2(-enemySpeedX, 0);
+
+func _physics_process(delta):
+	_moveEnemy(delta, halfOfSpriteWidth);
+
 func resetEnemyPosition():
-	super();
+	_resetEnemyPositionAndSpeedVariables(enemyResetPos, enemySpeedX);
 	randomize();
 	transform.origin.y = randi_range(enemyAltitudeMin, enemyAltitudeMax);
-	getFlyingEnemySpeed();
-
-## Updates the movementVector variable with the flying enemy speed from globals.
-func getFlyingEnemySpeed():
-	movementVector = Vector2(-globals.flyingEnemySpeed, 0);
