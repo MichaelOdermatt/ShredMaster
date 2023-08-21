@@ -252,6 +252,8 @@ collision_mask = 10
 script = ExtResource("6_oi6dd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
+position = Vector2(0, 1)
+scale = Vector2(0.75, -0.9)
 shape = SubResource("RectangleShape2D_cqxcg")
 
 [node name="RailRayCast" type="RayCast2D" parent="Player/CharacterBody"]

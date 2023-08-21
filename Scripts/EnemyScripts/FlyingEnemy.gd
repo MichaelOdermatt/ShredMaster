@@ -12,6 +12,7 @@ func _ready():
 	enemySpeedX = globals.flyingEnemySpeed;
 	# Set initial enemy speed
 	movementVector = Vector2(-enemySpeedX, 0);
+	enemySprite.play("default")
 
 func _physics_process(delta):
 	_moveEnemy(delta, halfOfSpriteWidth);

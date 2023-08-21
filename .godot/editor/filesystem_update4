@@ -1,9 +1,8 @@
-res://Scripts/EnemyScripts/StationaryEnemy.gd
-res://Scripts/EnemyScripts/EnemyBase.gd
-res://Scripts/EnemyScripts/BasicEnemy.gd
-res://Scripts/EnemyScripts/FlyingEnemy.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
 res://Scenes/EnemyScenes/EnemyManager.tscn
 res://Scenes/EnemyScenes/BasicEnemy.tscn
-res://Scripts/AutoLoaded/Globals.gd
+res://Scripts/EnemyScripts/FlyingEnemy.gd
+res://Scenes/EnemyScenes/FlyingEnemy.tscn
+res://Scripts/EnemyScripts/BasicEnemy.gd
+res://Scenes/EnemyScenes/StationaryEnemy.tscn
