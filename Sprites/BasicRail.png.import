@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj62t56hqigxq"
-path="res://.godot/imported/rail.png-ac721a5c08c68e4137915db6d65b1e98.ctex"
+uid="uid://bq1y6vh8706d7"
+path="res://.godot/imported/BasicRail.png-4e3b47c35cd8ee6d78316a117975c6ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/rail.png"
-dest_files=["res://.godot/imported/rail.png-ac721a5c08c68e4137915db6d65b1e98.ctex"]
+source_file="res://Sprites/BasicRail.png"
+dest_files=["res://.godot/imported/BasicRail.png-4e3b47c35cd8ee6d78316a117975c6ff.ctex"]
 
 [params]
 

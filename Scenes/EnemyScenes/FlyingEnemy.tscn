@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://byl8glshkxvta"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyScripts/FlyingEnemy.gd" id="1_jh5yj"]
-[ext_resource type="Texture2D" uid="uid://0ve555sspfkk" path="res://Sprites/EnemySprites/Bird.png" id="2_k3st2"]
+[ext_resource type="Texture2D" uid="uid://rbbhvmrdg88p" path="res://Sprites/EnemySprites/Bird.png" id="2_k3st2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvwil"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_500a0"]
 atlas = ExtResource("2_k3st2")
 region = Rect2(0, 0, 12, 7)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0h2u4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmkky"]
 atlas = ExtResource("2_k3st2")
 region = Rect2(12, 0, 12, 7)
 
@@ -15,10 +15,10 @@ region = Rect2(12, 0, 12, 7)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bvwil")
+"texture": SubResource("AtlasTexture_500a0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0h2u4")
+"texture": SubResource("AtlasTexture_gmkky")
 }],
 "loop": true,
 "name": &"default",
@@ -36,7 +36,7 @@ enemyAltitudeMin = 32
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ime0n")
-frame_progress = 0.431801
+frame_progress = 0.133655
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

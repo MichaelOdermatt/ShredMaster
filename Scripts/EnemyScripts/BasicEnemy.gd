@@ -1,18 +1,15 @@
 extends "res://Scripts/EnemyScripts/EnemyBase.gd"
 
 const halfOfSpriteWidth: int = 7;
-const enemyResetPos: Vector2 = Vector2(136, 120);
-
-var enemySpeedX: int;
+const enemyResetPos: Vector2 = Vector2(136, 116);
 
 func _ready():
-	enemySpeedX = globals.basicEnemySpeed;
 	# Set initial enemy speed
-	movementVector = Vector2(-enemySpeedX, 0);
+	movementVector = Vector2(-globals.basicEnemySpeed, 0);
 	enemySprite.play("default")
 
 func _physics_process(delta):
 	_moveEnemy(delta, halfOfSpriteWidth);
 
 func resetEnemyPosition():
-	_resetEnemyPositionAndSpeedVariables(enemyResetPos, enemySpeedX);
+	_resetEnemyPositionAndSpeedVariables(enemyResetPos, globals.basicEnemySpeed);

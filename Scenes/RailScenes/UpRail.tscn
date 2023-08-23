@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c545eqd3nb1jj"]
 
-[ext_resource type="Texture2D" uid="uid://bqsh4o5h6kr6l" path="res://Sprites/UpRail.png" id="1_cnorh"]
+[ext_resource type="Texture2D" uid="uid://b8q8n1tet05qh" path="res://Sprites/UpRail.png" id="1_cnorh"]
 
 [node name="UpRail" type="CharacterBody2D"]
 collision_layer = 8
@@ -11,5 +11,5 @@ texture = ExtResource("1_cnorh")
 offset = Vector2(0, 34)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-63, 18, -63, 19, -20, 19, 19, 4, 62, 4, 62, 3, 19, 3, -20, 18)
+polygon = PackedVector2Array(-63, 19, -63, 20, -20, 20, 19, 5, 62, 5, 62, 4, 19, 4, -20, 19)
 one_way_collision = true
