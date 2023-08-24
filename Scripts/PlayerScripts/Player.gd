@@ -13,6 +13,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerMovement = $CharacterBody;
 @onready var playerSprite = $CharacterBody/PlayerSprite;
 @onready var invincibilityTimer = $InvincibilityTimer;
+@onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
 
 ## Bool used to keep track if the player is currently invincible.
 var isPlayerInvincible: bool = false;
@@ -23,7 +24,7 @@ func _ready():
 	invincibilityTimer.timeout.connect(_on_invincibilityTimer_timeout);
 
 func _process(delta):
-	if (playerMovement.isPlayerGrindingRail()):
+	if (playerRaycasts.isPlayerGrindingRail()):
 		addPointsToScore(PLAYER_GRIND_SCORE)
 
 ## Destroys the player, ending the game.

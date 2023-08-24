@@ -1,15 +1,4 @@
 res://main.tscn
 res://Shaders/Flash.gdshader
-res://Scenes/EnemyScenes/EnemyManager.tscn
-res://Scenes/EnemyScenes/BasicEnemy.tscn
-res://Scripts/EnemyScripts/BasicEnemy.gd
-res://Scenes/EnemyScenes/StationaryEnemy.tscn
-res://Scripts/EnemyScripts/StationaryEnemy.gd
-res://Scripts/RailScripts/Rail.gd
-res://Scripts/EnemyScripts/EnemyBase.gd
-res://Scripts/EnemyScripts/FlyingEnemy.gd
-res://Scenes/RailScenes/UpRail.tscn
-res://Scenes/RailScenes/RailManager.tscn
-res://Scenes/RailScenes/BasicRail.tscn
-res://Scenes/RailScenes/DownRail.tscn
-res://Scenes/EnemyScenes/FlyingEnemy.tscn
+res://Scripts/PlayerScripts/PlayerSprite.gd
+res://Scripts/PlayerScripts/Player.gd

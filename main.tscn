@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=42 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -22,12 +22,13 @@
 [ext_resource type="Texture2D" uid="uid://8qm8vgmj435j" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
 [ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
 [ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
+[ext_resource type="Texture2D" uid="uid://cmr8bewb742mh" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_kjsdu"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerRaycasts.gd" id="17_mpa5x"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ihwf"]
-radius = 5.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyjdm"]
+size = Vector2(11, 16)
 
 [sub_resource type="Animation" id="Animation_6e5bf"]
 resource_name = "FlashOnDamage"
@@ -113,6 +114,14 @@ region = Rect2(0, 0, 10, 16)
 atlas = ExtResource("15_oxtje")
 region = Rect2(10, 0, 10, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l678u"]
+atlas = ExtResource("16_kjsdu")
+region = Rect2(0, 0, 10, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6plaa"]
+atlas = ExtResource("16_kjsdu")
+region = Rect2(10, 0, 10, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_n47ng"]
 atlas = ExtResource("15_sqvoo")
 region = Rect2(10, 0, 10, 16)
@@ -151,6 +160,17 @@ animations = [{
 }],
 "loop": true,
 "name": &"grind",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l678u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6plaa")
+}],
+"loop": true,
+"name": &"jump",
 "speed": 2.0
 }, {
 "frames": [{
@@ -255,17 +275,7 @@ script = ExtResource("6_oi6dd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
 position = Vector2(0, 1)
 scale = Vector2(0.75, -0.9)
-shape = SubResource("CapsuleShape2D_6ihwf")
-
-[node name="RailRayCast" type="RayCast2D" parent="Player/CharacterBody"]
-position = Vector2(-4, 2)
-target_position = Vector2(-2, 10)
-collision_mask = 8
-
-[node name="RailRayCast2" type="RayCast2D" parent="Player/CharacterBody"]
-position = Vector2(4, 2)
-target_position = Vector2(2, 10)
-collision_mask = 8
+shape = SubResource("RectangleShape2D_tyjdm")
 
 [node name="PlayerSprite" type="Node2D" parent="Player/CharacterBody"]
 script = ExtResource("9_xiubo")
@@ -278,7 +288,21 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
-frame_progress = 0.622121
+animation = &"jump"
+frame_progress = 0.718256
+
+[node name="PlayerRaycasts" type="Node2D" parent="Player/CharacterBody"]
+script = ExtResource("17_mpa5x")
+
+[node name="RailRayCast" type="RayCast2D" parent="Player/CharacterBody/PlayerRaycasts"]
+position = Vector2(-4, 2)
+target_position = Vector2(-2, 10)
+collision_mask = 8
+
+[node name="RailRayCast2" type="RayCast2D" parent="Player/CharacterBody/PlayerRaycasts"]
+position = Vector2(4, 2)
+target_position = Vector2(2, 10)
+collision_mask = 8
 
 [node name="PlayerHealth" type="Node2D" parent="Player"]
 script = ExtResource("8_vqve4")

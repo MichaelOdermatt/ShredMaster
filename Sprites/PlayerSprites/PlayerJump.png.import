@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b43hsxww0lbl3"
-path="res://.godot/imported/DownRail.png-cbf032c3a316724185997b4815c7a7cc.ctex"
+uid="uid://cmr8bewb742mh"
+path="res://.godot/imported/PlayerJump.png-53fef617721182bb0943e071f2825b4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/DownRail.png"
-dest_files=["res://.godot/imported/DownRail.png-cbf032c3a316724185997b4815c7a7cc.ctex"]
+source_file="res://Sprites/PlayerSprites/PlayerJump.png"
+dest_files=["res://.godot/imported/PlayerJump.png-53fef617721182bb0943e071f2825b4e.ctex"]
 
 [params]
 

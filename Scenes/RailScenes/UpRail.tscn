@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c545eqd3nb1jj"]
 
-[ext_resource type="Texture2D" uid="uid://b8q8n1tet05qh" path="res://Sprites/UpRail.png" id="1_cnorh"]
+[ext_resource type="Texture2D" uid="uid://b8q8n1tet05qh" path="res://Sprites/RailSprites/UpRail.png" id="1_cnorh"]
 
 [node name="UpRail" type="CharacterBody2D"]
 collision_layer = 8

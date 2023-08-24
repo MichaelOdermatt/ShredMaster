@@ -11,9 +11,8 @@ const HALF_SCREEN_WIDTH: int = 64;
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 
 @onready var globals = get_node("/root/Globals");
-@onready var railRaycast = $RailRayCast;
-@onready var railRaycast2 = $RailRayCast2;
 @onready var playerSprite = get_node("PlayerSprite");
+@onready var playerRaycasts = $PlayerRaycasts;
 
 var gravity: float;
 var maxJumpVelocity: float;
@@ -26,7 +25,7 @@ func _ready():
 	minJumpVelocity = -sqrt(2 * gravity * MIN_JUMP_HEIGHT);
 
 func _physics_process(delta):
-	var isGrinding = isPlayerGrindingRail();
+	var isGrinding = playerRaycasts.isPlayerGrindingRail();
 	calcPlayerVelocity(delta, isGrinding);
 	move_and_slide()
 
@@ -51,13 +50,8 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	else:
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
-			if (direction == 1):
-				playerSprite.playPushAnimation();
-			else:
-				playerSprite.playGrindAnimation();
 		else:
 			velocity.x = move_toward(velocity.x, 0, DECC)
-			playerSprite.playIdleAnimation();
 
 # FOR RAIL GRINDING
 
@@ -71,23 +65,3 @@ func calcGrindVelocity() -> float:
 	var grindVelocityDecrease = (offsetFromCenter / HALF_SCREEN_WIDTH) * MAX_GRIND_VELOCITY_DECREASE_VALUE;
 
 	return baseGrindVelocity - grindVelocityDecrease;
-
-## Returns true if the player is colliding with a rail object. Otherwise returns false.
-func isPlayerGrindingRail() -> bool:
-	var isRearRaycastHittingRail = isRaycastHittingRail(railRaycast);
-	var isFrontRaycastHittingRail = isRaycastHittingRail(railRaycast2);
-	# return true if either of the raycasts are hitting the rail and if the player is not moving upwards
-	return (isRearRaycastHittingRail || isFrontRaycastHittingRail) && velocity.y >= 0;
-
-## Returns true if the given raycast is colliding with an object of type Rail.
-func isRaycastHittingRail(rayCast: RayCast2D) -> bool:
-	if (!rayCast.is_colliding()):
-		return false;
-	
-	var collider = rayCast.get_collider();
-	var colliderType = collider.get_type() if collider.has_method("get_type") else null;
-
-	if (colliderType == "Rail"):
-		return true;
-
-	return false;

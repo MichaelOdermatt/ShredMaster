@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdxrtukbv5q4c"]
 
 [ext_resource type="Script" path="res://Scripts/RailScripts/Rail.gd" id="1_kic0m"]
-[ext_resource type="Texture2D" uid="uid://bq1y6vh8706d7" path="res://Sprites/BasicRail.png" id="2_b7y0m"]
+[ext_resource type="Texture2D" uid="uid://bq1y6vh8706d7" path="res://Sprites/RailSprites/BasicRail.png" id="2_b7y0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8ng"]
 size = Vector2(125, 1)
