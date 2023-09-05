@@ -1,4 +1,4 @@
-res://main.tscn
+res://Scenes/CoinScenes/Coin.tscn
 res://Shaders/Flash.gdshader
-res://Scripts/PlayerScripts/PlayerSprite.gd
-res://Scripts/PlayerScripts/Player.gd
+res://main.tscn
+res://Scenes/CoinScenes/CoinManager.tscn

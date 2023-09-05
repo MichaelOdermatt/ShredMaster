@@ -9,4 +9,3 @@ coinSpawnIntervalMax = 3
 coinSpawnIntervalMin = 6
 
 [node name="Coin" parent="." instance=ExtResource("1_vtve3")]
-coinAltitudeMax = 96
