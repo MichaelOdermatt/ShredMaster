@@ -1,4 +1,11 @@
-res://Scenes/CoinScenes/Coin.tscn
-res://Shaders/Flash.gdshader
 res://main.tscn
-res://Scenes/CoinScenes/CoinManager.tscn
+res://Shaders/Flash.gdshader
+res://PlayerParticleEffects.gd
+res://Scripts/PlayerScripts/PlayerMovement.gd
+res://Scripts/PlayerScripts/Player.gd
+res://Scripts/PlayerScripts/PlayerParticleEffects.gd
+res://Scripts/EnemyScripts/BasicEnemy.gd
+res://Scripts/EnemyScripts/EnemyBase.gd
+res://Scripts/AutoLoaded/Globals.gd
+res://Scripts/EnemyScripts/StationaryEnemy.gd
+res://Scripts/PlayerScripts/PlayerRaycasts.gd
