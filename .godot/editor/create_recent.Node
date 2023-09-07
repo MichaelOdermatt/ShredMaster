@@ -1,3 +1,5 @@
+CollisionShape2D
+Area2D
 GPUParticles2D
 Node2D
 AnimatedSprite2D
@@ -5,8 +7,6 @@ Sprite2D
 ParallaxLayer
 Timer
 AnimationPlayer
-CollisionShape2D
-Area2D
 Label
 Control
 MarginContainer

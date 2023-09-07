@@ -14,6 +14,8 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerSprite = $CharacterBody/PlayerSprite;
 @onready var invincibilityTimer = $InvincibilityTimer;
 @onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
+@onready var playerParticleEffects = $PlayerParticleEffects
+@onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
 
 ## Bool used to keep track if the player is currently invincible.
 var isPlayerInvincible: bool = false;
@@ -22,6 +24,7 @@ func _ready():
 	enemyManager.player_hit.connect(_on_player_hit);
 	coinManager.player_pickup.connect(_on_player_pickup_coin);
 	invincibilityTimer.timeout.connect(_on_invincibilityTimer_timeout);
+	floorCollisionArea.area_entered.connect(_on_player_floor_collision);
 
 func _process(delta):
 	if (playerRaycasts.isPlayerGrindingRail()):
@@ -51,3 +54,7 @@ func _on_player_pickup_coin():
 
 func _on_invincibilityTimer_timeout():
 	isPlayerInvincible = false;
+
+func _on_player_floor_collision(area: Area2D):
+	# Since the floor collision area only masks for the map boundaries we dont need to bother checking the colliding area
+	playerParticleEffects.emitCloudParticles(playerMovement.transform.origin);
