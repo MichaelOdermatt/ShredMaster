@@ -13,6 +13,7 @@ const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 @onready var globals = get_node("/root/Globals");
 @onready var playerSprite = get_node("PlayerSprite");
 @onready var playerRaycasts = $PlayerRaycasts;
+@onready var playerParticleEffects = get_node("../PlayerParticleEffects");
 
 var gravity: float;
 var maxJumpVelocity: float;
@@ -47,7 +48,9 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	if (isGrinding):
 		velocity.x = calcGrindVelocity();
 		playerSprite.playGrindAnimation();
+		playerParticleEffects.startEmittingSparkParticles(transform.origin);
 	else:
+		playerParticleEffects.stopEmittingSparkParticles();
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
 		else:

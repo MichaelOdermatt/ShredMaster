@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1694134316
+::res://::1694136991
 icon.svg::CompressedTexture2D::8739832967494668803::1690238305::1690238311::1::::<><>::
-main.tscn::PackedScene::2432694066404650885::1694134316::0::1::::<><>::res://Scripts/ProgressManager.gd<>uid://b6noujhrx0k3f::::res://Scenes/EnemyScenes/EnemyManager.tscn<>res://Scripts/BackgroundScroll.gd<>res://Scripts/PlayerScripts/Player.gd<>res://Scripts/PlayerScripts/PlayerMovement.gd<>uid://8kyuvm87n6gd::::res://Sprites/SkyAndMountains.png<>uid://hp60hg6a04m5::::res://Sprites/Buildings.png<>uid://dk8ynya7c8fse::::res://Sprites/Trees.png<>uid://dp4uitryitw5f::::res://Sprites/Sidewalk.png<>res://Scripts/PlayerScripts/PlayerHealth.gd<>res://Scripts/PlayerScripts/PlayerScore.gd<>res://Shaders/Flash.gdshader<>uid://bvwo4aqhbidjk::::res://Sprites/Heart.png<>res://Scripts/PlayerScripts/PlayerSprite.gd<>res://Scripts/UI/UI.gd<>res://Scripts/UI/HealthUI.gd<>uid://cjlvkwlv122xg::::res://Scenes/RailScenes/RailManager.tscn<>uid://c25vvnxjxdxs6::::res://Sprites/Score.png<>uid://de34elsax0xx4::::res://Sprites/PlayerSprites/PlayerIdle.png<>uid://8qm8vgmj435j::::res://Sprites/PlayerSprites/PlayerGrind.png<>uid://bcc2nabmvdgaw::::res://Sprites/PlayerSprites/PlayerPush.png<>uid://b77utn85gvy7y::::res://Scenes/CoinScenes/CoinManager.tscn<>uid://cmr8bewb742mh::::res://Sprites/PlayerSprites/PlayerJump.png<>res://Scripts/PlayerScripts/PlayerRaycasts.gd<>res://Scripts/PlayerScripts/PlayerParticleEffects.gd<>uid://b1gv32hwsi3hf::::res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png
+main.tscn::PackedScene::2432694066404650885::1694134844::0::1::::<><>::res://Scripts/ProgressManager.gd<>uid://b6noujhrx0k3f::::res://Scenes/EnemyScenes/EnemyManager.tscn<>res://Scripts/BackgroundScroll.gd<>res://Scripts/PlayerScripts/Player.gd<>res://Scripts/PlayerScripts/PlayerMovement.gd<>uid://8kyuvm87n6gd::::res://Sprites/SkyAndMountains.png<>uid://hp60hg6a04m5::::res://Sprites/Buildings.png<>uid://dk8ynya7c8fse::::res://Sprites/Trees.png<>uid://dp4uitryitw5f::::res://Sprites/Sidewalk.png<>res://Scripts/PlayerScripts/PlayerHealth.gd<>res://Scripts/PlayerScripts/PlayerScore.gd<>res://Shaders/Flash.gdshader<>uid://bvwo4aqhbidjk::::res://Sprites/Heart.png<>res://Scripts/PlayerScripts/PlayerSprite.gd<>res://Scripts/UI/UI.gd<>res://Scripts/UI/HealthUI.gd<>uid://cjlvkwlv122xg::::res://Scenes/RailScenes/RailManager.tscn<>uid://c25vvnxjxdxs6::::res://Sprites/Score.png<>uid://de34elsax0xx4::::res://Sprites/PlayerSprites/PlayerIdle.png<>uid://8qm8vgmj435j::::res://Sprites/PlayerSprites/PlayerGrind.png<>uid://bcc2nabmvdgaw::::res://Sprites/PlayerSprites/PlayerPush.png<>uid://b77utn85gvy7y::::res://Scenes/CoinScenes/CoinManager.tscn<>uid://cmr8bewb742mh::::res://Sprites/PlayerSprites/PlayerJump.png<>res://Scripts/PlayerScripts/PlayerRaycasts.gd<>res://Scripts/PlayerScripts/PlayerParticleEffects.gd<>uid://b1gv32hwsi3hf::::res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png
 ::res://Scenes/::1694129664
 ::res://Scenes/CoinScenes/::1694058976
 Coin.tscn::PackedScene::4535651993457280700::1693884719::0::1::::<><>::uid://or3xnffs2bss
@@ -31,10 +31,10 @@ EnemyManager.gd::GDScript::-1::1691432056::0::1::::<>Node2D<>::
 FlyingEnemy.gd::GDScript::-1::1692745609::0::1::::<>Node2D<>::
 StationaryEnemy.gd::GDScript::-1::1692745545::0::1::::<>Node2D<>::
 ::res://Scripts/PlayerScripts/::1694129323
-Player.gd::GDScript::-1::1694129057::0::1::::<>Node2D<>::
+Player.gd::GDScript::-1::1694134678::0::1::::<>Node2D<>::
 PlayerHealth.gd::GDScript::-1::1691119682::0::1::::<>Node2D<>::
 PlayerMovement.gd::GDScript::-1::1693966002::0::1::::<>CharacterBody2D<>::
-PlayerParticleEffects.gd::GDScript::-1::1694132974::0::1::::<>Node2D<>::
+PlayerParticleEffects.gd::GDScript::-1::1694134689::0::1::::<>Node2D<>::
 PlayerRaycasts.gd::GDScript::-1::1692837001::0::1::::<>Node2D<>::
 PlayerScore.gd::GDScript::-1::1690741766::0::1::::<>Node2D<>::
 PlayerSprite.gd::GDScript::-1::1692845319::0::1::::<>Node2D<>::
@@ -44,8 +44,8 @@ RailManager.gd::GDScript::-1::1690678407::0::1::::<>Node2D<>::
 ::res://Scripts/UI/::1690741891
 HealthUI.gd::GDScript::-1::1690741608::0::1::::<>TextureRect<>::
 UI.gd::GDScript::-1::1691119884::0::1::::<>CanvasLayer<>::
-::res://Shaders/::1694134316
-Flash.gdshader::Shader::-1::1694134316::0::1::::<><>::
+::res://Shaders/::1694134920
+Flash.gdshader::Shader::-1::1694134920::0::1::::<><>::
 ::res://Sprites/::1693955762
 Buildings.png::CompressedTexture2D::524214821742298322::1691547671::1691547671::1::::<><>::
 Heart.png::CompressedTexture2D::3906704561639641848::1690412168::1690412170::1::::<><>::
@@ -60,8 +60,9 @@ Trees.png::CompressedTexture2D::7930756638509071524::1692327300::1692327300::1::
 Bird.png::CompressedTexture2D::1195349059455403381::1692757084::1692757089::1::::<><>::
 ScooterKid.png::CompressedTexture2D::1340213835445737827::1692756973::1692756973::1::::<><>::
 Trash.png::CompressedTexture2D::2644917393214369064::1692757344::1692757344::1::::<><>::
-::res://Sprites/ParticleEffectSprites/::1694134358
+::res://Sprites/ParticleEffectSprites/::1694137036
 ImpactParticleEffect.png::CompressedTexture2D::4225043373851799747::1694134358::1694134358::1::::<><>::
+SparkParticleEffect.png::CompressedTexture2D::7705460288814765706::1694137036::1694137036::1::::<><>::
 ::res://Sprites/PlayerSprites/::1692845162
 PlayerGrind.png::CompressedTexture2D::2350050532049689069::1692758449::1692758449::1::::<><>::
 PlayerIdle.png::CompressedTexture2D::7499588544306030271::1692758467::1692758467::1::::<><>::

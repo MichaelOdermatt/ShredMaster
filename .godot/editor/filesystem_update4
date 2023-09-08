@@ -1,5 +1,5 @@
-res://Scripts/PlayerScripts/PlayerParticleEffects.gd
-res://Scripts/PlayerScripts/Player.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
-res://Scripts/PlayerScripts/PlayerHealth.gd
+res://Scripts/PlayerScripts/PlayerParticleEffects.gd
+res://Scripts/PlayerScripts/Player.gd
+res://Scripts/PlayerScripts/PlayerMovement.gd
