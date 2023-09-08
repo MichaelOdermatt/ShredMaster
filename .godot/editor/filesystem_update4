@@ -1,9 +1,5 @@
 res://Scripts/PlayerScripts/PlayerParticleEffects.gd
-res://Scripts/PlayerScripts/PlayerRaycasts.gd
-res://Scripts/PlayerScripts/PlayerMovement.gd
+res://Scripts/PlayerScripts/Player.gd
 res://main.tscn
 res://Shaders/Flash.gdshader
-res://Scripts/PlayerScripts/Player.gd
-res://Scripts/CoinScripts/Coin.gd
-res://Scripts/CoinScripts/CoinManager.gd
-res://Scenes/CoinScenes/CoinManager.tscn
+res://Scripts/PlayerScripts/PlayerHealth.gd

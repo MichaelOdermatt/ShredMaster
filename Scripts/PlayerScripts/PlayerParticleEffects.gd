@@ -1,22 +1,21 @@
 extends Node2D
 
 @onready var globals = get_node("/root/Globals");
-@onready var cloudParticles = $CloudParticles
+@onready var impactParticles = $ImpactParticles;
 
-var particleEffectOffsetY: float = 5;
+var particleEffectOffsetY: float = 8;
 
 func _process(delta):
 	updateParticleVelocity();
 
 ## Emits the cloud particle effect.
-func emitCloudParticles(emitPosition: Vector2):
-	cloudParticles.transform.origin = emitPosition;
-	cloudParticles.transform.origin.y += particleEffectOffsetY;
-	cloudParticles.emitting = true;
-	pass
+func emitImpactParticles(emitPosition: Vector2):
+	impactParticles.restart();
+	impactParticles.transform.origin = emitPosition;
+	impactParticles.transform.origin.y += particleEffectOffsetY;
+	impactParticles.emitting = true;
 
 ## Updates the velocity of all particle effects to match the global current base speed.
 func updateParticleVelocity():
-	cloudParticles.material.set('initial_velocity_min', -globals.currentBaseSpeed);
-	cloudParticles.material.set('initial_velocity_max', -globals.currentBaseSpeed);
-
+	impactParticles.material.set('initial_velocity_min', -globals.currentBaseSpeed);
+	impactParticles.material.set('initial_velocity_max', -globals.currentBaseSpeed);

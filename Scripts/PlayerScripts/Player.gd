@@ -57,4 +57,4 @@ func _on_invincibilityTimer_timeout():
 
 func _on_player_floor_collision(area: Area2D):
 	# Since the floor collision area only masks for the map boundaries we dont need to bother checking the colliding area
-	playerParticleEffects.emitCloudParticles(playerMovement.transform.origin);
+	playerParticleEffects.emitImpactParticles(playerMovement.transform.origin);

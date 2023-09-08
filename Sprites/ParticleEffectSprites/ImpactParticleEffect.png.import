@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi88igsejkc7q"
-path="res://.godot/imported/CloudParticleEffect.png-a02267e578d78183de55e7666f6a299d.ctex"
+uid="uid://b1gv32hwsi3hf"
+path="res://.godot/imported/ImpactParticleEffect.png-e7553e142f00f64d83796da362343c51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/ParticleEffectSprites/CloudParticleEffect.png"
-dest_files=["res://.godot/imported/CloudParticleEffect.png-a02267e578d78183de55e7666f6a299d.ctex"]
+source_file="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png"
+dest_files=["res://.godot/imported/ImpactParticleEffect.png-e7553e142f00f64d83796da362343c51.ctex"]
 
 [params]
 
