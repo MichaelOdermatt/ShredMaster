@@ -1,19 +1,23 @@
 extends Node2D
 
+const cloudParticlesResource = preload("res://Scenes/ParticleEffectScenes/CloudParticles.tscn");
+const impactParticleEffectOffsetY: float = 8;
+const sparkParticleEffectOffsetY: float = 7;
+
+@onready var rootNode = get_node("/root");
 @onready var globals = get_node("/root/Globals");
 @onready var impactParticles = $ImpactParticles;
 @onready var sparkParticles = $SparkParticles;
-@onready var cloudParticles = $CloudParticles;
-
-var impactParticleEffectOffsetY: float = 8;
-var sparkParticleEffectOffsetY: float = 7;
 
 func _process(delta):
 	updateParticleVelocity();
 
-## Emits the cloud particle effect.
-func emitCloudParticles(emitPosition: Vector2):
-	cloudParticles.restart();
+## Creates an instance of the cloud particle effect scene and emits the effect.
+func CreateInstanceAndEmitCloudParticles(emitPosition: Vector2):
+	var cloudParticles = cloudParticlesResource.instantiate();
+	rootNode.add_child(cloudParticles);
+	cloudParticles.material.set('initial_velocity_min', -globals.currentBaseSpeed);
+	cloudParticles.material.set('initial_velocity_max', -globals.currentBaseSpeed);
 	cloudParticles.transform.origin = emitPosition;
 	cloudParticles.emitting = true;
 
@@ -38,5 +42,3 @@ func stopEmittingSparkParticles():
 func updateParticleVelocity():
 	impactParticles.material.set('initial_velocity_min', -globals.currentBaseSpeed);
 	impactParticles.material.set('initial_velocity_max', -globals.currentBaseSpeed);
-	cloudParticles.material.set('initial_velocity_min', -globals.currentBaseSpeed);
-	cloudParticles.material.set('initial_velocity_max', -globals.currentBaseSpeed);
