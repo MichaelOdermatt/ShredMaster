@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=51 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_2ww78"]
 [ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_haccd"]
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
+[ext_resource type="Texture2D" uid="uid://c8go8tqkhlwgc" path="res://Sprites/Kaput.png" id="28_qp1ta"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -269,12 +270,12 @@ position = Vector2(64, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_ao2bu")
 
-[node name="GroundArea" type="Area2D" parent="MapBoundries"]
+[node name="FloorCollisionEventsArea" type="Area2D" parent="MapBoundries"]
 collision_layer = 2
 collision_mask = 0
 monitoring = false
 
-[node name="Bottom" type="CollisionShape2D" parent="MapBoundries/GroundArea"]
+[node name="Bottom" type="CollisionShape2D" parent="MapBoundries/FloorCollisionEventsArea"]
 position = Vector2(0, 61)
 shape = SubResource("WorldBoundaryShape2D_ao2bu")
 
@@ -429,3 +430,11 @@ stretch_mode = 2
 [node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="Kaput" type="Node2D" parent="UI"]
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Kaput"]
+position = Vector2(64, 64)
+texture = ExtResource("28_qp1ta")
+centered = false
+offset = Vector2(-64, -32)

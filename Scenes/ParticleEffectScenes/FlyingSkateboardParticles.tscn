@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnsq0l1wcacfd"]
+
+[ext_resource type="Texture2D" uid="uid://tprn3lvvnvo1" path="res://Sprites/ParticleEffectSprites/FlyingSkateboard.png" id="1_lg8fx"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wtenu"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_v0ssw"]
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = -100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 2.0
+anim_speed_max = 2.0
+
+[node name="FlyingSkateboardParticle" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_wtenu")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_v0ssw")
+texture = ExtResource("1_lg8fx")
+lifetime = 2.0
+one_shot = true

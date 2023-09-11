@@ -15,6 +15,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var invincibilityTimer = $InvincibilityTimer;
 @onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
 @onready var playerParticleEffects = $PlayerParticleEffects
+## I use this Area2D node for the area_entered event that runs on collisions with the floor
 @onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
 
 ## Bool used to keep track if the player is currently invincible.
@@ -33,6 +34,8 @@ func _process(delta):
 ## Destroys the player, ending the game.
 func destroyPlayer():
 	playerParticleEffects.CreateInstanceAndEmitCloudParticles(playerMovement.transform.origin);
+	playerParticleEffects.CreateInstanceAndEmitFlyingSkateboardParticles(playerMovement.transform.origin);
+	playerParticleEffects.CreateInstanceAndEmitFlyingPlayerParticles(playerMovement.transform.origin);
 	queue_free();
 
 ## Adds specified amount of points to the player score.
