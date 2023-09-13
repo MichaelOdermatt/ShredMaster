@@ -17,6 +17,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerParticleEffects = $PlayerParticleEffects
 ## I use this Area2D node for the area_entered event that runs on collisions with the floor
 @onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
+@onready var kaput = get_node("../UI/Kaput");
 
 ## Bool used to keep track if the player is currently invincible.
 var isPlayerInvincible: bool = false;
@@ -36,6 +37,7 @@ func destroyPlayer():
 	playerParticleEffects.CreateInstanceAndEmitCloudParticles(playerMovement.transform.origin);
 	playerParticleEffects.CreateInstanceAndEmitFlyingSkateboardParticles(playerMovement.transform.origin);
 	playerParticleEffects.CreateInstanceAndEmitFlyingPlayerParticles(playerMovement.transform.origin);
+	kaput.startNextSpriteTimer();
 	queue_free();
 
 ## Adds specified amount of points to the player score.
