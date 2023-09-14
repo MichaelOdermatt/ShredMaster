@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=53 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
 [ext_resource type="Texture2D" uid="uid://c8go8tqkhlwgc" path="res://Sprites/Kaput.png" id="28_qp1ta"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
+[ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -237,21 +238,6 @@ anim_speed_max = 1.25
 
 [node name="Node2D" type="Node2D"]
 
-[node name="ProgressManager" type="Node2D" parent="."]
-script = ExtResource("1_csyby")
-
-[node name="Timer" type="Timer" parent="ProgressManager"]
-wait_time = 10.0
-autostart = true
-
-[node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
-
-[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
-railSpawnIntervalMax = 5
-railSpawnIntervalMin = 10
-
-[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]
-
 [node name="MapBoundries" type="StaticBody2D" parent="."]
 position = Vector2(64, 64)
 collision_layer = 2
@@ -307,12 +293,30 @@ motion_mirroring = Vector2(384, 0)
 texture = ExtResource("8_0pvnu")
 offset = Vector2(64, 64)
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxForeground" type="ParallaxBackground" parent="ParallaxBackground"]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground/ParallaxForeground"]
 motion_mirroring = Vector2(384, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxForeground/ParallaxLayer"]
 position = Vector2(64, 64)
 texture = ExtResource("8_blds7")
+
+[node name="ProgressManager" type="Node2D" parent="."]
+script = ExtResource("1_csyby")
+
+[node name="Timer" type="Timer" parent="ProgressManager"]
+wait_time = 10.0
+autostart = true
+
+[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
+railSpawnIntervalMax = 5
+railSpawnIntervalMin = 10
+
+[node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
+
+[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("5_21ok0")
@@ -444,3 +448,6 @@ offset = Vector2(-64, -32)
 
 [node name="NextSpriteTimer" type="Timer" parent="UI/Kaput"]
 wait_time = 1.5
+
+[node name="UIInputs" type="Node2D" parent="UI"]
+script = ExtResource("30_ot8kt")

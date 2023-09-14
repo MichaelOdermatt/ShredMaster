@@ -3,7 +3,7 @@ extends Node2D
 const cloudParticlesResource = preload("res://Scenes/ParticleEffectScenes/CloudParticles.tscn");
 const flyingSkateboardParticlesResorce = preload("res://Scenes/ParticleEffectScenes/FlyingSkateboardParticles.tscn");
 const flyingPlayerParticlesResorce = preload("res://Scenes/ParticleEffectScenes/FlyingPlayerParticles.tscn");
-const impactParticleEffectOffsetY: float = 8;
+const impactParticleEffectOffsetY: float = 7;
 const sparkParticleEffectOffset: Vector2 = Vector2(-3, 7);
 
 @onready var rootNode = get_node("/root");
