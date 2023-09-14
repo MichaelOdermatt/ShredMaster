@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://b6noujhrx0k3f"]
 
 [ext_resource type="Script" path="res://Scripts/EnemyScripts/EnemyManager.gd" id="1_1r6fd"]
-[ext_resource type="PackedScene" uid="uid://bpyvbm1jorjwg" path="res://Scenes/EnemyScenes/BasicEnemy.tscn" id="2_5x13j"]
-[ext_resource type="PackedScene" uid="uid://byl8glshkxvta" path="res://Scenes/EnemyScenes/FlyingEnemy.tscn" id="2_an644"]
-[ext_resource type="PackedScene" uid="uid://cdqdacso6wyqw" path="res://Scenes/EnemyScenes/StationaryEnemy.tscn" id="4_x8qud"]
+[ext_resource type="PackedScene" uid="uid://byl8glshkxvta" path="res://Scenes/EnemyScenes/FlyingEnemy.tscn" id="2_obsjt"]
+[ext_resource type="PackedScene" uid="uid://bpyvbm1jorjwg" path="res://Scenes/EnemyScenes/BasicEnemy.tscn" id="3_1exut"]
+[ext_resource type="PackedScene" uid="uid://cdqdacso6wyqw" path="res://Scenes/EnemyScenes/StationaryEnemy.tscn" id="4_rd17y"]
 
 [node name="EnemyManager" type="Node2D"]
 script = ExtResource("1_1r6fd")
 
-[node name="FlyingEnemy" parent="." instance=ExtResource("2_an644")]
+[node name="FlyingEnemy" parent="." instance=ExtResource("2_obsjt")]
 position = Vector2(-8, 8)
 metadata/_edit_group_ = true
 
-[node name="BasicEnemy" parent="." instance=ExtResource("2_5x13j")]
+[node name="BasicEnemy" parent="." instance=ExtResource("3_1exut")]
 position = Vector2(-8, 24)
 metadata/_edit_group_ = true
 
-[node name="StationaryEnemy" parent="." instance=ExtResource("4_x8qud")]
+[node name="StationaryEnemy" parent="." instance=ExtResource("4_rd17y")]

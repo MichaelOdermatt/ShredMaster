@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=54 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -27,6 +27,7 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_2ww78"]
 [ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_haccd"]
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
+[ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
 [ext_resource type="Texture2D" uid="uid://c8go8tqkhlwgc" path="res://Sprites/Kaput.png" id="28_qp1ta"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
@@ -34,7 +35,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyjdm"]
-size = Vector2(11, 16)
+size = Vector2(9, 16)
 
 [sub_resource type="Animation" id="Animation_6e5bf"]
 resource_name = "FlashOnDamage"
@@ -342,8 +343,6 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
-animation = &"jump"
-frame_progress = 0.718256
 
 [node name="PlayerRaycasts" type="Node2D" parent="Player/CharacterBody"]
 script = ExtResource("17_mpa5x")
@@ -434,6 +433,7 @@ stretch_mode = 2
 
 [node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("28_jpsys")
 text = "0"
 
 [node name="Kaput" type="Node2D" parent="UI"]
