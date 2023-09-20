@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=53 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -17,7 +17,6 @@
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
 [ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
-[ext_resource type="Texture2D" uid="uid://c25vvnxjxdxs6" path="res://Sprites/Score.png" id="14_73kod"]
 [ext_resource type="Texture2D" uid="uid://de34elsax0xx4" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="15_aleeg"]
 [ext_resource type="Texture2D" uid="uid://8qm8vgmj435j" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
 [ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
@@ -399,9 +398,35 @@ one_shot = true
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")
 
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -14.0
+offset_top = -3.0
+offset_right = 14.0
+offset_bottom = 37.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ScoreLabel" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("28_jpsys")
+text = "Score"
+
+[node name="ScoreCounter" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_jpsys")
+text = "0"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="UI"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 59.0
+offset_bottom = 16.0
 size_flags_vertical = 0
 
 [node name="Container" type="MarginContainer" parent="UI/HBoxContainer"]
@@ -420,21 +445,6 @@ texture = ExtResource("9_tuhrv")
 expand_mode = 1
 stretch_mode = 1
 script = ExtResource("11_bh6rr")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-
-[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("14_73kod")
-stretch_mode = 2
-
-[node name="ScoreLabel" type="Label" parent="UI/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("28_jpsys")
-text = "0"
 
 [node name="Kaput" type="Node2D" parent="UI"]
 script = ExtResource("28_yupq5")

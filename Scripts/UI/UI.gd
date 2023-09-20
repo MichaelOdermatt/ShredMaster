@@ -1,11 +1,11 @@
 extends CanvasLayer
 
 @onready var healthUI = $HBoxContainer/Container/Health;
-@onready var scoreLabel = $HBoxContainer/HBoxContainer/ScoreLabel;
+@onready var scoreCounter = $MarginContainer/HBoxContainer/ScoreCounter;
 
 ## Sets the displayed score to the given string.
 func updatePlayerScore(score: String):
-	scoreLabel.text = score;
+	scoreCounter.text = score;
 
 ## Removes one of the player hearts from the UI.
 func removePlayerHeart():
