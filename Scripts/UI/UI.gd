@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var healthUI = $HBoxContainer/Container/Health;
-@onready var scoreCounter = $MarginContainer/HBoxContainer/ScoreCounter;
+@onready var healthUI = $HealthContainer/Container/Health;
+@onready var scoreCounter = $ScoreContainer/HBoxContainer/ScoreCounter;
 
 ## Sets the displayed score to the given string.
 func updatePlayerScore(score: String):

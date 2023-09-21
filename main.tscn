@@ -278,6 +278,7 @@ position = Vector2(64, 64)
 texture = ExtResource("6_q8iad")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(384, 0)
 
@@ -398,7 +399,7 @@ one_shot = true
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI"]
+[node name="ScoreContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -408,34 +409,34 @@ offset_right = 14.0
 offset_bottom = 37.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/ScoreContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="ScoreLabel" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="UI/ScoreContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("28_jpsys")
 text = "Score"
 
-[node name="ScoreCounter" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+[node name="ScoreCounter" type="Label" parent="UI/ScoreContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("28_jpsys")
 text = "0"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+[node name="HealthContainer" type="HBoxContainer" parent="UI"]
 offset_right = 59.0
 offset_bottom = 16.0
 size_flags_vertical = 0
 
-[node name="Container" type="MarginContainer" parent="UI/HBoxContainer"]
+[node name="Container" type="MarginContainer" parent="UI/HealthContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(27, 0)
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Health" type="TextureRect" parent="UI/HBoxContainer/Container"]
+[node name="Health" type="TextureRect" parent="UI/HealthContainer/Container"]
 clip_contents = true
 custom_minimum_size = Vector2(27, 10)
 layout_mode = 2
@@ -460,4 +461,26 @@ offset = Vector2(-64, -32)
 wait_time = 1.5
 
 [node name="UIInputs" type="Node2D" parent="UI"]
+process_mode = 3
 script = ExtResource("30_ot8kt")
+
+[node name="PauseMenuContainer" type="MarginContainer" parent="UI"]
+process_mode = 2
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="UI/PauseMenuContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_jpsys")
+text = "Paused"
+horizontal_alignment = 1
