@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8go8tqkhlwgc"
-path="res://.godot/imported/Kaput.png-190ee7f33e3b700feeb8a84cedacf572.ctex"
+uid="uid://c2qal3o0k1e6b"
+path="res://.godot/imported/KaputRed.png-eb35584a3ed5662ff9268d6a4bed69bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Kaput.png"
-dest_files=["res://.godot/imported/Kaput.png-190ee7f33e3b700feeb8a84cedacf572.ctex"]
+source_file="res://Sprites/KaputRed.png"
+dest_files=["res://.godot/imported/KaputRed.png-eb35584a3ed5662ff9268d6a4bed69bc.ctex"]
 
 [params]
 
