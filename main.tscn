@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=55 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -26,6 +26,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_2ww78"]
 [ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_haccd"]
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSounds.gd" id="24_5xis1"]
+[ext_resource type="AudioStream" uid="uid://biov0crart4hr" path="res://Sounds/CruiseLoop.wav" id="25_wjuyw"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
@@ -395,6 +397,19 @@ lifetime = 0.5
 [node name="InvincibilityTimer" type="Timer" parent="Player"]
 wait_time = 2.0
 one_shot = true
+
+[node name="PlayerSounds" type="Node2D" parent="Player"]
+script = ExtResource("24_5xis1")
+
+[node name="JumpAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+
+[node name="ImpactAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+
+[node name="CruiseAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+stream = ExtResource("25_wjuyw")
+autoplay = true
+
+[node name="PopCanAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")

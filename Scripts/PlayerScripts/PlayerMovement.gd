@@ -14,6 +14,7 @@ const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 @onready var playerSprite = get_node("PlayerSprite");
 @onready var playerRaycasts = $PlayerRaycasts;
 @onready var playerParticleEffects = get_node("../PlayerParticleEffects");
+@onready var playerSounds = get_node("../PlayerSounds");
 
 var gravity: float;
 var maxJumpVelocity: float;
@@ -40,6 +41,7 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = maxJumpVelocity
+		playerSounds.playConcreteJumpSound();
 	if Input.is_action_just_released("Jump") && velocity.y < minJumpVelocity:
 		velocity.y = minJumpVelocity;
 

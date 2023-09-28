@@ -15,6 +15,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var invincibilityTimer = $InvincibilityTimer;
 @onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
 @onready var playerParticleEffects = $PlayerParticleEffects
+@onready var playerSounds = $PlayerSounds;
 ## I use this Area2D node for the area_entered event that runs on collisions with the floor
 @onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
 @onready var kaput = get_node("../UI/Kaput");
@@ -57,6 +58,7 @@ func _on_player_hit():
 
 func _on_player_pickup_coin():
 	addPointsToScore(PLAYER_PICKUP_COIN_SCORE);
+	playerSounds.playPopCanOpenSound();
 
 func _on_invincibilityTimer_timeout():
 	isPlayerInvincible = false;
@@ -64,3 +66,4 @@ func _on_invincibilityTimer_timeout():
 func _on_player_floor_collision(area: Area2D):
 	# Since the floor collision area only masks for the map boundaries we dont need to bother checking the colliding area
 	playerParticleEffects.emitImpactParticles(playerMovement.transform.origin);
+	playerSounds.playConcreteImpactSound();
