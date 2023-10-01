@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var cruiseAudioPlayer = $CruiseAudioPlayer;
+@onready var pushAudioPlayer = $PushAudioPlayer;
 @onready var popCanAudioPlayer = $PopCanAudioPlayer;
 @onready var jumpAudioPlayer = $JumpAudioPlayer;
 @onready var impactAudioPlayer = $ImpactAudioPlayer;
@@ -36,7 +38,29 @@ func playPopCanOpenSound():
 		return;
 		
 	playRandomSoundFromArray(popCanOpenSounds, popCanAudioPlayer);	
+
+## Plays the cruise sound loop.
+func playCruiseLoop():
+	if (cruiseAudioPlayer.playing):
+		return;
 	
+	cruiseAudioPlayer.play();
+	
+## Plays the push sound loop.
+func playPushLoop():
+	if (pushAudioPlayer.playing):
+		return;
+	
+	pushAudioPlayer.play();
+	
+## Stops the cruise sound loop.
+func stopCruiseLoop():
+	cruiseAudioPlayer.stop();
+	
+## Stops the push sound loop.
+func stopPushLoop():
+	pushAudioPlayer.stop();
+
 func playRandomSoundFromArray(arrayOfSounds: Array, audioPlayer: AudioStreamPlayer):
 	randomize();
 	var soundToPlay = arrayOfSounds[randi_range(0, len(arrayOfSounds) - 1)];

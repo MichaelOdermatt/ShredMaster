@@ -28,6 +28,7 @@ func _ready():
 
 func _physics_process(delta):
 	var isGrinding = playerRaycasts.isPlayerGrindingRail();
+	handlePlayerMovementSounds(isGrinding);
 	calcPlayerVelocity(delta, isGrinding);
 	move_and_slide()
 
@@ -36,12 +37,11 @@ func _physics_process(delta):
 func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta;
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = maxJumpVelocity
-		playerSounds.playConcreteJumpSound();
+		velocity.y = maxJumpVelocity;
 	if Input.is_action_just_released("Jump") && velocity.y < minJumpVelocity:
 		velocity.y = minJumpVelocity;
 
@@ -56,7 +56,33 @@ func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
 		else:
-			velocity.x = move_toward(velocity.x, 0, DECC)
+			velocity.x = move_toward(velocity.x, 0, DECC);
+
+## Plays sounds contextually depending on the players movement and inputs.
+func handlePlayerMovementSounds(isGrinding: bool):
+	var direction = Input.get_axis("MoveLeft", "MoveRight");
+	var isPlayerOnFloor = is_on_floor();
+	if Input.is_action_just_pressed("Jump") and isPlayerOnFloor:
+		playerSounds.playConcreteJumpSound();
+	
+	if isPlayerOnFloor && !isGrinding:
+		playRollLoops(direction);
+	else:
+		stopRollLoops();
+	
+## Plays either the cruise, or push loop depending on the players movement direction.
+func playRollLoops(direction: int):
+	if direction == 1:
+		playerSounds.stopCruiseLoop();
+		playerSounds.playPushLoop();
+	else:
+		playerSounds.stopPushLoop();
+		playerSounds.playCruiseLoop();
+
+## Stops the cruise, and push audio loops.
+func stopRollLoops():
+	playerSounds.stopCruiseLoop();
+	playerSounds.stopPushLoop();
 
 # FOR RAIL GRINDING
 

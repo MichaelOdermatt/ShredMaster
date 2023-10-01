@@ -28,7 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSounds.gd" id="24_5xis1"]
 [ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_6mj6b"]
-[ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_nsntm"]
+[ext_resource type="AudioStream" uid="uid://bi5cvrxnjpy5v" path="res://Sounds/PushLoopLooped.wav" id="25_qc2pv"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
@@ -413,7 +413,7 @@ autoplay = true
 [node name="PopCanAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="PushAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("26_nsntm")
+stream = ExtResource("25_qc2pv")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")
