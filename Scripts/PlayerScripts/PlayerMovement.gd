@@ -73,16 +73,23 @@ func handlePlayerMovementSounds(isGrinding: bool):
 ## Plays either the cruise, or push loop depending on the players movement direction.
 func playRollLoops(direction: int):
 	if direction == 1:
-		playerSounds.stopCruiseLoop();
-		playerSounds.playPushLoop();
+		playerSounds.stopCruiseLoop(true);
+		playerSounds.stopStallLoop(true);
+		playerSounds.playPushLoop(true);
+	elif direction == -1:
+		playerSounds.stopPushLoop(true);
+		playerSounds.stopCruiseLoop(true);
+		playerSounds.playStallLoop(true);
 	else:
-		playerSounds.stopPushLoop();
-		playerSounds.playCruiseLoop();
+		playerSounds.stopPushLoop(true);
+		playerSounds.stopStallLoop(true);
+		playerSounds.playCruiseLoop(true);
 
 ## Stops the cruise, and push audio loops.
 func stopRollLoops():
 	playerSounds.stopCruiseLoop();
 	playerSounds.stopPushLoop();
+	playerSounds.stopStallLoop();
 
 # FOR RAIL GRINDING
 
