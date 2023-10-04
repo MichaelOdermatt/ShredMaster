@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=58 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -30,6 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_6mj6b"]
 [ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_nsntm"]
 [ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoopLooped.wav" id="27_m5kln"]
+[ext_resource type="AudioStream" uid="uid://jjda5581rg8s" path="res://Sounds/RailGrindLoop.wav" id="28_6jfmt"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
@@ -415,8 +416,11 @@ stream = ExtResource("25_6mj6b")
 [node name="PushAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 stream = ExtResource("26_nsntm")
 
-[node name="StallAuidoPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+[node name="StallAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 stream = ExtResource("27_m5kln")
+
+[node name="RailGrindAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+stream = ExtResource("28_6jfmt")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")

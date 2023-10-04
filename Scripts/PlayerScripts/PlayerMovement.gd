@@ -67,6 +67,8 @@ func handlePlayerMovementSounds(isGrinding: bool):
 	
 	if isPlayerOnFloor && !isGrinding:
 		playRollLoops(direction);
+	elif isPlayerOnFloor:
+		playerSounds.playRailGrindLoop();
 	else:
 		stopRollLoops();
 	
@@ -90,6 +92,7 @@ func stopRollLoops():
 	playerSounds.stopCruiseLoop();
 	playerSounds.stopPushLoop();
 	playerSounds.stopStallLoop();
+	playerSounds.stopRailGrindLoop();
 
 # FOR RAIL GRINDING
 

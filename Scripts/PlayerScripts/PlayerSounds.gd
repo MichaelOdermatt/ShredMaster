@@ -14,9 +14,10 @@ var concreteJump3 = preload("res://Sounds/ConcreteJump/ConcreteJump3.wav");
 var popCanOpen1 = preload("res://Sounds/PopCanOpen/PopCanOpen1.wav");
 var popCanOpen2 = preload("res://Sounds/PopCanOpen/PopCanOpen2.wav");
 
+@onready var railGrindAudioPlayer = $RailGrindAudioPlayer;
 @onready var cruiseAudioPlayer = $CruiseAudioPlayer;
 @onready var pushAudioPlayer = $PushAudioPlayer;
-@onready var stallAudioPlayer = $StallAuidoPlayer;
+@onready var stallAudioPlayer = $StallAudioPlayer;
 @onready var popCanAudioPlayer = $PopCanAudioPlayer;
 @onready var jumpAudioPlayer = $JumpAudioPlayer;
 @onready var impactAudioPlayer = $ImpactAudioPlayer;
@@ -53,12 +54,19 @@ func playPopCanOpenSound():
 		
 	playRandomSoundFromArray(popCanOpenSounds, popCanAudioPlayer);	
 
+## Plays the rail grind sound loop.
+func playRailGrindLoop():
+	if (railGrindAudioPlayer.playing):
+		return;
+		
+	railGrindAudioPlayer.play();
+
 ## Plays the cruise sound loop.
 func playCruiseLoop(fade: bool = false):
 	if (cruiseAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeInCruiseTween):
+	if fade && !isCurrentlyTweening(fadeInCruiseTween):
 		fadeInCruiseTween = createFadeInTween(cruiseAudioPlayer);
 	elif !fade:
 		cruiseAudioPlayer.play();
@@ -68,7 +76,7 @@ func playPushLoop(fade: bool = false):
 	if (pushAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeInPushTween):
+	if fade && !isCurrentlyTweening(fadeInPushTween):
 		fadeInPushTween = createFadeInTween(pushAudioPlayer);
 	elif !fade:
 		pushAudioPlayer.play();
@@ -78,17 +86,22 @@ func playStallLoop(fade: bool = false):
 	if (stallAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeInStallTween):
+	if fade && !isCurrentlyTweening(fadeInStallTween):
 		fadeInStallTween = createFadeInTween(stallAudioPlayer);
 	elif !fade:
 		stallAudioPlayer.play();
 		
+## Plays the rail grind sound loop.
+func stopRailGrindLoop():
+	railGrindAudioPlayer.stop();
+
 ## Stops the cruise sound loop.
 func stopCruiseLoop(fade: bool = false):
 	if (!cruiseAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeOutCruiseTween):
+	if fade && !isCurrentlyTweening(fadeOutCruiseTween):
+		
 		fadeOutCruiseTween = createFadeOutTween(cruiseAudioPlayer);
 	elif !fade:
 		cruiseAudioPlayer.stop();
@@ -98,7 +111,7 @@ func stopPushLoop(fade: bool = false):
 	if (!pushAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeOutPushTween):
+	if fade && !isCurrentlyTweening(fadeOutPushTween):
 		fadeOutPushTween = createFadeOutTween(pushAudioPlayer);
 	elif !fade:
 		pushAudioPlayer.stop();
@@ -108,7 +121,7 @@ func stopStallLoop(fade: bool = false):
 	if (!stallAudioPlayer.playing):
 		return;
 	
-	if fade && isNotCurrentlyTweening(fadeOutStallTween):
+	if fade && !isCurrentlyTweening(fadeOutStallTween):
 		fadeOutStallTween = createFadeOutTween(stallAudioPlayer);
 	elif !fade:
 		stallAudioPlayer.stop();
@@ -148,5 +161,5 @@ func createFadeOutTween(audioPlayer: AudioStreamPlayer) -> Tween:
 	fadeTween.tween_callback(audioPlayer.stop);
 	return fadeTween;
 
-func isNotCurrentlyTweening(tween: Tween) -> bool:
-	return tween == null || !tween.is_running();
+func isCurrentlyTweening(tween: Tween) -> bool:
+	return tween != null && tween.is_running();
