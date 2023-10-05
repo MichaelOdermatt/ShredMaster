@@ -5,6 +5,7 @@ const AUDIO_FADE_OUT_DURATION: float = 0.25;
 const AUDIO_VOLUME_MIN: float = -30;
 const AUDIO_VOLUME_MAX: float = 0;
 
+var metalImpact = preload("res://Sounds/MetalImpact.wav");
 var concreteImpact1 = preload("res://Sounds/ConcreteImpact/ConcreteImpact1.wav");
 var concreteImpact2 = preload("res://Sounds/ConcreteImpact/ConcreteImpact2.wav");
 var concreteImpact3 = preload("res://Sounds/ConcreteImpact/ConcreteImpact3.wav");
@@ -33,6 +34,14 @@ var fadeOutPushTween: Tween;
 var fadeInStallTween: Tween;
 var fadeOutStallTween: Tween;
 
+## Plays the metal impact sound.
+func playMetalImpactSound():
+	if (impactAudioPlayer.playing):
+		return;
+	
+	impactAudioPlayer.stream = metalImpact;
+	impactAudioPlayer.play();
+
 ## Randomly selects and plays one of the concrete impact sounds.
 func playConcreteImpactSound():
 	if (impactAudioPlayer.playing):
@@ -54,11 +63,12 @@ func playPopCanOpenSound():
 		
 	playRandomSoundFromArray(popCanOpenSounds, popCanAudioPlayer);	
 
-## Plays the rail grind sound loop.
-func playRailGrindLoop():
+## Plays the one shot metal impact sound then starts playing the rail grind sound loop.
+func playRailGrindLoopWithImpact():
 	if (railGrindAudioPlayer.playing):
 		return;
-		
+	
+	playMetalImpactSound();
 	railGrindAudioPlayer.play();
 
 ## Plays the cruise sound loop.

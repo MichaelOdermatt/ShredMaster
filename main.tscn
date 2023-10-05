@@ -30,7 +30,7 @@
 [ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_6mj6b"]
 [ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_nsntm"]
 [ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoopLooped.wav" id="27_m5kln"]
-[ext_resource type="AudioStream" uid="uid://jjda5581rg8s" path="res://Sounds/RailGrindLoop.wav" id="28_6jfmt"]
+[ext_resource type="AudioStream" uid="uid://du1hhpuc67df0" path="res://Sounds/RailGrindLoop.wav" id="28_6jfmt"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
