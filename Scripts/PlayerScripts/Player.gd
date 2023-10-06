@@ -16,6 +16,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
 @onready var playerParticleEffects = $PlayerParticleEffects
 @onready var playerSounds = $PlayerSounds;
+@onready var UISounds = get_node("../UI/UISounds");
 ## I use this Area2D node for the area_entered event that runs on collisions with the floor
 @onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
 @onready var kaput = get_node("../UI/Kaput");
@@ -52,9 +53,14 @@ func _on_player_hit():
 
 	isPlayerInvincible = true;
 	ui.removePlayerHeart();
-	playerHealth.decreaseHealth();
 	playerSprite.playOnHitAnimation();
 	invincibilityTimer.start();
+	var newHealth = playerHealth.decreaseHealth();
+	if (newHealth != 0):
+		playerSounds.playHitSound();
+	else:
+		UISounds.playDeathSound();
+		destroyPlayer();
 
 func _on_player_pickup_coin():
 	addPointsToScore(PLAYER_PICKUP_COIN_SCORE);

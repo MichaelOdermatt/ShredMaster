@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=60 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -35,6 +35,8 @@
 [ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
+[ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_g25pn"]
+[ext_resource type="AudioStream" uid="uid://bmq7wgexnuymn" path="res://Sounds/DeathSound.wav" id="36_iw5rm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -422,6 +424,8 @@ stream = ExtResource("27_m5kln")
 [node name="RailGrindAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 stream = ExtResource("28_6jfmt")
 
+[node name="HitAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("9_yu4qi")
 
@@ -510,3 +514,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("28_jpsys")
 text = "Paused"
 horizontal_alignment = 1
+
+[node name="UISounds" type="Node2D" parent="UI"]
+script = ExtResource("36_g25pn")
+
+[node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
+stream = ExtResource("36_iw5rm")

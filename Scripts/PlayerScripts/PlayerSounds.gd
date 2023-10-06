@@ -5,6 +5,7 @@ const AUDIO_FADE_OUT_DURATION: float = 0.25;
 const AUDIO_VOLUME_MIN: float = -30;
 const AUDIO_VOLUME_MAX: float = 0;
 
+var deathSound = preload("res://Sounds/DeathSound.wav");
 var metalImpact = preload("res://Sounds/MetalImpact.wav");
 var concreteImpact1 = preload("res://Sounds/ConcreteImpact/ConcreteImpact1.wav");
 var concreteImpact2 = preload("res://Sounds/ConcreteImpact/ConcreteImpact2.wav");
@@ -12,6 +13,9 @@ var concreteImpact3 = preload("res://Sounds/ConcreteImpact/ConcreteImpact3.wav")
 var concreteJump1 = preload("res://Sounds/ConcreteJump/ConcreteJump1.wav");
 var concreteJump2 = preload("res://Sounds/ConcreteJump/ConcreteJump2.wav");
 var concreteJump3 = preload("res://Sounds/ConcreteJump/ConcreteJump3.wav");
+var hit1 = preload("res://Sounds/HitSounds/HitSound1.wav");
+var hit2 = preload("res://Sounds/HitSounds/HitSound2.wav");
+var hit3 = preload("res://Sounds/HitSounds/HitSound3.wav");
 var popCanOpen1 = preload("res://Sounds/PopCanOpen/PopCanOpen1.wav");
 var popCanOpen2 = preload("res://Sounds/PopCanOpen/PopCanOpen2.wav");
 
@@ -22,10 +26,12 @@ var popCanOpen2 = preload("res://Sounds/PopCanOpen/PopCanOpen2.wav");
 @onready var popCanAudioPlayer = $PopCanAudioPlayer;
 @onready var jumpAudioPlayer = $JumpAudioPlayer;
 @onready var impactAudioPlayer = $ImpactAudioPlayer;
+@onready var hitAudioPlayer = $HitAudioPlayer;
 
 var concreteImpactSounds = [concreteImpact1, concreteImpact2, concreteImpact3];
 var concreteJumpSounds = [concreteJump1, concreteJump2, concreteJump3];
 var popCanOpenSounds = [popCanOpen1, popCanOpen2];
+var hitSounds = [hit1, hit2, hit3];
 
 var fadeInCruiseTween: Tween;
 var fadeOutCruiseTween: Tween;
@@ -34,6 +40,14 @@ var fadeOutPushTween: Tween;
 var fadeInStallTween: Tween;
 var fadeOutStallTween: Tween;
 
+## Plays the death sound.
+func playDeathSound():
+	if (hitAudioPlayer.playing):
+		return;
+		
+	hitAudioPlayer.stream = deathSound;
+	hitAudioPlayer.play();
+
 ## Plays the metal impact sound.
 func playMetalImpactSound():
 	if (impactAudioPlayer.playing):
@@ -41,6 +55,13 @@ func playMetalImpactSound():
 	
 	impactAudioPlayer.stream = metalImpact;
 	impactAudioPlayer.play();
+
+## Randomly selects and plays one of the hit sounds.
+func playHitSound():
+	if (hitAudioPlayer.playing):
+		return;
+		
+	playRandomSoundFromArray(hitSounds, hitAudioPlayer);	
 
 ## Randomly selects and plays one of the concrete impact sounds.
 func playConcreteImpactSound():
