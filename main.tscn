@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=61 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
 [ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_g25pn"]
 [ext_resource type="AudioStream" uid="uid://bmq7wgexnuymn" path="res://Sounds/DeathSound.wav" id="36_iw5rm"]
+[ext_resource type="AudioStream" uid="uid://b0xl74uhsc2op" path="res://Sounds/KaputSound.wav" id="38_gunge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -520,3 +521,6 @@ script = ExtResource("36_g25pn")
 
 [node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
 stream = ExtResource("36_iw5rm")
+
+[node name="KaputAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
+stream = ExtResource("38_gunge")

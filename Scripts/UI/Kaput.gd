@@ -5,6 +5,7 @@ const FINAL_SPRITE_OFFSET = -448;
 
 @onready var sprite = $Sprite2D;
 @onready var nextSpriteTimer = $NextSpriteTimer;
+@onready var uiSounds = get_node("../UISounds");
 
 func _ready():
 	nextSpriteTimer.timeout.connect(nextSprite);
@@ -20,6 +21,7 @@ func nextSprite():
 	if (sprite.offset.x <= FINAL_SPRITE_OFFSET):
 		nextSpriteTimer.stop();
 
+	uiSounds.playKaputSound();
 	if (!sprite.visible):
 		sprite.visible = true;
 	else:
