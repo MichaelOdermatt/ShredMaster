@@ -36,8 +36,8 @@
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
 [ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_g25pn"]
-[ext_resource type="AudioStream" uid="uid://bmq7wgexnuymn" path="res://Sounds/DeathSound.wav" id="36_iw5rm"]
-[ext_resource type="AudioStream" uid="uid://b0xl74uhsc2op" path="res://Sounds/KaputSound.wav" id="38_gunge"]
+[ext_resource type="AudioStream" uid="uid://74g2r2y03nvy" path="res://Sounds/HitSounds/HitSound3.wav" id="37_m5k4a"]
+[ext_resource type="AudioStream" uid="uid://5llml8bio0cv" path="res://Sounds/KaputSound.wav" id="38_gunge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -520,7 +520,7 @@ horizontal_alignment = 1
 script = ExtResource("36_g25pn")
 
 [node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
-stream = ExtResource("36_iw5rm")
+stream = ExtResource("37_m5k4a")
 
 [node name="KaputAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
 stream = ExtResource("38_gunge")
