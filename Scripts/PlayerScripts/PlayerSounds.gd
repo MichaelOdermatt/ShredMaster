@@ -5,7 +5,6 @@ const AUDIO_FADE_OUT_DURATION: float = 0.25;
 const AUDIO_VOLUME_MIN: float = -30;
 const AUDIO_VOLUME_MAX: float = 0;
 
-var deathSound = preload("res://Sounds/DeathSound.wav");
 var metalImpact = preload("res://Sounds/MetalImpact.wav");
 var concreteImpact1 = preload("res://Sounds/ConcreteImpact/ConcreteImpact1.wav");
 var concreteImpact2 = preload("res://Sounds/ConcreteImpact/ConcreteImpact2.wav");
@@ -39,14 +38,6 @@ var fadeInPushTween: Tween;
 var fadeOutPushTween: Tween;
 var fadeInStallTween: Tween;
 var fadeOutStallTween: Tween;
-
-## Plays the death sound.
-func playDeathSound():
-	if (hitAudioPlayer.playing):
-		return;
-		
-	hitAudioPlayer.stream = deathSound;
-	hitAudioPlayer.play();
 
 ## Plays the metal impact sound.
 func playMetalImpactSound():
