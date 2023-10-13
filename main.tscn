@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
 [ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
@@ -36,6 +36,7 @@
 [ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
 [ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_g25pn"]
+[ext_resource type="AudioStream" uid="uid://c2m38p3xll2vn" path="res://Sounds/garbidch.wav" id="38_7xamw"]
 [ext_resource type="AudioStream" uid="uid://b32iggcfdlsc3" path="res://Sounds/KaputSound.wav" id="38_gunge"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
@@ -527,3 +528,7 @@ stream = SubResource("AudioStreamWAV_mgk3l")
 
 [node name="KaputAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
 stream = ExtResource("38_gunge")
+
+[node name="Music" type="AudioStreamPlayer" parent="UI/UISounds"]
+stream = ExtResource("38_7xamw")
+autoplay = true
