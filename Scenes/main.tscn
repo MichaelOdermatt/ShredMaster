@@ -1,43 +1,43 @@
 [gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
 
-[ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="1_csyby"]
-[ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="1_ha327"]
-[ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="3_d4847"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="5_21ok0"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="6_oi6dd"]
-[ext_resource type="Texture2D" uid="uid://8kyuvm87n6gd" path="res://Sprites/SkyAndMountains.png" id="6_q8iad"]
-[ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="7_8h7ap"]
-[ext_resource type="Texture2D" uid="uid://dk8ynya7c8fse" path="res://Sprites/Trees.png" id="8_0pvnu"]
-[ext_resource type="Texture2D" uid="uid://dp4uitryitw5f" path="res://Sprites/Sidewalk.png" id="8_blds7"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="8_vqve4"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="9_nxc7c"]
-[ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="9_rdbwf"]
-[ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="9_tuhrv"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSprite.gd" id="9_xiubo"]
-[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="9_yu4qi"]
-[ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="11_bh6rr"]
-[ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="12_iii0j"]
-[ext_resource type="Texture2D" uid="uid://de34elsax0xx4" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="15_aleeg"]
-[ext_resource type="Texture2D" uid="uid://8qm8vgmj435j" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_oxtje"]
-[ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="15_sqvoo"]
-[ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="15_use8u"]
-[ext_resource type="Texture2D" uid="uid://cmr8bewb742mh" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_kjsdu"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerRaycasts.gd" id="17_mpa5x"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_2ww78"]
-[ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_haccd"]
-[ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_pgiq3"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSounds.gd" id="24_5xis1"]
-[ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_6mj6b"]
-[ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_nsntm"]
-[ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoopLooped.wav" id="27_m5kln"]
-[ext_resource type="AudioStream" uid="uid://du1hhpuc67df0" path="res://Sounds/RailGrindLoop.wav" id="28_6jfmt"]
-[ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="28_jpsys"]
-[ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="28_yupq5"]
-[ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="29_t7jch"]
-[ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="30_ot8kt"]
-[ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_g25pn"]
-[ext_resource type="AudioStream" uid="uid://c2m38p3xll2vn" path="res://Sounds/garbidch.wav" id="38_7xamw"]
-[ext_resource type="AudioStream" uid="uid://b32iggcfdlsc3" path="res://Sounds/KaputSound.wav" id="38_gunge"]
+[ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
+[ext_resource type="Texture2D" uid="uid://8kyuvm87n6gd" path="res://Sprites/SkyAndMountains.png" id="2_ag7el"]
+[ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="3_y02y5"]
+[ext_resource type="Texture2D" uid="uid://dk8ynya7c8fse" path="res://Sprites/Trees.png" id="4_i5woh"]
+[ext_resource type="Texture2D" uid="uid://dp4uitryitw5f" path="res://Sprites/Sidewalk.png" id="5_ycr21"]
+[ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="6_ju20w"]
+[ext_resource type="PackedScene" uid="uid://cjlvkwlv122xg" path="res://Scenes/RailScenes/RailManager.tscn" id="7_2jee1"]
+[ext_resource type="PackedScene" uid="uid://b6noujhrx0k3f" path="res://Scenes/EnemyScenes/EnemyManager.tscn" id="8_3gipi"]
+[ext_resource type="PackedScene" uid="uid://b77utn85gvy7y" path="res://Scenes/CoinScenes/CoinManager.tscn" id="9_6ipmh"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/Player.gd" id="10_i5smg"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerMovement.gd" id="11_6aqh5"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSprite.gd" id="12_avav4"]
+[ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="13_hggcb"]
+[ext_resource type="Texture2D" uid="uid://de34elsax0xx4" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="14_2gcrc"]
+[ext_resource type="Texture2D" uid="uid://8qm8vgmj435j" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_yik5h"]
+[ext_resource type="Texture2D" uid="uid://cmr8bewb742mh" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_gjlwc"]
+[ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="17_vwtg7"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerRaycasts.gd" id="18_3otdh"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="19_v7sbt"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="20_x0dm2"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_hvbv7"]
+[ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_6ilp1"]
+[ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_ci1jf"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSounds.gd" id="24_rpumt"]
+[ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_utj1q"]
+[ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_hjmsc"]
+[ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoopLooped.wav" id="27_dpj4t"]
+[ext_resource type="AudioStream" uid="uid://du1hhpuc67df0" path="res://Sounds/RailGrindLoop.wav" id="28_4l41m"]
+[ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="29_go1kk"]
+[ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="30_5pdmh"]
+[ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="31_nhfkj"]
+[ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="32_kgyn0"]
+[ext_resource type="Script" path="res://Scripts/UI/Kaput.gd" id="33_gtxil"]
+[ext_resource type="Texture2D" uid="uid://c2qal3o0k1e6b" path="res://Sprites/KaputRed.png" id="34_ekrtf"]
+[ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="35_06q2r"]
+[ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_m4wxq"]
+[ext_resource type="AudioStream" uid="uid://b32iggcfdlsc3" path="res://Sounds/KaputSound.wav" id="37_3wjd3"]
+[ext_resource type="AudioStream" uid="uid://c2m38p3xll2vn" path="res://Sounds/garbidch.wav" id="38_kp1ea"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -107,49 +107,49 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6rk0j"]
-shader = ExtResource("9_rdbwf")
+shader = ExtResource("13_hggcb")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_modifier = 0.0
 shader_parameter/alpha_modifier = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2b15"]
-atlas = ExtResource("15_aleeg")
+atlas = ExtResource("14_2gcrc")
 region = Rect2(0, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5pul3"]
-atlas = ExtResource("15_aleeg")
+atlas = ExtResource("14_2gcrc")
 region = Rect2(10, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20vr8"]
-atlas = ExtResource("15_oxtje")
+atlas = ExtResource("15_yik5h")
 region = Rect2(0, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bxc4"]
-atlas = ExtResource("15_oxtje")
+atlas = ExtResource("15_yik5h")
 region = Rect2(10, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l678u"]
-atlas = ExtResource("16_kjsdu")
+atlas = ExtResource("16_gjlwc")
 region = Rect2(0, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6plaa"]
-atlas = ExtResource("16_kjsdu")
+atlas = ExtResource("16_gjlwc")
 region = Rect2(10, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n47ng"]
-atlas = ExtResource("15_sqvoo")
+atlas = ExtResource("17_vwtg7")
 region = Rect2(10, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q8dy2"]
-atlas = ExtResource("15_sqvoo")
+atlas = ExtResource("17_vwtg7")
 region = Rect2(20, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehgcc"]
-atlas = ExtResource("15_sqvoo")
+atlas = ExtResource("17_vwtg7")
 region = Rect2(30, 0, 10, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2na5w"]
-atlas = ExtResource("15_sqvoo")
+atlas = ExtResource("17_vwtg7")
 region = Rect2(0, 0, 10, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo0fu"]
@@ -279,7 +279,7 @@ position = Vector2(0, 61)
 shape = SubResource("WorldBoundaryShape2D_ao2bu")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-script = ExtResource("3_d4847")
+script = ExtResource("1_txpna")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.25, 0.25)
@@ -287,7 +287,7 @@ motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(64, 64)
-texture = ExtResource("6_q8iad")
+texture = ExtResource("2_ag7el")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 visible = false
@@ -295,7 +295,7 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("7_8h7ap")
+texture = ExtResource("3_y02y5")
 offset = Vector2(64, 64)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -303,7 +303,7 @@ motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource("8_0pvnu")
+texture = ExtResource("4_i5woh")
 offset = Vector2(64, 64)
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="ParallaxBackground"]
@@ -314,30 +314,30 @@ motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxForeground/ParallaxLayer"]
 position = Vector2(64, 64)
-texture = ExtResource("8_blds7")
+texture = ExtResource("5_ycr21")
 
 [node name="ProgressManager" type="Node2D" parent="."]
-script = ExtResource("1_csyby")
+script = ExtResource("6_ju20w")
 
 [node name="Timer" type="Timer" parent="ProgressManager"]
 wait_time = 10.0
 autostart = true
 
-[node name="RailManager" parent="." instance=ExtResource("12_iii0j")]
+[node name="RailManager" parent="." instance=ExtResource("7_2jee1")]
 railSpawnIntervalMax = 5
 railSpawnIntervalMin = 10
 
-[node name="EnemyManager" parent="." instance=ExtResource("1_ha327")]
+[node name="EnemyManager" parent="." instance=ExtResource("8_3gipi")]
 
-[node name="CoinManager" parent="." instance=ExtResource("15_use8u")]
+[node name="CoinManager" parent="." instance=ExtResource("9_6ipmh")]
 
 [node name="Player" type="Node2D" parent="."]
-script = ExtResource("5_21ok0")
+script = ExtResource("10_i5smg")
 
 [node name="CharacterBody" type="CharacterBody2D" parent="Player"]
 position = Vector2(64, 64)
 collision_mask = 10
-script = ExtResource("6_oi6dd")
+script = ExtResource("11_6aqh5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
 position = Vector2(0, 1)
@@ -345,7 +345,7 @@ scale = Vector2(0.75, -0.9)
 shape = SubResource("RectangleShape2D_tyjdm")
 
 [node name="PlayerSprite" type="Node2D" parent="Player/CharacterBody"]
-script = ExtResource("9_xiubo")
+script = ExtResource("12_avav4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/CharacterBody/PlayerSprite"]
 libraries = {
@@ -357,7 +357,7 @@ material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
 
 [node name="PlayerRaycasts" type="Node2D" parent="Player/CharacterBody"]
-script = ExtResource("17_mpa5x")
+script = ExtResource("18_3otdh")
 
 [node name="RailRayCast" type="RayCast2D" parent="Player/CharacterBody/PlayerRaycasts"]
 position = Vector2(-4, 2)
@@ -379,21 +379,21 @@ position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_faqee")
 
 [node name="PlayerHealth" type="Node2D" parent="Player"]
-script = ExtResource("8_vqve4")
+script = ExtResource("19_v7sbt")
 playerHealth = 3
 
 [node name="PlayerScore" type="Node2D" parent="Player"]
-script = ExtResource("9_nxc7c")
+script = ExtResource("20_x0dm2")
 
 [node name="PlayerParticleEffects" type="Node2D" parent="Player"]
-script = ExtResource("21_2ww78")
+script = ExtResource("21_hvbv7")
 
 [node name="ImpactParticles" type="GPUParticles2D" parent="Player/PlayerParticleEffects"]
 material = SubResource("CanvasItemMaterial_q3ktg")
 emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_80tno")
-texture = ExtResource("22_haccd")
+texture = ExtResource("22_6ilp1")
 lifetime = 0.3
 one_shot = true
 
@@ -401,7 +401,7 @@ one_shot = true
 material = SubResource("CanvasItemMaterial_1ei7b")
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_5u4n3")
-texture = ExtResource("23_pgiq3")
+texture = ExtResource("23_ci1jf")
 lifetime = 0.5
 
 [node name="InvincibilityTimer" type="Timer" parent="Player"]
@@ -409,30 +409,30 @@ wait_time = 2.0
 one_shot = true
 
 [node name="PlayerSounds" type="Node2D" parent="Player"]
-script = ExtResource("24_5xis1")
+script = ExtResource("24_rpumt")
 
 [node name="JumpAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="ImpactAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="CruiseAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("25_6mj6b")
+stream = ExtResource("25_utj1q")
 
 [node name="PopCanAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="PushAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("26_nsntm")
+stream = ExtResource("26_hjmsc")
 
 [node name="StallAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("27_m5kln")
+stream = ExtResource("27_dpj4t")
 
 [node name="RailGrindAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("28_6jfmt")
+stream = ExtResource("28_4l41m")
 
 [node name="HitAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="UI" type="CanvasLayer" parent="."]
-script = ExtResource("9_yu4qi")
+script = ExtResource("29_go1kk")
 
 [node name="ScoreContainer" type="MarginContainer" parent="UI"]
 anchors_preset = 5
@@ -452,12 +452,12 @@ size_flags_vertical = 0
 [node name="ScoreLabel" type="Label" parent="UI/ScoreContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_fonts/font = ExtResource("28_jpsys")
+theme_override_fonts/font = ExtResource("30_5pdmh")
 text = "Score"
 
 [node name="ScoreCounter" type="Label" parent="UI/ScoreContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("28_jpsys")
+theme_override_fonts/font = ExtResource("30_5pdmh")
 text = "0"
 
 [node name="HealthContainer" type="HBoxContainer" parent="UI"]
@@ -477,18 +477,18 @@ custom_minimum_size = Vector2(27, 10)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("9_tuhrv")
+texture = ExtResource("31_nhfkj")
 expand_mode = 1
 stretch_mode = 1
-script = ExtResource("11_bh6rr")
+script = ExtResource("32_kgyn0")
 
 [node name="Kaput" type="Node2D" parent="UI"]
-script = ExtResource("28_yupq5")
+script = ExtResource("33_gtxil")
 
 [node name="Sprite2D" type="Sprite2D" parent="UI/Kaput"]
 visible = false
 position = Vector2(64, 64)
-texture = ExtResource("29_t7jch")
+texture = ExtResource("34_ekrtf")
 centered = false
 offset = Vector2(-64, -32)
 
@@ -497,7 +497,7 @@ wait_time = 1.5
 
 [node name="UIInputs" type="Node2D" parent="UI"]
 process_mode = 3
-script = ExtResource("30_ot8kt")
+script = ExtResource("35_06q2r")
 
 [node name="PauseMenuContainer" type="MarginContainer" parent="UI"]
 process_mode = 2
@@ -516,19 +516,19 @@ grow_vertical = 2
 
 [node name="Title" type="Label" parent="UI/PauseMenuContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("28_jpsys")
+theme_override_fonts/font = ExtResource("30_5pdmh")
 text = "Paused"
 horizontal_alignment = 1
 
 [node name="UISounds" type="Node2D" parent="UI"]
-script = ExtResource("36_g25pn")
+script = ExtResource("36_m4wxq")
 
 [node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
 stream = SubResource("AudioStreamWAV_mgk3l")
 
 [node name="KaputAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
-stream = ExtResource("38_gunge")
+stream = ExtResource("37_3wjd3")
 
 [node name="Music" type="AudioStreamPlayer" parent="UI/UISounds"]
-stream = ExtResource("38_7xamw")
+stream = ExtResource("38_kp1ea")
 autoplay = true

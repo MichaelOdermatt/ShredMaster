@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2nkxr41siau7"]
+
+[ext_resource type="Script" path="res://Scripts/TitleScreen/TitleText.gd" id="1_8afj1"]
+[ext_resource type="Texture2D" uid="uid://bd44pqa1e86ny" path="res://Sprites/TitleScreen/MasterText.png" id="1_mpno2"]
+[ext_resource type="Texture2D" uid="uid://dysia7rpalcwf" path="res://Sprites/TitleScreen/ShredText.png" id="2_6rcdh"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+color = Color(0.0862745, 0.0784314, 0.133333, 1)
+
+[node name="TitleText" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8afj1")
+
+[node name="Master" type="TextureRect" parent="TitleText"]
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_mpno2")
+
+[node name="Shred" type="TextureRect" parent="TitleText"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 128.0
+offset_bottom = 129.0
+texture = ExtResource("2_6rcdh")
