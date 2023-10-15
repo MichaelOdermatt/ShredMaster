@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c73eyjcoi3pjy"
-path="res://.godot/imported/MasterText.png-b8f1d5cdb16f4fd35e2eddaaf48a43af.ctex"
+uid="uid://crug7bwnd8xv1"
+path="res://.godot/imported/MasterTextShadow.png-430525fd40610220bd42d1ac1b4e1494.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/TitleScreen/MasterText.png"
-dest_files=["res://.godot/imported/MasterText.png-b8f1d5cdb16f4fd35e2eddaaf48a43af.ctex"]
+source_file="res://Sprites/TitleScreen/MasterTextShadow.png"
+dest_files=["res://.godot/imported/MasterTextShadow.png-430525fd40610220bd42d1ac1b4e1494.ctex"]
 
 [params]
 
