@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2nkxr41siau7"]
+[gd_scene load_steps=10 format=3 uid="uid://b2nkxr41siau7"]
 
 [ext_resource type="Texture2D" uid="uid://crug7bwnd8xv1" path="res://Sprites/TitleScreen/MasterTextShadow.png" id="1_4bxgr"]
 [ext_resource type="Texture2D" uid="uid://c73eyjcoi3pjy" path="res://Sprites/TitleScreen/MasterText.png" id="1_mpno2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Shader" path="res://Shaders/MasterText.gdshader" id="2_hyu4i"]
 [ext_resource type="Shader" path="res://Shaders/VerticalBob.gdshader" id="4_5s6kn"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="6_ig1ul"]
+[ext_resource type="Script" path="res://Scripts/TitleScreen/StartButton.gd" id="7_cmodq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sremj"]
 shader = ExtResource("2_hyu4i")
@@ -61,27 +62,17 @@ offset_right = 128.0
 offset_bottom = 129.0
 texture = ExtResource("2_6rcdh")
 
-[node name="MenuButtons" type="VFlowContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = 1.0
-offset_right = 10.0
-offset_bottom = 17.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/v_separation = 0
-alignment = 1
-
-[node name="Start" type="Label" parent="MenuButtons"]
+[node name="Start" type="Label" parent="."]
 layout_mode = 2
+offset_left = 8.0
+offset_top = 105.0
+offset_right = 28.0
+offset_bottom = 121.0
+mouse_filter = 0
 theme_override_fonts/font = ExtResource("6_ig1ul")
 text = "START
 "
+script = ExtResource("7_cmodq")
 
 [node name="Info Section" type="MarginContainer" parent="."]
 visible = false
