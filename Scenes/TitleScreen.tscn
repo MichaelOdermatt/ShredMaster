@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2nkxr41siau7"]
+[gd_scene load_steps=11 format=3 uid="uid://b2nkxr41siau7"]
 
-[ext_resource type="Texture2D" uid="uid://crug7bwnd8xv1" path="res://Sprites/TitleScreen/MasterTextShadow.png" id="1_4bxgr"]
-[ext_resource type="Texture2D" uid="uid://c73eyjcoi3pjy" path="res://Sprites/TitleScreen/MasterText.png" id="1_mpno2"]
-[ext_resource type="Texture2D" uid="uid://dysia7rpalcwf" path="res://Sprites/TitleScreen/ShredText.png" id="2_6rcdh"]
+[ext_resource type="Texture2D" uid="uid://boihdihj41fvm" path="res://Sprites/TitleScreen/TitleScreenBackground.png" id="1_2bnty"]
+[ext_resource type="Texture2D" uid="uid://bdpffa7pvo8ne" path="res://Sprites/TitleScreen/MasterTextShadow.png" id="1_4bxgr"]
+[ext_resource type="Texture2D" uid="uid://da6uko4tytyau" path="res://Sprites/TitleScreen/MasterText.png" id="1_mpno2"]
+[ext_resource type="Texture2D" uid="uid://cl1p4yt5q2m2m" path="res://Sprites/TitleScreen/ShredText.png" id="2_6rcdh"]
 [ext_resource type="Shader" path="res://Shaders/MasterText.gdshader" id="2_hyu4i"]
 [ext_resource type="Shader" path="res://Shaders/VerticalBob.gdshader" id="4_5s6kn"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="6_ig1ul"]
@@ -10,9 +11,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sremj"]
 shader = ExtResource("2_hyu4i")
-shader_parameter/gradient_color = Color(1, 1, 1, 1)
-shader_parameter/speed = 0.3
-shader_parameter/angle = 45.0
+shader_parameter/gradient_color = Color(0.85098, 0.67451, 0.545098, 1)
+shader_parameter/speed = 0.2
+shader_parameter/angle = 90.0
 shader_parameter/scale = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4u4lg"]
@@ -32,7 +33,13 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 128.0
 offset_bottom = 128.0
-color = Color(0.0862745, 0.0784314, 0.133333, 1)
+color = Color(0.168627, 0.156863, 0.129412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2bnty")
 
 [node name="TitleText" type="Control" parent="."]
 anchors_preset = 0
@@ -63,12 +70,20 @@ offset_bottom = 129.0
 texture = ExtResource("2_6rcdh")
 
 [node name="Start" type="Label" parent="."]
-layout_mode = 2
-offset_left = 8.0
-offset_top = 105.0
-offset_right = 28.0
-offset_bottom = 121.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = 21.0
+offset_right = 10.0
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 0
+theme_override_colors/font_color = Color(0.890196, 0.811765, 0.705882, 1)
 theme_override_fonts/font = ExtResource("6_ig1ul")
 text = "START
 "

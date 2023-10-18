@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
 [ext_resource type="Texture2D" uid="uid://8kyuvm87n6gd" path="res://Sprites/SkyAndMountains.png" id="2_ag7el"]
-[ext_resource type="Texture2D" uid="uid://hp60hg6a04m5" path="res://Sprites/Buildings.png" id="3_y02y5"]
+[ext_resource type="Texture2D" uid="uid://bwu0x26xi1ocp" path="res://Sprites/NearBuildings.png" id="3_6xpao"]
 [ext_resource type="Texture2D" uid="uid://dk8ynya7c8fse" path="res://Sprites/Trees.png" id="4_i5woh"]
 [ext_resource type="Texture2D" uid="uid://dp4uitryitw5f" path="res://Sprites/Sidewalk.png" id="5_ycr21"]
 [ext_resource type="Script" path="res://Scripts/ProgressManager.gd" id="6_ju20w"]
@@ -290,12 +290,11 @@ position = Vector2(64, 64)
 texture = ExtResource("2_ag7el")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource("3_y02y5")
+texture = ExtResource("3_6xpao")
 offset = Vector2(64, 64)
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]

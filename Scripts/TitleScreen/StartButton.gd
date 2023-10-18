@@ -1,7 +1,8 @@
 extends Label
 
 @onready var bounds = Rect2(position, size);
-@onready var onHoverColor: Color = Color("6df7c1");
+@onready var onHoverColor: Color = Color("d4804d");
+@onready var normalColor: Color = Color("e3cfb4");
 
 func _ready():
 	mouse_entered.connect(_on_mouse_entered);
@@ -20,5 +21,5 @@ func _on_mouse_entered():
 	add_theme_color_override("font_shadow_color", Color.BLACK);
 
 func _on_mouse_exited():
-	remove_theme_color_override("font_color");
+	add_theme_color_override("font_color", normalColor);
 	remove_theme_color_override("font_shadow_color");
