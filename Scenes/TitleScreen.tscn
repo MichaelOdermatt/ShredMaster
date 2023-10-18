@@ -1,18 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2nkxr41siau7"]
+[gd_scene load_steps=17 format=3 uid="uid://b2nkxr41siau7"]
 
 [ext_resource type="Texture2D" uid="uid://boihdihj41fvm" path="res://Sprites/TitleScreen/TitleScreenBackground.png" id="1_2bnty"]
 [ext_resource type="Texture2D" uid="uid://bdpffa7pvo8ne" path="res://Sprites/TitleScreen/MasterTextShadow.png" id="1_4bxgr"]
+[ext_resource type="Texture2D" uid="uid://tprn3lvvnvo1" path="res://Sprites/ParticleEffectSprites/FlyingSkateboard.png" id="1_eshsa"]
 [ext_resource type="Texture2D" uid="uid://da6uko4tytyau" path="res://Sprites/TitleScreen/MasterText.png" id="1_mpno2"]
 [ext_resource type="Texture2D" uid="uid://cl1p4yt5q2m2m" path="res://Sprites/TitleScreen/ShredText.png" id="2_6rcdh"]
 [ext_resource type="Shader" path="res://Shaders/MasterText.gdshader" id="2_hyu4i"]
 [ext_resource type="Shader" path="res://Shaders/VerticalBob.gdshader" id="4_5s6kn"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="6_ig1ul"]
 [ext_resource type="Script" path="res://Scripts/TitleScreen/StartButton.gd" id="7_cmodq"]
+[ext_resource type="Texture2D" uid="uid://dy2u6cd1hp5tw" path="res://Sprites/ParticleEffectSprites/FlyingPlayer.png" id="7_pxb20"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sremj"]
 shader = ExtResource("2_hyu4i")
 shader_parameter/gradient_color = Color(0.85098, 0.67451, 0.545098, 1)
-shader_parameter/speed = 0.2
+shader_parameter/speed = 0.3
 shader_parameter/angle = 90.0
 shader_parameter/scale = 2.0
 
@@ -20,6 +22,46 @@ shader_parameter/scale = 2.0
 shader = ExtResource("4_5s6kn")
 shader_parameter/magnitude = 1.0
 shader_parameter/frequency = 3.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wtenu"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s1y57"]
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(32, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 20, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 3.0
+anim_speed_max = 3.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_snxfa"]
+particles_animation = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w7ypu"]
+lifetime_randomness = 0.2
+emission_shape = 3
+emission_box_extents = Vector3(32, 0, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, 20, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+anim_speed_min = 2.0
+anim_speed_max = 2.0
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -69,6 +111,24 @@ offset_right = 128.0
 offset_bottom = 129.0
 texture = ExtResource("2_6rcdh")
 
+[node name="FlyingPlayerParticle" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_wtenu")
+position = Vector2(64, -15)
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_s1y57")
+texture = ExtResource("7_pxb20")
+lifetime = 5.0
+randomness = 1.0
+
+[node name="FlyingSkateboardParticle" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_snxfa")
+position = Vector2(64, -15)
+amount = 5
+process_material = SubResource("ParticleProcessMaterial_w7ypu")
+texture = ExtResource("1_eshsa")
+lifetime = 5.0
+randomness = 1.0
+
 [node name="Start" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -101,6 +161,6 @@ grow_vertical = 0
 
 [node name="Label" type="Label" parent="Info Section"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.890196, 0.811765, 0.705882, 1)
 theme_override_fonts/font = ExtResource("6_ig1ul")
-text = "Test"
 horizontal_alignment = 1
