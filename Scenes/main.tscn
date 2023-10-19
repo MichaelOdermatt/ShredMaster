@@ -1,6 +1,7 @@
-[gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=63 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
+[ext_resource type="Material" uid="uid://b6rrrv1pk6sa" path="res://Materials/SmoothFilter.tres" id="2_8a6ct"]
 [ext_resource type="Texture2D" uid="uid://8kyuvm87n6gd" path="res://Sprites/SkyAndMountains.png" id="2_ag7el"]
 [ext_resource type="Texture2D" uid="uid://bwu0x26xi1ocp" path="res://Sprites/NearBuildings.png" id="3_6xpao"]
 [ext_resource type="Texture2D" uid="uid://dk8ynya7c8fse" path="res://Sprites/Trees.png" id="4_i5woh"]
@@ -286,6 +287,8 @@ motion_scale = Vector2(0.25, 0.25)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+texture_filter = 2
+material = ExtResource("2_8a6ct")
 position = Vector2(64, 64)
 texture = ExtResource("2_ag7el")
 
@@ -294,6 +297,8 @@ motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_filter = 2
+material = ExtResource("2_8a6ct")
 texture = ExtResource("3_6xpao")
 offset = Vector2(64, 64)
 
@@ -302,6 +307,8 @@ motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 2
+material = ExtResource("2_8a6ct")
 texture = ExtResource("4_i5woh")
 offset = Vector2(64, 64)
 
@@ -312,6 +319,8 @@ layer = 1
 motion_mirroring = Vector2(384, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxForeground/ParallaxLayer"]
+texture_filter = 2
+material = ExtResource("2_8a6ct")
 position = Vector2(64, 64)
 texture = ExtResource("5_ycr21")
 
