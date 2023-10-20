@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
 [ext_resource type="Material" uid="uid://b6rrrv1pk6sa" path="res://Materials/SmoothFilter.tres" id="2_8a6ct"]
@@ -38,7 +38,6 @@
 [ext_resource type="Script" path="res://Scripts/UI/UIInputs.gd" id="35_06q2r"]
 [ext_resource type="Script" path="res://Scripts/UI/UISounds.gd" id="36_m4wxq"]
 [ext_resource type="AudioStream" uid="uid://b32iggcfdlsc3" path="res://Sounds/KaputSound.wav" id="37_3wjd3"]
-[ext_resource type="AudioStream" uid="uid://c2m38p3xll2vn" path="res://Sounds/garbidch.wav" id="38_kp1ea"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
@@ -328,7 +327,7 @@ texture = ExtResource("5_ycr21")
 script = ExtResource("6_ju20w")
 
 [node name="Timer" type="Timer" parent="ProgressManager"]
-wait_time = 10.0
+wait_time = 7.0
 autostart = true
 
 [node name="RailManager" parent="." instance=ExtResource("7_2jee1")]
@@ -536,7 +535,3 @@ stream = SubResource("AudioStreamWAV_mgk3l")
 
 [node name="KaputAudioPlayer" type="AudioStreamPlayer" parent="UI/UISounds"]
 stream = ExtResource("37_3wjd3")
-
-[node name="Music" type="AudioStreamPlayer" parent="UI/UISounds"]
-stream = ExtResource("38_kp1ea")
-autoplay = true
