@@ -67,3 +67,15 @@ func increaseSpawnIntervals():
 		globals.MIN_FLYING_ENEMY_SPAWN_INTERVAL.y,
 		globals.MAX_FLYING_ENEMY_SPAWN_INTERVAL.y,
 	);
+
+## Resets all progress values.
+func resetAllValues():
+	## Speed values
+	globals.currentBaseSpeed = globals.MIN_BASE_SPEED;
+	globals.basicEnemySpeed = globals.MIN_BASIC_ENEMY_SPEED;
+	globals.flyingEnemySpeed = globals.MIN_FLYING_ENEMY_SPEED;
+
+	## Spawn Intervals 
+	globals.basicEnemySpawnInterval = globals.MAX_BASIC_ENEMY_SPAWN_INTERVAL;
+	globals.stationaryEnemySpawnInterval = globals.MAX_STATIONARY_ENEMY_SPAWN_INTERVAL;
+	globals.flyingEnemySpawnInterval = globals.MAX_FLYING_ENEMY_SPAWN_INTERVAL;
