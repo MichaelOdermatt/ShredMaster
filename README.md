@@ -1,3 +1,5 @@
 # ShredMaster
 
-![grind](https://github.com/MichaelOdermatt/ShredMaster/assets/43145047/444b65af-e327-4c66-936a-6347eadd4863)
+<p align="center">
+    <img src="https://github.com/MichaelOdermatt/ShredMaster/blob/main/Screenshots/grind.gif" alt="grind" width="480"/>
+</p>
