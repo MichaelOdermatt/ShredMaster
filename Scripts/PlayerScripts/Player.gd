@@ -8,8 +8,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var railManager = get_node("../RailManager");
 @onready var coinManager = get_node("../CoinManager");
 @onready var ui = get_node("../UI");
-@onready var playerHealth = $PlayerHealth;
-@onready var playerScore = $PlayerScore;
+@onready var playerStats = $PlayerStats;
 @onready var playerMovement = $CharacterBody;
 @onready var playerSprite = $CharacterBody/PlayerSprite;
 @onready var invincibilityTimer = $InvincibilityTimer;
@@ -44,8 +43,8 @@ func destroyPlayer():
 
 ## Adds specified amount of points to the player score.
 func addPointsToScore(points: int):
-	playerScore.addPoints(points);
-	ui.updatePlayerScore(str(playerScore.getScore()));
+	var newScore = playerStats.addPoints(points);
+	ui.updatePlayerScore(str(newScore));
 
 func _on_player_hit():
 	if (isPlayerInvincible):
@@ -55,7 +54,7 @@ func _on_player_hit():
 	ui.removePlayerHeart();
 	playerSprite.playOnHitAnimation();
 	invincibilityTimer.start();
-	var newHealth = playerHealth.decreaseHealth();
+	var newHealth = playerStats.decreaseHealth();
 	if (newHealth != 0):
 		playerSounds.playHitSound();
 	else:

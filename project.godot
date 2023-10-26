@@ -19,6 +19,7 @@ config/windows_native_icon="res://ShredMaster.ico"
 
 Globals="*res://Scripts/AutoLoaded/Globals.gd"
 MusicController="*res://Scenes/MusicController.tscn"
+Helpers="*res://Scripts/AutoLoaded/Helpers.gd"
 
 [display]
 

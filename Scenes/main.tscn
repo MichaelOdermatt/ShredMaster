@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=61 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
 [ext_resource type="Material" uid="uid://b6rrrv1pk6sa" path="res://Materials/SmoothFilter.tres" id="2_8a6ct"]
@@ -19,8 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cmr8bewb742mh" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_gjlwc"]
 [ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="17_vwtg7"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerRaycasts.gd" id="18_3otdh"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerHealth.gd" id="19_v7sbt"]
-[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerScore.gd" id="20_x0dm2"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerStats.gd" id="19_4ncvd"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerParticleEffects.gd" id="21_hvbv7"]
 [ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_6ilp1"]
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_ci1jf"]
@@ -385,12 +384,8 @@ monitorable = false
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_faqee")
 
-[node name="PlayerHealth" type="Node2D" parent="Player"]
-script = ExtResource("19_v7sbt")
-playerHealth = 3
-
-[node name="PlayerScore" type="Node2D" parent="Player"]
-script = ExtResource("20_x0dm2")
+[node name="PlayerStats" type="Node2D" parent="Player"]
+script = ExtResource("19_4ncvd")
 
 [node name="PlayerParticleEffects" type="Node2D" parent="Player"]
 script = ExtResource("21_hvbv7")

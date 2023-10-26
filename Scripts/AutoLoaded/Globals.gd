@@ -1,5 +1,12 @@
 extends Node
 
+## Sound constants
+
+const AUDIO_FADE_IN_DURATION: float = 0.1;
+const AUDIO_FADE_OUT_DURATION: float = 0.25;
+const AUDIO_VOLUME_MIN: float = -30;
+const AUDIO_VOLUME_MAX: float = 0;
+
 ## The base speed is the speed at which all seemingly stationary objects move.
 
 const MIN_BASE_SPEED: int = 55;

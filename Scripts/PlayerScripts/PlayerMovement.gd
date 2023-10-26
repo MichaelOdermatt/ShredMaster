@@ -66,33 +66,11 @@ func handlePlayerMovementSounds(isGrinding: bool):
 		playerSounds.playConcreteJumpSound();
 	
 	if isPlayerOnFloor && !isGrinding:
-		playRollLoops(direction);
+		playerSounds.playRollLoops(direction);
 	elif isPlayerOnFloor:
 		playerSounds.playRailGrindLoopWithImpact();
 	else:
-		stopRollLoops();
-	
-## Plays either the cruise, or push loop depending on the players movement direction.
-func playRollLoops(direction: int):
-	if direction == 1:
-		playerSounds.stopCruiseLoop(true);
-		playerSounds.stopStallLoop(true);
-		playerSounds.playPushLoop(true);
-	elif direction == -1:
-		playerSounds.stopPushLoop(true);
-		playerSounds.stopCruiseLoop(true);
-		playerSounds.playStallLoop(true);
-	else:
-		playerSounds.stopPushLoop(true);
-		playerSounds.stopStallLoop(true);
-		playerSounds.playCruiseLoop(true);
-
-## Stops the cruise, and push audio loops.
-func stopRollLoops():
-	playerSounds.stopCruiseLoop();
-	playerSounds.stopPushLoop();
-	playerSounds.stopStallLoop();
-	playerSounds.stopRailGrindLoop();
+		playerSounds.stopRollLoops();
 
 # FOR RAIL GRINDING
 

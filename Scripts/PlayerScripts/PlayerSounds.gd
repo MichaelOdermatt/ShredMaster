@@ -1,10 +1,5 @@
 extends Node2D
 
-const AUDIO_FADE_IN_DURATION: float = 0.1;
-const AUDIO_FADE_OUT_DURATION: float = 0.25;
-const AUDIO_VOLUME_MIN: float = -30;
-const AUDIO_VOLUME_MAX: float = 0;
-
 var metalImpact = preload("res://Sounds/MetalImpact.wav");
 var concreteImpact1 = preload("res://Sounds/ConcreteImpact/ConcreteImpact1.wav");
 var concreteImpact2 = preload("res://Sounds/ConcreteImpact/ConcreteImpact2.wav");
@@ -18,6 +13,7 @@ var hit3 = preload("res://Sounds/HitSounds/HitSound3.wav");
 var popCanOpen1 = preload("res://Sounds/PopCanOpen/PopCanOpen1.wav");
 var popCanOpen2 = preload("res://Sounds/PopCanOpen/PopCanOpen2.wav");
 
+@onready var helpers = get_node("/root/Helpers");
 @onready var railGrindAudioPlayer = $RailGrindAudioPlayer;
 @onready var cruiseAudioPlayer = $CruiseAudioPlayer;
 @onready var pushAudioPlayer = $PushAudioPlayer;
@@ -52,28 +48,50 @@ func playHitSound():
 	if (hitAudioPlayer.playing):
 		return;
 		
-	playRandomSoundFromArray(hitSounds, hitAudioPlayer);	
+	helpers.playRandomSoundFromArray(hitSounds, hitAudioPlayer);	
 
 ## Randomly selects and plays one of the concrete impact sounds.
 func playConcreteImpactSound():
 	if (impactAudioPlayer.playing):
 		return;
 		
-	playRandomSoundFromArray(concreteImpactSounds, impactAudioPlayer);	
+	helpers.playRandomSoundFromArray(concreteImpactSounds, impactAudioPlayer);	
 
 ## Randomly selects and plays one of the concrete jump sounds.
 func playConcreteJumpSound():
 	if (jumpAudioPlayer.playing):
 		return;
 	
-	playRandomSoundFromArray(concreteJumpSounds, jumpAudioPlayer);	
+	helpers.playRandomSoundFromArray(concreteJumpSounds, jumpAudioPlayer);	
 
 ## Randomly selects and plays one of the pop can opening sounds.
 func playPopCanOpenSound():
 	if (popCanAudioPlayer.playing):
 		return;
 		
-	playRandomSoundFromArray(popCanOpenSounds, popCanAudioPlayer);	
+	helpers.playRandomSoundFromArray(popCanOpenSounds, popCanAudioPlayer);	
+
+## Plays either the cruise, or push loop depending on the players movement direction.
+func playRollLoops(direction: int):
+	if direction == 1:
+		stopCruiseLoop(true);
+		stopStallLoop(true);
+		playPushLoop(true);
+	elif direction == -1:
+		stopPushLoop(true);
+		stopCruiseLoop(true);
+		playStallLoop(true);
+	else:
+		stopPushLoop(true);
+		stopStallLoop(true);
+		playCruiseLoop(true);
+
+## Stops the cruise, and push audio loops.
+func stopRollLoops():
+	stopCruiseLoop();
+	stopPushLoop();
+	stopStallLoop();
+	stopRailGrindLoop();
 
 ## Plays the one shot metal impact sound then starts playing the rail grind sound loop.
 func playRailGrindLoopWithImpact():
@@ -88,8 +106,8 @@ func playCruiseLoop(fade: bool = false):
 	if (cruiseAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeInCruiseTween):
-		fadeInCruiseTween = createFadeInTween(cruiseAudioPlayer);
+	if fade && !helpers.isCurrentlyTweening(fadeInCruiseTween):
+		fadeInCruiseTween = helpers.createFadeInTween(cruiseAudioPlayer);
 	elif !fade:
 		cruiseAudioPlayer.play();
 	
@@ -98,8 +116,8 @@ func playPushLoop(fade: bool = false):
 	if (pushAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeInPushTween):
-		fadeInPushTween = createFadeInTween(pushAudioPlayer);
+	if fade && !helpers.isCurrentlyTweening(fadeInPushTween):
+		fadeInPushTween = helpers.createFadeInTween(pushAudioPlayer);
 	elif !fade:
 		pushAudioPlayer.play();
 		
@@ -108,8 +126,8 @@ func playStallLoop(fade: bool = false):
 	if (stallAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeInStallTween):
-		fadeInStallTween = createFadeInTween(stallAudioPlayer);
+	if fade && !helpers.isCurrentlyTweening(fadeInStallTween):
+		fadeInStallTween = helpers.createFadeInTween(stallAudioPlayer);
 	elif !fade:
 		stallAudioPlayer.play();
 		
@@ -122,9 +140,9 @@ func stopCruiseLoop(fade: bool = false):
 	if (!cruiseAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeOutCruiseTween):
+	if fade && !helpers.isCurrentlyTweening(fadeOutCruiseTween):
 		
-		fadeOutCruiseTween = createFadeOutTween(cruiseAudioPlayer);
+		fadeOutCruiseTween = helpers.createFadeOutTween(cruiseAudioPlayer);
 	elif !fade:
 		cruiseAudioPlayer.stop();
 	
@@ -133,8 +151,8 @@ func stopPushLoop(fade: bool = false):
 	if (!pushAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeOutPushTween):
-		fadeOutPushTween = createFadeOutTween(pushAudioPlayer);
+	if fade && !helpers.isCurrentlyTweening(fadeOutPushTween):
+		fadeOutPushTween = helpers.createFadeOutTween(pushAudioPlayer);
 	elif !fade:
 		pushAudioPlayer.stop();
 		
@@ -143,45 +161,7 @@ func stopStallLoop(fade: bool = false):
 	if (!stallAudioPlayer.playing):
 		return;
 	
-	if fade && !isCurrentlyTweening(fadeOutStallTween):
-		fadeOutStallTween = createFadeOutTween(stallAudioPlayer);
+	if fade && !helpers.isCurrentlyTweening(fadeOutStallTween):
+		fadeOutStallTween = helpers.createFadeOutTween(stallAudioPlayer);
 	elif !fade:
 		stallAudioPlayer.stop();
-
-## Randomly selects a sound from the array and plays it through the given audio player.
-func playRandomSoundFromArray(arrayOfSounds: Array, audioPlayer: AudioStreamPlayer):
-	randomize();
-	var soundToPlay = arrayOfSounds[randi_range(0, len(arrayOfSounds) - 1)];
-	audioPlayer.stream = soundToPlay;
-	audioPlayer.play();
-
-## Creates a fade in tween for the audioPlayer's volume.
-func createFadeInTween(audioPlayer: AudioStreamPlayer) -> Tween:
-	var fadeTween = create_tween();
-	
-	fadeTween.tween_property(
-		audioPlayer, 
-		"volume_db", 
-		AUDIO_VOLUME_MAX, 
-		AUDIO_FADE_IN_DURATION
-	).from(AUDIO_VOLUME_MIN);
-	audioPlayer.play();
-	
-	return fadeTween;
-
-## Creates a fade out tween for the audioPlayer's volume.
-func createFadeOutTween(audioPlayer: AudioStreamPlayer) -> Tween:
-	var fadeTween = get_tree().create_tween();
-	
-	fadeTween.tween_property(
-		audioPlayer, 
-		"volume_db", 
-		AUDIO_VOLUME_MIN, 
-		AUDIO_FADE_OUT_DURATION
-	).from_current();
-	
-	fadeTween.tween_callback(audioPlayer.stop);
-	return fadeTween;
-
-func isCurrentlyTweening(tween: Tween) -> bool:
-	return tween != null && tween.is_running();
