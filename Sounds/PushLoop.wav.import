@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dgfipipsiut2r"
-path="res://.godot/imported/PushLoopLoopedShortened.wav-6bb63411cdacd9109991835fc121f123.sample"
+path="res://.godot/imported/PushLoop.wav-74f208f89248e536d64ae434b99b5452.sample"
 
 [deps]
 
-source_file="res://Sounds/PushLoopLoopedShortened.wav"
-dest_files=["res://.godot/imported/PushLoopLoopedShortened.wav-6bb63411cdacd9109991835fc121f123.sample"]
+source_file="res://Sounds/PushLoop.wav"
+dest_files=["res://.godot/imported/PushLoop.wav-74f208f89248e536d64ae434b99b5452.sample"]
 
 [params]
 

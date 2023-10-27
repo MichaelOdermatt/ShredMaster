@@ -24,9 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://b1gv32hwsi3hf" path="res://Sprites/ParticleEffectSprites/ImpactParticleEffect.png" id="22_6ilp1"]
 [ext_resource type="Texture2D" uid="uid://dh1t2m1ui4163" path="res://Sprites/ParticleEffectSprites/SparkParticleEffect.png" id="23_ci1jf"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerSounds.gd" id="24_rpumt"]
-[ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoopLooped.wav" id="25_utj1q"]
-[ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoopLoopedShortened.wav" id="26_hjmsc"]
-[ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoopLooped.wav" id="27_dpj4t"]
+[ext_resource type="AudioStream" uid="uid://2b7xmsq2c6b3" path="res://Sounds/CruiseLoop.wav" id="25_dmj8q"]
+[ext_resource type="AudioStream" uid="uid://dgfipipsiut2r" path="res://Sounds/PushLoop.wav" id="26_ybcr4"]
+[ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoop.wav" id="27_pvvsm"]
 [ext_resource type="AudioStream" uid="uid://du1hhpuc67df0" path="res://Sounds/RailGrindLoop.wav" id="28_4l41m"]
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="29_go1kk"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="30_5pdmh"]
@@ -418,15 +418,15 @@ script = ExtResource("24_rpumt")
 [node name="ImpactAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="CruiseAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("25_utj1q")
+stream = ExtResource("25_dmj8q")
 
 [node name="PopCanAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 
 [node name="PushAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("26_hjmsc")
+stream = ExtResource("26_ybcr4")
 
 [node name="StallAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
-stream = ExtResource("27_dpj4t")
+stream = ExtResource("27_pvvsm")
 
 [node name="RailGrindAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
 stream = ExtResource("28_4l41m")

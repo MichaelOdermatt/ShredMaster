@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bb715vh735qw"
-path="res://.godot/imported/StallLoopLooped.wav-47ddcfc3f1715e60d78b9fbc3c8200ea.sample"
+path="res://.godot/imported/StallLoop.wav-8f7554d4877035039c67a523b77dd80a.sample"
 
 [deps]
 
-source_file="res://Sounds/StallLoopLooped.wav"
-dest_files=["res://.godot/imported/StallLoopLooped.wav-47ddcfc3f1715e60d78b9fbc3c8200ea.sample"]
+source_file="res://Sounds/StallLoop.wav"
+dest_files=["res://.godot/imported/StallLoop.wav-8f7554d4877035039c67a523b77dd80a.sample"]
 
 [params]
 

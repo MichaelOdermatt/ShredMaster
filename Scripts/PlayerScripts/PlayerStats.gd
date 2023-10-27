@@ -1,6 +1,6 @@
 extends Node2D
 
-var playerHealth: int;
+var playerHealth: int = 3;
 var playerScore: int = 0;
 
 ## Decreases the playerHealth value by one. Returns the new health value.

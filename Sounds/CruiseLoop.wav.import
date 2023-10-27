@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://2b7xmsq2c6b3"
-path="res://.godot/imported/CruiseLoopLooped.wav-137741868bf795acb7f9f04c72a0afe1.sample"
+path="res://.godot/imported/CruiseLoop.wav-d753b57fa00463b01d590e46c01702e5.sample"
 
 [deps]
 
-source_file="res://Sounds/CruiseLoopLooped.wav"
-dest_files=["res://.godot/imported/CruiseLoopLooped.wav-137741868bf795acb7f9f04c72a0afe1.sample"]
+source_file="res://Sounds/CruiseLoop.wav"
+dest_files=["res://.godot/imported/CruiseLoop.wav-d753b57fa00463b01d590e46c01702e5.sample"]
 
 [params]
 
