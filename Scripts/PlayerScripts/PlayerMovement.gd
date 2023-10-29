@@ -11,10 +11,8 @@ const HALF_SCREEN_WIDTH: int = 64;
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;
 
 @onready var globals = get_node("/root/Globals");
-@onready var playerSprite = get_node("PlayerSprite");
 @onready var playerRaycasts = $PlayerRaycasts;
-@onready var playerParticleEffects = get_node("../PlayerParticleEffects");
-@onready var playerSounds = get_node("../PlayerSounds");
+@onready var playerInput = get_node("../PlayerInput");
 
 var gravity: float;
 var maxJumpVelocity: float;
@@ -28,49 +26,30 @@ func _ready():
 
 func _physics_process(delta):
 	var isGrinding = playerRaycasts.isPlayerGrindingRail();
-	handlePlayerMovementSounds(isGrinding);
 	calcPlayerVelocity(delta, isGrinding);
 	move_and_slide()
 
-## Updates the CharacterBody2D's velocity property. Intended to be called in the
-## _physics_process function.
+## Updates the CharacterBody2D's velocity property. Intended to be called in the _physics_process function.
 func calcPlayerVelocity(delta: float, isGrinding: bool = false):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta;
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
+	if playerInput.wasJumpJustPressed() and is_on_floor():
 		velocity.y = maxJumpVelocity;
-	if Input.is_action_just_released("Jump") && velocity.y < minJumpVelocity:
+	if playerInput.wasJumpJustReleased() && velocity.y < minJumpVelocity:
 		velocity.y = minJumpVelocity;
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction = Input.get_axis("MoveLeft", "MoveRight")
+	var direction = playerInput.getMovementInputDirection();
 	if (isGrinding):
 		velocity.x = calcGrindVelocity();
-		playerSprite.playGrindAnimation();
-		playerParticleEffects.startEmittingSparkParticles(transform.origin);
 	else:
-		playerParticleEffects.stopEmittingSparkParticles();
 		if direction:
 			velocity.x = move_toward(velocity.x, direction * SPEED, ACC);
 		else:
 			velocity.x = move_toward(velocity.x, 0, DECC);
-
-## Plays sounds contextually depending on the players movement and inputs.
-func handlePlayerMovementSounds(isGrinding: bool):
-	var direction = Input.get_axis("MoveLeft", "MoveRight");
-	var isPlayerOnFloor = is_on_floor();
-	if Input.is_action_just_pressed("Jump") and isPlayerOnFloor:
-		playerSounds.playConcreteJumpSound();
-	
-	if isPlayerOnFloor && !isGrinding:
-		playerSounds.playRollLoops(direction);
-	elif isPlayerOnFloor:
-		playerSounds.playRailGrindLoopWithImpact();
-	else:
-		playerSounds.stopRollLoops();
 
 # FOR RAIL GRINDING
 

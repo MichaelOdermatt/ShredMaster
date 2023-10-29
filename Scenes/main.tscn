@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bawod66qbrxj6"]
+[gd_scene load_steps=62 format=3 uid="uid://bawod66qbrxj6"]
 
 [ext_resource type="Script" path="res://Scripts/BackgroundScroll.gd" id="1_txpna"]
 [ext_resource type="Material" uid="uid://b6rrrv1pk6sa" path="res://Materials/SmoothFilter.tres" id="2_8a6ct"]
@@ -29,6 +29,7 @@
 [ext_resource type="AudioStream" uid="uid://bb715vh735qw" path="res://Sounds/StallLoop.wav" id="27_pvvsm"]
 [ext_resource type="AudioStream" uid="uid://du1hhpuc67df0" path="res://Sounds/RailGrindLoop.wav" id="28_4l41m"]
 [ext_resource type="Script" path="res://Scripts/UI/UI.gd" id="29_go1kk"]
+[ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerInput.gd" id="29_vgyfl"]
 [ext_resource type="FontFile" uid="uid://dh7fmbq872ps7" path="res://Fonts/m3x6.ttf" id="30_5pdmh"]
 [ext_resource type="Texture2D" uid="uid://bvwo4aqhbidjk" path="res://Sprites/Heart.png" id="31_nhfkj"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthUI.gd" id="32_kgyn0"]
@@ -432,6 +433,9 @@ stream = ExtResource("27_pvvsm")
 stream = ExtResource("28_4l41m")
 
 [node name="HitAudioPlayer" type="AudioStreamPlayer" parent="Player/PlayerSounds"]
+
+[node name="PlayerInput" type="Node2D" parent="Player"]
+script = ExtResource("29_vgyfl")
 
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("29_go1kk")

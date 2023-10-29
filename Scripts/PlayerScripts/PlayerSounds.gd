@@ -28,12 +28,9 @@ var concreteJumpSounds = [concreteJump1, concreteJump2, concreteJump3];
 var popCanOpenSounds = [popCanOpen1, popCanOpen2];
 var hitSounds = [hit1, hit2, hit3];
 
-var fadeInCruiseTween: Tween;
-var fadeOutCruiseTween: Tween;
-var fadeInPushTween: Tween;
-var fadeOutPushTween: Tween;
-var fadeInStallTween: Tween;
-var fadeOutStallTween: Tween;
+var fadeCruiseTween: Tween;
+var fadePushTween: Tween;
+var fadeStallTween: Tween;
 
 ## Plays the metal impact sound.
 func playMetalImpactSound():
@@ -101,67 +98,54 @@ func playRailGrindLoopWithImpact():
 	playMetalImpactSound();
 	railGrindAudioPlayer.play();
 
-## Plays the cruise sound loop.
-func playCruiseLoop(fade: bool = false):
-	if (cruiseAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeInCruiseTween):
-		fadeInCruiseTween = helpers.createFadeInTween(cruiseAudioPlayer);
-	elif !fade:
-		cruiseAudioPlayer.play();
-	
-## Plays the push sound loop.
-func playPushLoop(fade: bool = false):
-	if (pushAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeInPushTween):
-		fadeInPushTween = helpers.createFadeInTween(pushAudioPlayer);
-	elif !fade:
-		pushAudioPlayer.play();
-		
-## Plays the stall sound loop.
-func playStallLoop(fade: bool = false):
-	if (stallAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeInStallTween):
-		fadeInStallTween = helpers.createFadeInTween(stallAudioPlayer);
-	elif !fade:
-		stallAudioPlayer.play();
-		
 ## Plays the rail grind sound loop.
 func stopRailGrindLoop():
 	railGrindAudioPlayer.stop();
 
+## Plays the cruise sound loop.
+func playCruiseLoop(fade: bool = false):
+	if fade:
+		helpers.killTweenIfNotNull(fadeCruiseTween);
+		fadeCruiseTween = helpers.createFadeInTween(cruiseAudioPlayer);
+	else:
+		cruiseAudioPlayer.play();
+	
+## Plays the push sound loop.
+func playPushLoop(fade: bool = false):
+	if fade:
+		helpers.killTweenIfNotNull(fadePushTween);
+		fadePushTween = helpers.createFadeInTween(pushAudioPlayer);
+	else:
+		pushAudioPlayer.play();
+		
+## Plays the stall sound loop.
+func playStallLoop(fade: bool = false):
+	if fade:
+		helpers.killTweenIfNotNull(fadeStallTween);
+		fadeStallTween = helpers.createFadeInTween(stallAudioPlayer);
+	else:
+		stallAudioPlayer.play();
+
 ## Stops the cruise sound loop.
 func stopCruiseLoop(fade: bool = false):
-	if (!cruiseAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeOutCruiseTween):
-		
-		fadeOutCruiseTween = helpers.createFadeOutTween(cruiseAudioPlayer);
-	elif !fade:
+	if fade:
+		helpers.killTweenIfNotNull(fadeCruiseTween);
+		fadeCruiseTween = helpers.createFadeOutTween(cruiseAudioPlayer);
+	else:
 		cruiseAudioPlayer.stop();
 	
 ## Stops the push sound loop.
 func stopPushLoop(fade: bool = false):
-	if (!pushAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeOutPushTween):
-		fadeOutPushTween = helpers.createFadeOutTween(pushAudioPlayer);
-	elif !fade:
+	if fade:
+		helpers.killTweenIfNotNull(fadePushTween);
+		fadePushTween = helpers.createFadeOutTween(pushAudioPlayer);
+	else:
 		pushAudioPlayer.stop();
 		
 ## Stops the stall sound loop abruptly.
 func stopStallLoop(fade: bool = false):
-	if (!stallAudioPlayer.playing):
-		return;
-	
-	if fade && !helpers.isCurrentlyTweening(fadeOutStallTween):
-		fadeOutStallTween = helpers.createFadeOutTween(stallAudioPlayer);
-	elif !fade:
+	if fade:
+		helpers.killTweenIfNotNull(fadeStallTween);
+		fadeStallTween = helpers.createFadeOutTween(stallAudioPlayer);
+	else:
 		stallAudioPlayer.stop();

@@ -15,6 +15,7 @@ const PLAYER_PICKUP_COIN_SCORE = 100;
 @onready var playerRaycasts = $CharacterBody/PlayerRaycasts;
 @onready var playerParticleEffects = $PlayerParticleEffects
 @onready var playerSounds = $PlayerSounds;
+@onready var playerInput = $PlayerInput;
 @onready var UISounds = get_node("../UI/UISounds");
 ## I use this Area2D node for the area_entered event that runs on collisions with the floor
 @onready var floorCollisionArea = $CharacterBody/FloorCollisionArea;
@@ -28,10 +29,21 @@ func _ready():
 	coinManager.player_pickup.connect(_on_player_pickup_coin);
 	invincibilityTimer.timeout.connect(_on_invincibilityTimer_timeout);
 	floorCollisionArea.area_entered.connect(_on_player_floor_collision);
+	playerInput.movement_key_just_pressed_or_released.connect(_on_movement_key_just_pressed_or_released);
+	playerInput.jump_key_just_pressed.connect(_on_jump_key_just_pressed);
 
 func _process(delta):
-	if (playerRaycasts.isPlayerGrindingRail()):
+	var isPlayerOnFloor = playerMovement.is_on_floor();
+	var isGrindingRail = playerRaycasts.isPlayerGrindingRail();
+	if (isGrindingRail):
+		playerSounds.playRailGrindLoopWithImpact();
+		playerParticleEffects.startEmittingSparkParticles(playerMovement.transform.origin);
+		playerSprite.playGrindAnimation();
 		addPointsToScore(PLAYER_GRIND_SCORE)
+	elif (!isPlayerOnFloor):
+		playerSounds.stopRollLoops();
+		playerSounds.stopRailGrindLoop();
+		playerParticleEffects.stopEmittingSparkParticles();
 
 ## Destroys the player, ending the game.
 func destroyPlayer():
@@ -72,3 +84,17 @@ func _on_player_floor_collision(area: Area2D):
 	# Since the floor collision area only masks for the map boundaries we dont need to bother checking the colliding area
 	playerParticleEffects.emitImpactParticles(playerMovement.transform.origin);
 	playerSounds.playConcreteImpactSound();
+	var direction = playerInput.getMovementInputDirection();
+	playerSounds.playRollLoops(direction);
+
+func _on_movement_key_just_pressed_or_released():
+	var isPlayerOnFloor = playerMovement.is_on_floor();
+	var direction = playerInput.getMovementInputDirection();
+	var isGrindingRail = playerRaycasts.isPlayerGrindingRail();
+	if isPlayerOnFloor && !isGrindingRail:
+		playerSounds.playRollLoops(direction);
+
+func _on_jump_key_just_pressed():
+	var isPlayerOnFloor = playerMovement.is_on_floor();
+	if isPlayerOnFloor:
+		playerSounds.playConcreteJumpSound();

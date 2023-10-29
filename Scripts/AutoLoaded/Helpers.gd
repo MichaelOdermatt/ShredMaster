@@ -37,5 +37,6 @@ func createFadeOutTween(audioPlayer: AudioStreamPlayer) -> Tween:
 	fadeTween.tween_callback(audioPlayer.stop);
 	return fadeTween;
 
-func isCurrentlyTweening(tween: Tween) -> bool:
-	return tween != null && tween.is_running();
+func killTweenIfNotNull(tween: Tween):
+	if (tween != null):
+		tween.kill();
