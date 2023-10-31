@@ -7,6 +7,8 @@ extends Node2D
 
 func _ready():
 	playerSprite.play("push");
+	# reset the on hit animation, incase the player reset the game midway through the animation.
+	resetOnHitAnimation();
 
 func _process(delta):
 	updatePlayerAnimation();
@@ -34,6 +36,10 @@ func playOnHitAnimation():
 	# just play the default animation on the animation player since there
 	# is only hit on hit animation right now.
 	spriteAnimationPlayer.play("FlashOnDamage");
+
+## Resets the animation values to their original positions.
+func resetOnHitAnimation():
+	spriteAnimationPlayer.play("RESET");
 
 func playIdleAnimation():
 	playerSprite.play("default");
