@@ -19,7 +19,7 @@ func createFadeInTween(audioPlayer: AudioStreamPlayer) -> Tween:
 		globals.AUDIO_VOLUME_MAX, 
 		globals.AUDIO_FADE_IN_DURATION
 	).from(globals.AUDIO_VOLUME_MIN);
-	audioPlayer.play();
+	unpauseOrPlayAudio(audioPlayer);
 	
 	return fadeTween;
 
@@ -34,9 +34,21 @@ func createFadeOutTween(audioPlayer: AudioStreamPlayer) -> Tween:
 		globals.AUDIO_FADE_OUT_DURATION
 	).from_current();
 	
-	fadeTween.tween_callback(audioPlayer.stop);
+	fadeTween.tween_callback(pauseAudio.bind(audioPlayer));
 	return fadeTween;
 
+## pauses the given audio player.
+func pauseAudio(audioPlayer: AudioStreamPlayer):
+	audioPlayer.stream_paused = true;
+
+## Unpauses the audio if it is paused. If the audio player is not playing. Plays the audio.
+func unpauseOrPlayAudio(audioPlayer: AudioStreamPlayer):
+	if (!audioPlayer.playing):
+		audioPlayer.play();
+
+	audioPlayer.stream_paused = false;
+
+## Kills the current tween if it is not null.
 func killTweenIfNotNull(tween: Tween):
 	if (tween != null):
 		tween.kill();
