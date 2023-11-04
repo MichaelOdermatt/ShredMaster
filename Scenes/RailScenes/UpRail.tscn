@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c545eqd3nb1jj"]
+[gd_scene load_steps=4 format=3 uid="uid://c545eqd3nb1jj"]
 
 [ext_resource type="Texture2D" uid="uid://b8q8n1tet05qh" path="res://Sprites/RailSprites/UpRail.png" id="1_cnorh"]
+[ext_resource type="Script" path="res://Scripts/RailScripts/Rail.gd" id="1_ji1q2"]
+[ext_resource type="PackedScene" uid="uid://b5vdr4w0k41bk" path="res://Scenes/CoinScenes/Coin.tscn" id="3_12jqp"]
 
 [node name="UpRail" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
+script = ExtResource("1_ji1q2")
+railAltitudeMax = 90
+railAltitudeMin = 67
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cnorh")
@@ -13,3 +18,6 @@ offset = Vector2(0, 34)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-63, 19, -63, 20, -20, 20, 19, 5, 62, 5, 62, 4, 19, 4, -20, 19)
 one_way_collision = true
+
+[node name="Coin" parent="." instance=ExtResource("3_12jqp")]
+position = Vector2(80, -32)

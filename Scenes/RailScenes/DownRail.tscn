@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://j3al3rjdx5fj"]
+[gd_scene load_steps=4 format=3 uid="uid://j3al3rjdx5fj"]
 
+[ext_resource type="Script" path="res://Scripts/RailScripts/Rail.gd" id="1_dyfcn"]
 [ext_resource type="Texture2D" uid="uid://b43hsxww0lbl3" path="res://Sprites/RailSprites/DownRail.png" id="1_oi0w1"]
+[ext_resource type="PackedScene" uid="uid://b5vdr4w0k41bk" path="res://Scenes/CoinScenes/Coin.tscn" id="3_bu5nh"]
 
 [node name="DownRail" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 0
-metadata/_edit_group_ = true
+script = ExtResource("1_dyfcn")
+railAltitudeMax = 90
+railAltitudeMin = 70
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oi0w1")
@@ -14,3 +18,6 @@ offset = Vector2(0, 34)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-20, 3, 20, 18, 62, 18, 62, 19, 20, 19, -20, 4, -63, 4, -63, 3)
 one_way_collision = true
+
+[node name="Coin" parent="." instance=ExtResource("3_bu5nh")]
+position = Vector2(80, -16)

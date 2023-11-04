@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b77utn85gvy7y"]
+[gd_scene load_steps=2 format=3 uid="uid://b77utn85gvy7y"]
 
 [ext_resource type="Script" path="res://Scripts/CoinScripts/CoinManager.gd" id="1_3pnrm"]
-[ext_resource type="PackedScene" uid="uid://b5vdr4w0k41bk" path="res://Scenes/CoinScenes/Coin.tscn" id="1_vtve3"]
 
 [node name="CoinManager" type="Node2D"]
 script = ExtResource("1_3pnrm")
-coinSpawnIntervalMax = 3
-coinSpawnIntervalMin = 6
-
-[node name="Coin" parent="." instance=ExtResource("1_vtve3")]

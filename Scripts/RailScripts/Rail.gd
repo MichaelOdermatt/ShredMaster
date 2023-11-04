@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
-const halfOfSpriteWidth: int = 64
-const enemyResetPos: Vector2 = Vector2(192, 112);
+const Coin = preload("res://Scripts/CoinScripts/Coin.gd");
+## The x position that the rail must be at to be considered off the screen
+const offScreenPosition: int = -90;
+const railResetPos: Vector2 = Vector2(192, 112);
 
 @onready var globals = get_node("/root/Globals");
+@onready var coin = $Coin;
 
 signal rail_off_screen();
 
@@ -29,23 +32,27 @@ func moveRail():
 	velocity = movementVector;
 	move_and_slide()
 
-	# don't mark the enemy as off screen until it is past half its width and
+	# don't mark the rail as off screen until it is past half its width and
 	# a few extra pixels to ensure its collider is completely off the screen
-	if (transform.origin.x < -(halfOfSpriteWidth + 5)):
+	if (transform.origin.x < offScreenPosition):
 		isOffScreen = true;
 		emit_signal("rail_off_screen");
 	
-## Resets the enemy's position to its starting position
-func resetEnemyPosition():
+## Resets the rails's position to its starting position
+func resetRailPosition():
 	isOffScreen = false;
-	transform.origin = enemyResetPos;
+	transform.origin = railResetPos;
 	randomize();
 	transform.origin.y = randi_range(railAltitudeMin, railAltitudeMax);
 	getRailSpeed();
+	coin.enable();
 
 ## Updates the movementVector variable with the rail speed from globals.
 func getRailSpeed():
 	movementVector = Vector2(-globals.currentBaseSpeed, 0);
+
+func getCoin()-> Coin:
+	return coin;
 
 ## Function which returns the script's type as a string.
 func get_type():

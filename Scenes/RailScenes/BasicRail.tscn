@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdxrtukbv5q4c"]
+[gd_scene load_steps=5 format=3 uid="uid://bdxrtukbv5q4c"]
 
 [ext_resource type="Script" path="res://Scripts/RailScripts/Rail.gd" id="1_kic0m"]
 [ext_resource type="Texture2D" uid="uid://bq1y6vh8706d7" path="res://Sprites/RailSprites/BasicRail.png" id="2_b7y0m"]
+[ext_resource type="PackedScene" uid="uid://b5vdr4w0k41bk" path="res://Scenes/CoinScenes/Coin.tscn" id="3_gb8fw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu8ng"]
 size = Vector2(125, 1)
 
 [node name="BasicRail" type="CharacterBody2D"]
-position = Vector2(192, 112)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_kic0m")
 railAltitudeMax = 112
-railAltitudeMin = 56
+railAltitudeMin = 75
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b7y0m")
@@ -22,3 +22,6 @@ offset = Vector2(0, 34)
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_mu8ng")
 one_way_collision = true
+
+[node name="Coin" parent="." instance=ExtResource("3_gb8fw")]
+position = Vector2(0, -32)

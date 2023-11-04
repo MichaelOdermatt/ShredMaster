@@ -7,6 +7,7 @@ extends Node2D
 @onready var basicRail = $BasicRail;
 @onready var upRail = $UpRail;
 @onready var downRail = $DownRail;
+@onready var coinManager = get_node("../CoinManager");
 
 func _ready():
 	# setup funcs for the basic rail
@@ -15,6 +16,10 @@ func _ready():
 	basicRail.rail_off_screen.connect(railOffScreen);
 	upRail.rail_off_screen.connect(railOffScreen);
 	downRail.rail_off_screen.connect(railOffScreen);
+
+	coinManager.monitorCoin(basicRail.getCoin());
+	coinManager.monitorCoin(upRail.getCoin());
+	coinManager.monitorCoin(downRail.getCoin());
 
 ## Setup and start a cooldown timer for the rails's respawn.
 func railOffScreen():
@@ -28,8 +33,8 @@ func resetRandomRail():
 	var randomInt = randi_range(0, 2);
 
 	if (randomInt == 0):
-		basicRail.resetEnemyPosition();
+		basicRail.resetRailPosition();
 	elif (randomInt == 1):
-		upRail.resetEnemyPosition();
+		upRail.resetRailPosition();
 	else:
-		downRail.resetEnemyPosition();
+		downRail.resetRailPosition();

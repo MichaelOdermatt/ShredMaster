@@ -7,11 +7,9 @@
 size = Vector2(7, 10)
 
 [node name="Coin" type="Area2D"]
-position = Vector2(-24, 8)
-collision_layer = 16
+collision_layer = 0
+monitorable = false
 script = ExtResource("1_x8snn")
-coinAltitudeMin = 40
-coinAltitudeMax = 96
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,6 +17,3 @@ shape = SubResource("RectangleShape2D_3pj6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cy170")
-
-[node name="Timer" type="Timer" parent="."]
-one_shot = true

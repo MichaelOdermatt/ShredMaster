@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 80.0;
-const ACC = 7;
+const SPEED = 65.0;
+const ACC = 6;
 const DECC = 5;
-const MAX_JUMP_HEIGHT = 80.0;
-const MIN_JUMP_HEIGHT = 15.0;
-const JUMP_DURATION = 0.40;
+const MAX_JUMP_HEIGHT = 60.0;
+const MIN_JUMP_HEIGHT = 10.0;
+const JUMP_DURATION = 0.35;
 const HALF_SCREEN_WIDTH: int = 64;
 ## The max amount that the grind speed can decrease by while grinding
 const MAX_GRIND_VELOCITY_DECREASE_VALUE = 50;

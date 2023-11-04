@@ -330,13 +330,13 @@ script = ExtResource("6_ju20w")
 wait_time = 7.0
 autostart = true
 
+[node name="CoinManager" parent="." instance=ExtResource("9_6ipmh")]
+
 [node name="RailManager" parent="." instance=ExtResource("7_2jee1")]
 railSpawnIntervalMax = 5
 railSpawnIntervalMin = 10
 
 [node name="EnemyManager" parent="." instance=ExtResource("8_3gipi")]
-
-[node name="CoinManager" parent="." instance=ExtResource("9_6ipmh")]
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource("10_i5smg")
@@ -384,6 +384,7 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
+animation = &"jump"
 
 [node name="PlayerStats" type="Node2D" parent="Player"]
 script = ExtResource("19_4ncvd")
