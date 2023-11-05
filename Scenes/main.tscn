@@ -16,7 +16,7 @@
 [ext_resource type="Shader" path="res://Shaders/Flash.gdshader" id="13_hggcb"]
 [ext_resource type="Texture2D" uid="uid://de34elsax0xx4" path="res://Sprites/PlayerSprites/PlayerIdle.png" id="14_2gcrc"]
 [ext_resource type="Texture2D" uid="uid://8qm8vgmj435j" path="res://Sprites/PlayerSprites/PlayerGrind.png" id="15_yik5h"]
-[ext_resource type="Texture2D" uid="uid://cmr8bewb742mh" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_gjlwc"]
+[ext_resource type="Texture2D" uid="uid://crvbhpk40p6ln" path="res://Sprites/PlayerSprites/PlayerJump.png" id="16_gjlwc"]
 [ext_resource type="Texture2D" uid="uid://bcc2nabmvdgaw" path="res://Sprites/PlayerSprites/PlayerPush.png" id="17_vwtg7"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerRaycasts.gd" id="18_3otdh"]
 [ext_resource type="Script" path="res://Scripts/PlayerScripts/PlayerStats.gd" id="19_4ncvd"]
@@ -42,7 +42,7 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ao2bu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyjdm"]
-size = Vector2(9, 16)
+size = Vector2(4, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faqee"]
 size = Vector2(5, 10)
@@ -131,11 +131,11 @@ region = Rect2(0, 0, 10, 16)
 atlas = ExtResource("15_yik5h")
 region = Rect2(10, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l678u"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a4jq"]
 atlas = ExtResource("16_gjlwc")
 region = Rect2(0, 0, 10, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6plaa"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eepxo"]
 atlas = ExtResource("16_gjlwc")
 region = Rect2(10, 0, 10, 16)
 
@@ -181,10 +181,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l678u")
+"texture": SubResource("AtlasTexture_0a4jq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6plaa")
+"texture": SubResource("AtlasTexture_eepxo")
 }],
 "loop": true,
 "name": &"jump",
@@ -348,7 +348,6 @@ script = ExtResource("11_6aqh5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/CharacterBody"]
 position = Vector2(0, 1)
-scale = Vector2(0.75, -0.9)
 shape = SubResource("RectangleShape2D_tyjdm")
 
 [node name="PlayerRaycasts" type="Node2D" parent="Player/CharacterBody"]
@@ -384,7 +383,6 @@ libraries = {
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/CharacterBody/PlayerSprite"]
 material = SubResource("ShaderMaterial_6rk0j")
 sprite_frames = SubResource("SpriteFrames_yo0fu")
-animation = &"jump"
 
 [node name="PlayerStats" type="Node2D" parent="Player"]
 script = ExtResource("19_4ncvd")

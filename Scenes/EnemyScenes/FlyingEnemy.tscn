@@ -29,10 +29,9 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="FlyingEnemy" type="Node2D"]
-position = Vector2(136, 120)
 script = ExtResource("1_jh5yj")
 enemyAltitudeMax = 96
-enemyAltitudeMin = 32
+enemyAltitudeMin = 42
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ime0n")
