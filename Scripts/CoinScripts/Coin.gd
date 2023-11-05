@@ -1,9 +1,11 @@
 extends Area2D
 
-@onready var sprite = $Sprite2D;
+@onready var sprite = $AnimatedSprite;
 
 func _ready():
 	body_entered.connect(_on_body_entered);
+	sprite.play("default");
+
 
 ## Enables and shows the coin
 func enable():
