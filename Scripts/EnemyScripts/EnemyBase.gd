@@ -14,7 +14,7 @@ var isOffScreen: bool = false;
 func resetEnemyPosition():
 	pass
 
-## Moves the enemy while it is not off the screen.
+## Moves the enemy while it is on the screen.
 ## Once it is off the screen emit a signal to the enemy manager.
 func _moveEnemy(delta, halfOfSpriteWidth):
 	if (isOffScreen):
