@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5vdr4w0k41bk"]
+[gd_scene load_steps=9 format=3 uid="uid://b5vdr4w0k41bk"]
 
 [ext_resource type="Texture2D" uid="uid://tv1v1y4rm3nx" path="res://Sprites/PopCan.png" id="1_cy170"]
 [ext_resource type="Script" path="res://Scripts/CoinScripts/Coin.gd" id="1_x8snn"]
+[ext_resource type="PackedScene" uid="uid://rg30d4n37mko" path="res://Scenes/ParticleEffectScenes/CollectCoinParticles.tscn" id="3_6w1ta"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3pj6r"]
 size = Vector2(8, 10)
@@ -50,3 +51,5 @@ shape = SubResource("RectangleShape2D_3pj6r")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_fwes7")
 frame_progress = 0.673712
+
+[node name="CollectCoinParticles" parent="." instance=ExtResource("3_6w1ta")]
